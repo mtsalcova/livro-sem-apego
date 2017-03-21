@@ -45,14 +45,14 @@ gulp.task('pug', function() {
 // React
 //
 // var browserify = require('gulp-browserify');
-var react = require('gulp-react');
+// var react = require('gulp-react');
 
 
-gulp.task('jsx', function () {  
-    return gulp.src('../src/coffeescript/react/components/jsx/*.jsx')
-        .pipe(react())
-        .pipe(gulp.dest('../src/coffeescript/react/components/js'));
-});
+// gulp.task('jsx', function () {  
+//     return gulp.src('../src/coffeescript/react/components/jsx/*.jsx')
+//         .pipe(react())
+//         .pipe(gulp.dest('../src/coffeescript/react/components/js'));
+// });
 
 // gulp.task('concat', function() {
 //     return gulp.src('../public/main.js')
