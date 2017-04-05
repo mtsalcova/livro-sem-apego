@@ -8,7 +8,7 @@ var gulp = require('gulp');
 
 var stylus = require('gulp-stylus');
 var autoprefixerStylus = require('autoprefixer-stylus');
-var minify = require('gulp-minify-css');
+var combineMq = require('gulp-combine-mq');
 
 gulp.task('stylus', function() {
     return gulp.src("../src/stylus/main.styl")
@@ -18,12 +18,13 @@ gulp.task('stylus', function() {
         .pipe(gulp.dest("../public/css"))
 });
 
-gulp.task('minify-css', function () {
+gulp.task('combineMq', ['stylus'], function () {
     return gulp.src('../public/css/main.css')
-        .pipe(minify({keepBreaks: true}))
-        .pipe(gulp.dest('../public/css'));
+    .pipe(combineMq({
+        beautify: true
+    }))
+    .pipe(gulp.dest('../public/css/'));
 });
-
 
 
 //
@@ -40,46 +41,12 @@ gulp.task('pug', function() {
 
 
 
-
-//
-// React
-//
-// var browserify = require('gulp-browserify');
-// var react = require('gulp-react');
-
-
-// gulp.task('jsx', function () {  
-//     return gulp.src('../src/coffeescript/react/components/jsx/*.jsx')
-//         .pipe(react())
-//         .pipe(gulp.dest('../src/coffeescript/react/components/js'));
-// });
-
-// gulp.task('concat', function() {
-//     return gulp.src('../public/main.js')
-//         .pipe(babel({
-//             only: [
-//                 '../src/coffeescript/react/components/'
-//             ],
-//             compact: false
-//         }))
-//         .pipe(concat('main.js'))
-//         .pipe(gulp.dest('../public/main.js'));
-// });
-
-
-
-
 //
 // Task Default
 
 gulp.task('default', function() {
-    gulp.watch('../src/stylus/**/*.styl', ['stylus']);
+    gulp.watch('../src/stylus/**/*.styl', ['combineMq']);
     gulp.watch('../src/pug/**/*.pug', ['pug']);
 });
 
-
-//
-// Task Build -> minify files.
-
-gulp.task('build', ['minify-css']);
 

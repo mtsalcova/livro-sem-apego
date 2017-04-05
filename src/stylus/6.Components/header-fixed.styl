@@ -12,6 +12,9 @@
     left 0
     width 100%
 
+    @media ( max-width 849px )
+        height 55px
+
     // @media (min-width 850px)
     //     display none
 
@@ -25,23 +28,21 @@
 
     .btn
         padding 5px 15px
-
-        @media ( min-width 850px )
-            &:after
-                content 'Minha Conta'
-
+        
         @media ( max-width 849px )
-            order 0
-            &:after
-                content '+'
-                font-weight bold
-                font-size 20px
+            display none
+
 
     img
-        height 55px
+        @media ( min-width 850px )
+            height 55px
+            margin-left -250px
 
         @media ( max-width 849px )
-            order 1
+            height 35px
+            
+
+        
 
     .icon
         cursor pointer
@@ -50,9 +51,6 @@
         text-align center
         height 35px
         width 42px
-
-        @media ( max-width 849px )
-            order 2
 
         @media ( min-width 850px )
             display none
