@@ -1,0 +1,27 @@
+
+//-
+//- Header
+//-
+
+mixin menu() 
+    a.menuitem( href = '' ) Livros
+    a.menuitem( href = '' ) Desejados
+    a.menuitem( href = '' ) Sobre
+    a.menuitem( href = '' ) Contato 
+
+
+header.header-static: .wrap
+
+    a.logo( href = '' ): img( src = 'img/livro-sem-apego-logo.png' alt = 'Livro sem Apego - Logo' )
+    a( class = 'btn' href = '' ) Minha conta
+    nav( class = 'header-menu -static' ): +menu()
+
+header.header-fixed: .wrap
+
+    nav( class = 'header-menu -fixed' ): +menu()
+    button.icon: span
+    img( src = 'img/icon-livro-sem-apego.svg' alt = 'Ícone - Livro sem Apego' )
+    a( class = 'btn' href = '' )
+
+
+

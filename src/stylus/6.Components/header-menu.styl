@@ -1,0 +1,42 @@
+
+//
+// Header Menu - Component
+//
+
+.header-menu
+
+    &.-static
+        color #fff
+        float right
+        margin-top 30px
+
+    &.-fixed
+        color purplishGrey
+
+        @media ( max-width 849px )
+            display none
+        
+
+    > .menuitem
+        display inline-block
+        margin 0 10px
+        font 300 16px 'Museo'
+        letter-spacing 0.5px
+
+        &:after
+            background-color blush
+            border-radius 50%
+            content ''
+            display inline-block
+            height 5px
+            margin-left 15px
+            vertical-align middle
+            width 5px
+            
+        &:hover
+            text-decoration underline
+
+        &:last-child:after
+            display none
+            
+

@@ -1,0 +1,83 @@
+
+//
+// Header Fixed - Component
+//
+
+.header-fixed
+    background #fff
+    box-shadow 0 2px 3px 0 rgba(0, 0, 0, 0.15)
+    position fixed
+    top 0
+    height 75px
+    left 0
+    width 100%
+
+    // @media (min-width 850px)
+    //     display none
+
+
+    .wrap
+        display flex
+        justify-content space-between
+        flex-wrap wrap
+        align-items center
+    
+
+    .btn
+        padding 5px 15px
+
+        @media ( min-width 850px )
+            &:after
+                content 'Minha Conta'
+
+        @media ( max-width 849px )
+            order 0
+            &:after
+                content '+'
+                font-weight bold
+                font-size 20px
+
+    img
+        height 55px
+
+        @media ( max-width 849px )
+            order 1
+
+    .icon
+        cursor pointer
+        @extends .btn
+        padding 0 7px
+        text-align center
+        height 35px
+        width 42px
+
+        @media ( max-width 849px )
+            order 2
+
+        @media ( min-width 850px )
+            display none
+
+        span
+            display block
+            border-top 2px solid #fff
+            position relative
+            width 100%
+
+            &:after
+            &:before
+                border-top 2px solid #fff
+                content ''
+                left 50%
+                transform translateX( -50% )
+                position absolute
+                width 100%
+
+            &:before
+                top -10px
+
+            &:after
+                bottom -8px
+
+
+            
+
