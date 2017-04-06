@@ -2,6 +2,12 @@
 var gulp = require('gulp');
 
 
+function setError (error) {
+  console.log(error.toString())
+  this.emit('end')
+}
+
+
 //
 // Stylus
 //
@@ -15,6 +21,7 @@ gulp.task('stylus', function() {
         .pipe(stylus({
             use: [autoprefixerStylus()]
         }))
+        .on('error', setError)
         .pipe(gulp.dest("../public/css"))
 });
 
@@ -23,6 +30,7 @@ gulp.task('combineMq', ['stylus'], function () {
     .pipe(combineMq({
         beautify: true
     }))
+    .on('error', setError)
     .pipe(gulp.dest('../public/css/'));
 });
 
@@ -36,8 +44,37 @@ var pug = require('gulp-pug');
 gulp.task('pug', function() {
     return gulp.src('../src/pug/pages/*.pug')
         .pipe(pug())
+        .on('error', setError)
         .pipe(gulp.dest('../public/'));
 });
+
+
+
+//
+// SVG Sprite
+
+var svgstore = require('gulp-svgstore');
+var svgmin = require('gulp-svgmin');
+var path = require('path');
+
+gulp.task('svgstore', function () {
+    return gulp
+        .src('../public/img/svg/*.svg')
+        .pipe(svgmin(function (file) {
+            var prefix = path.basename(file.relative, path.extname(file.relative));
+            return {
+                plugins: [{
+                    cleanupIDs: {
+                        prefix: prefix + '-',
+                        minify: true
+                    }
+                }]
+            }
+        }))
+        .pipe(svgstore())
+        .pipe(gulp.dest('../public/img'));
+});
+
 
 
 
@@ -48,5 +85,10 @@ gulp.task('default', function() {
     gulp.watch('../src/stylus/**/*.styl', ['combineMq']);
     gulp.watch('../src/pug/**/*.pug', ['pug']);
 });
+
+
+gulp.task('svg', ['svgstore']);
+
+
 
 

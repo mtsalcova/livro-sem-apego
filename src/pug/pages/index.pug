@@ -3,7 +3,16 @@ extends ../main
 
 block content
 
-    .search-home
 
-        //- h1 Tá afim de ganhar um livro?
-        //- p Faça uma pesquisa e descubra se o livro que você deseja está disponível para doação ainda hoje (:
+    .header-search
+        h1.title Tá afim de ganhar um livro?
+        p.desc Faça uma pesquisa e descubra se o livro que você deseja <br>está disponível para doação ainda hoje (:
+        
+        form.search-form.-header( method = 'POST' )
+            label.icon( for = 'search' ): svg: use( xlink:href="img/svg.svg#icon-search" )
+            input.field( type = 'text' name = 'search' id = 'search' placeholder = 'Faça aqui sua pesquisa' )
+            button.btn-main.-searchheader
+            
+
+
+

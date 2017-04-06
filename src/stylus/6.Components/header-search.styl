@@ -1,0 +1,68 @@
+
+
+.header-search
+    background linear-gradient(to right, #9d50bb, #6e48aa)
+    color #fff
+    left 0
+    overflow hidden
+    position absolute
+    text-align center
+    top 0
+    width 100%
+
+    @media ( min-width 850px )
+        height 550px
+
+    @media ( max-width 849px )
+        padding 100px 20px 50px 20px
+
+
+    &:before
+        background url(../img/header-woman-bg.png) 0 0 no-repeat
+        content ''
+        position absolute
+        left calc(50% + 300px)
+        top -75px
+        transform translateX(-50%)
+        height 544px
+        width 597px
+
+        @media ( max-width 850px )
+            display none
+    
+
+    > .title
+    > .desc
+    > .search-form
+        position relative
+
+    > .title
+        font 700 36px 'Museo'
+        
+        @media ( min-width 850px )
+            margin-top 170px
+
+    > .desc
+        margin-top 10px
+        font 300 16px 'Museo'
+        position relative
+
+
+        @media ( max-width 510px )
+            padding 0 20px
+
+            br 
+                display none
+
+        &:after
+            background-color blush
+            border-radius 30px
+            content ''
+            position absolute
+            bottom -20px
+            left 50%
+            transform translateX(-50%)
+            height 4px
+            width 42px
+
+    

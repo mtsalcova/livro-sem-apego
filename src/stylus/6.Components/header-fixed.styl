@@ -1,7 +1,4 @@
 
-//
-// Header Fixed - Component
-//
 
 .header-fixed
     background #fff
@@ -11,13 +8,13 @@
     height 75px
     left 0
     width 100%
+    z-index 3
 
     @media ( max-width 849px )
         height 55px
 
-    // @media (min-width 850px)
-    //     display none
-
+    @media (min-width 850px)
+        display none
 
     .wrap
         display flex
@@ -26,7 +23,7 @@
         align-items center
     
 
-    .btn
+    .btn-main
         padding 5px 15px
         
         @media ( max-width 849px )
@@ -34,39 +31,40 @@
 
 
     img
+
+        @media ( min-width 950px )  
+            margin-left -250px
+
         @media ( min-width 850px )
             height 55px
-            margin-left -250px
 
         @media ( max-width 849px )
             height 35px
             
 
-        
-
     .icon
+        background-color transparent
         cursor pointer
-        @extends .btn
         padding 0 7px
         text-align center
         height 35px
-        width 42px
+        margin-right -5px
+        width 45px
 
         @media ( min-width 850px )
             display none
 
         span
             display block
-            border-top 2px solid #fff
+            border-top 2px solid #9d50bb
             position relative
             width 100%
 
             &:after
             &:before
-                border-top 2px solid #fff
+                border-top 2px solid #9d50bb
                 content ''
-                left 50%
-                transform translateX( -50% )
+                left 0
                 position absolute
                 width 100%
 
