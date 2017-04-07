@@ -3,6 +3,7 @@ extends ../main
 
 block content
 
+
     // Search 
     section.header-search
         h1.title Tá afim de ganhar um livro?
@@ -36,5 +37,35 @@ block content
         a.btn-main( href = '' ) Saiba mais
 
 
+    
+    // How it Works
+    section.how-works
+
+        h2.subtitle Como funciona?
+        p.desc É muito simples e fácil, dá só uma olhada:
+        
+        .process-steps
+
+            .step-box
+                .icon
+                h3.name 1
+                p.desc Escolha o livro que deseja doar e faça seu cadastro
+            
+            .step-box
+                .icon
+                h3.name 2
+                p.desc No seu painel, cadastre todas as informações sobre o livro
+            
+            .step-box
+                .icon
+                h3.name 3
+                p.desc Seu livro será publicado e ficará disponível para doação
+            
+            .step-box
+                .icon
+                h3.name 4
+                p.desc Prontinho! Agora é só esperar para alguém entrar em contato
+
+        a.btn-main( href = '' ) Doe um livro
 
 

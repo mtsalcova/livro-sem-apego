@@ -89,7 +89,6 @@ p {
 .about-project > .btn-main {
   margin-top: 80px;
   display: inline-block;
-  padding: 10px 15px;
 }
 
 .author-boxes {
@@ -132,6 +131,7 @@ p {
   font: 300 16px 'Museo';
   -webkit-transition: background 0.4s;
   transition: background 0.4s;
+  padding: 10px 16px;
 }
 
 .btn-main:hover {
@@ -176,8 +176,8 @@ p {
   align-items: center;
 }
 
-.header-fixed .btn-main {
-  padding: 5px 15px;
+.header-fixed img {
+  display: block;
 }
 
 .header-fixed .icon {
@@ -322,6 +322,65 @@ p {
   padding: 10px 15px;
 }
 
+.how-works {
+  background-color: #f8fbff;
+  border-top: 2px solid #f5807f;
+  padding: 65px 0;
+  text-align: center;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.how-works > .subtitle {
+  color: #625673;
+}
+
+.how-works > .desc {
+  color: #adadad;
+  margin-top: 10px;
+}
+
+.how-works > .process-steps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 40px auto 0;
+}
+
+.how-works > .btn-main {
+  display: inline-block;
+  margin-top: 50px;
+}
+
+.step-box {
+  color: #959fad;
+  width: 230px;
+}
+
+.step-box > .icon {
+  box-shadow: 0 0 6px 0 rgba(0,0,0,0.05);
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  height: 138px;
+  width: 138px;
+}
+
+.step-box > .name {
+  font: 700 20px 'Museo';
+  margin-top: 15px;
+}
+
+.step-box > .desc {
+  line-height: 1.38;
+  margin-top: 10px;
+}
+
 .search-form {
   background-color: #fff;
   border-radius: 8px;
@@ -431,9 +490,21 @@ p {
   }
 }
 
+@media (min-width: 1200px) {
+  .how-works > .process-steps {
+    width: 1060px;
+  }
+}
+
 @media (max-width: 1200px) {
   .wrap {
     padding: 0 20px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .how-works > .process-steps {
+    width: 95%;
   }
 }
 
