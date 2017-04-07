@@ -6,8 +6,12 @@
   list-style: none;
 }
 
+body {
+  padding-bottom: 150px;
+}
+
 html,body {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
 }
 
@@ -19,10 +23,105 @@ input,button {
   border: 0;
 }
 
+h1 {
+  font: 700 36px 'Museo';
+}
+
+h2 {
+  font: 700 26px 'Museo';
+}
+
+p {
+  font: 300 16px 'Museo';
+}
+
 .wrap {
   margin: 0 auto;
   max-width: 1115px;
   min-height: 100%;
+}
+
+.about-project {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-project:before {
+  box-shadow: 3px -5px 5px -1px rgba(0,0,0,0.05), -3px -5px 5px -1px rgba(0,0,0,0.05);
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  background-color: #fff;
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 165px;
+  width: 100%;
+}
+
+.about-project > .desc,.about-project > .subtitle {
+  position: relative;
+}
+
+.about-project > .subtitle {
+  color: #625673;
+  text-align: center;
+  width: 100%;
+}
+
+.about-project > .desc {
+  margin: 10px auto 0;
+  line-height: 1.62;
+  color: #adadad;
+}
+
+.about-project > h3 {
+  border: 1px solid #625673;
+  color: #625673;
+  display: inline-block;
+  text-transform: uppercase;
+  margin-top: 50px;
+  font: 700 12px/1 'Museo';
+  padding: 10px 25px;
+  width: 120px;
+}
+
+.about-project > .btn-main {
+  margin-top: 80px;
+  display: inline-block;
+  padding: 10px 15px;
+}
+
+.author-boxes {
+  width: 100%;
+}
+
+.author-boxes > .author-box {
+  width: 200px;
+}
+
+.author-box {
+  display: inline-block;
+}
+
+.author-box > .photo {
+  display: inline-block;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 0 rgba(0,0,0,0.05);
+  padding: 15px;
+}
+
+.author-box > .photo > img {
+  display: block;
+  border-radius: 50%;
+  width: 100%;
+}
+
+.author-box > .name {
+  color: #625673;
+  font: 700 20px 'Museo';
+  margin-top: 20px;
 }
 
 .btn-main {
@@ -154,11 +253,9 @@ input,button {
   background: -webkit-linear-gradient(left, #9d50bb, #6e48aa);
   background: linear-gradient(to right, #9d50bb, #6e48aa);
   color: #fff;
-  left: 0;
   overflow: hidden;
-  position: absolute;
   text-align: center;
-  top: 0;
+  position: relative;
   width: 100%;
 }
 
@@ -179,7 +276,7 @@ input,button {
 }
 
 .header-search > .title {
-  font: 700 36px 'Museo';
+  color: #fff;
 }
 
 .header-search > .desc {
@@ -270,7 +367,37 @@ input,button {
   font-family:'Museo';font-weight:700;src:url("fonts/museo-700.woff") format('woff');font-style:normal;
 }
 
+@media (min-width: 451px) {
+  .author-box > .name {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 645px) {
+  .author-boxes {
+    margin-top: 70px;
+  }
+
+  .author-boxes > .author-box {
+    margin: 0 50px;
+  }
+
+  .author-box > .photo {
+    width: 100%;
+  }
+}
+
+@media (min-width: 750px) {
+  .about-project > .desc {
+    width: 60%;
+  }
+}
+
 @media (min-width: 850px) {
+  .about-project:before {
+    top: -80px;
+  }
+
   .header-fixed {
     display: none;
   }
@@ -298,9 +425,21 @@ input,button {
   }
 }
 
+@media (min-width: 1130px) {
+  .about-project {
+    width: 1075px;
+  }
+}
+
 @media (max-width: 1200px) {
   .wrap {
     padding: 0 20px;
+  }
+}
+
+@media (max-width: 1130px) {
+  .about-project {
+    width: calc(100% - 40px);
   }
 }
 
@@ -311,6 +450,10 @@ input,button {
 }
 
 @media (max-width: 849px) {
+  .about-project:before {
+    top: -40px;
+  }
+
   .header-fixed {
     height: 55px;
   }
@@ -328,7 +471,7 @@ input,button {
   }
 
   .header-search {
-    padding: 100px 20px 50px 20px;
+    padding: 100px 20px;
   }
 
   .header-static {
@@ -336,9 +479,39 @@ input,button {
   }
 }
 
+@media (max-width: 749px) {
+  .about-project > .desc {
+    width: 80%;
+  }
+}
+
 @media (max-width: 660px) {
   .search-form.-header {
     width: 100%;
+  }
+}
+
+@media (max-width: 644px) {
+  .about-project > .btn-main {
+    margin-top: 30px;
+  }
+
+  .author-boxes {
+    margin-top: 50px;
+  }
+
+  .author-boxes > .author-box {
+    margin: 0 15px 30px;
+  }
+
+  .author-box > .photo {
+    width: 80%;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-search > .title {
+    font-size: 29px;
   }
 }
 
@@ -358,6 +531,16 @@ input,button {
 
   .header-search > .desc br {
     display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .about-project > .desc {
+    width: 90%;
+  }
+
+  .author-box > .name {
+    margin-top: 5px;
   }
 }
 

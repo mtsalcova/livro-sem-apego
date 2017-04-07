@@ -1,0 +1,140 @@
+
+
+
+.about-project
+    position relative
+    margin 0 auto
+    text-align center
+
+    @media ( min-width 1130px )
+        width 1075px
+
+    @media ( max-width 1130px )
+        width calc(100% - 40px)
+
+
+    &:before
+        box-shadow 3px -5px 5px -1px rgba(0,0,0,0.05), -3px -5px 5px -1px rgba(0,0,0,0.05)
+        border-top-right-radius 8px
+        border-top-left-radius 8px
+        background-color #fff
+        content ''
+        position absolute
+        left 0
+        height 165px
+        width 100%
+
+        @media ( min-width 850px )
+            top -80px
+
+
+        @media ( max-width 849px )
+            top -40px
+
+
+    > .desc
+    > .subtitle
+        position relative
+
+    > .subtitle
+        color purplishGrey
+        text-align center
+        width 100%
+
+
+    > .desc
+        margin 10px auto 0
+        line-height 1.62
+        color greyish
+
+        @media ( min-width 750px )
+            width 60%
+
+        @media ( max-width 749px )
+            width 80%
+
+        @media ( max-width 450px )
+            width 90%
+            
+
+
+    > h3
+        border 1px solid purplishGrey
+        color purplishGrey
+        display inline-block
+        text-transform uppercase
+        margin-top 50px
+        font 700 12px/1 'Museo'
+        padding 10px 25px
+        width 120px
+
+
+    > .btn-main
+        margin-top 80px
+        display inline-block
+        padding 10px 15px
+
+        @media( max-width 644px )
+            margin-top 30px
+
+
+
+// Author Boxes - Component
+
+.author-boxes
+    width 100%
+
+    @media( min-width 645px )
+        margin-top 70px
+        
+    @media( max-width 644px )
+        margin-top 50px
+
+
+    > .author-box
+        
+        width 200px
+
+        @media( min-width 645px )
+            margin 0 50px
+
+        @media( max-width 644px )
+            margin 0 15px 30px 
+
+
+// Author Box - Component
+
+.author-box
+    display inline-block
+
+    > .photo
+        display inline-block
+        background #fff
+        border-radius 50%
+        box-shadow 0px 0px 10px 0 rgba(0, 0, 0, 0.05)
+        padding 15px
+
+        @media ( min-width 645px )
+            width 100%
+
+        @media ( max-width 644px )
+            width 80%
+
+        > img
+            display block
+            border-radius 50%
+            width 100%
+    
+    > .name
+        color purplishGrey
+        font 700 20px 'Museo'
+        margin-top 20px
+
+
+        @media ( min-width 451px )
+            margin-top 20px
+
+        @media ( max-width 450px )
+            margin-top 5px
+
+

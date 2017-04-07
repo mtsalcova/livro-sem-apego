@@ -3,18 +3,16 @@
 .header-search
     background linear-gradient(to right, #9d50bb, #6e48aa)
     color #fff
-    left 0
     overflow hidden
-    position absolute
     text-align center
-    top 0
+    position relative
     width 100%
 
     @media ( min-width 850px )
         height 550px
 
     @media ( max-width 849px )
-        padding 100px 20px 50px 20px
+        padding 100px 20px
 
 
     &:before
@@ -37,8 +35,11 @@
         position relative
 
     > .title
-        font 700 36px 'Museo'
-        
+        color #fff
+
+        @media ( max-width 640px )
+            font-size 29px
+
         @media ( min-width 850px )
             margin-top 170px
 

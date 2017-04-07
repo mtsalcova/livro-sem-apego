@@ -3,8 +3,8 @@ extends ../main
 
 block content
 
-
-    .header-search
+    // Search 
+    section.header-search
         h1.title Tá afim de ganhar um livro?
         p.desc Faça uma pesquisa e descubra se o livro que você deseja <br>está disponível para doação ainda hoje (:
         
@@ -12,7 +12,29 @@ block content
             label.icon( for = 'search' ): svg: use( xlink:href="img/svg.svg#icon-search" )
             input.field( type = 'text' name = 'search' id = 'search' placeholder = 'Faça aqui sua pesquisa' )
             button.btn-main.-searchheader
-            
+
+        
+    // Abour Project
+    section.about-project
+        h2.subtitle Sobre o projeto
+        p.desc 
+            | Livro sem Apego é um site de doação de livros, sem fins lucrativos.
+            | A ideia do projeto surgiu através de uma necessidade de ajudar alguém que esteja 
+            | precisando de um livro, mas não tem condições de comprá-lo ou simplesmente gostaria de ganhá-lo.
+
+        h3 Criadores
+        .author-boxes
+
+            .author-box
+                .photo: img( src = 'img/gustavo-feijo.jpg' alt = 'Gustavo Feijó'  )
+                h4.name Gustavo F. Lima
+
+            .author-box
+                .photo: img( src = 'img/mateus-alcova.jpg' alt = 'Mateus Alcova'  )
+                h4.name Mateus Alcova
+
+        a.btn-main( href = '' ) Saiba mais
+
 
 
 
