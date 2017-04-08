@@ -325,7 +325,7 @@ p {
 .how-works {
   background-color: #f8fbff;
   border-top: 2px solid #f5807f;
-  padding: 65px 0;
+  padding: 65px 20px;
   text-align: center;
   margin-top: 60px;
   width: 100%;
@@ -352,9 +352,12 @@ p {
   margin: 40px auto 0;
 }
 
+.how-works > .process-steps > .step-box {
+  margin-bottom: 50px;
+}
+
 .how-works > .btn-main {
   display: inline-block;
-  margin-top: 50px;
 }
 
 .step-box {
@@ -511,6 +514,13 @@ p {
 @media (max-width: 1130px) {
   .about-project {
     width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 1050px) {
+  .how-works > .process-steps {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
   }
 }
 
