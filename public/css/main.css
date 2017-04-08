@@ -138,7 +138,7 @@ p {
   background-color: #ec7271;
 }
 
-.btn-main.-searchheader {
+.btn-main.-inside {
   float: right;
   border-radius: 0;
   border-top-right-radius: 8px;
@@ -147,8 +147,8 @@ p {
   padding: 0 25px;
 }
 
-.btn-main.-searchheader:after {
-  content: 'pesquisar';
+.btn-main.-inside:after {
+  content: attr(data-text);
 }
 
 .header-fixed {
@@ -325,7 +325,7 @@ p {
 .how-works {
   background-color: #f8fbff;
   border-top: 2px solid #f5807f;
-  padding: 65px 20px;
+  padding: 70px 20px;
   text-align: center;
   margin-top: 60px;
   width: 100%;
@@ -382,6 +382,47 @@ p {
 .step-box > .desc {
   line-height: 1.38;
   margin-top: 10px;
+}
+
+.newsletter-section {
+  background: #625673;
+  border-top: 2px solid #f5807f;
+  text-align: center;
+  padding: 60px 20px;
+  width: 100%;
+}
+
+.newsletter-section > .title {
+  color: #fff;
+}
+
+.newsletter-section > .desc {
+  color: #fff;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.newsletter-section > .frm {
+  display: inline-block;
+  margin-top: 20px;
+  width: 400px;
+}
+
+.email-newsletter {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 4px 4px 9px 0 rgba(70,58,88,0.15);
+  height: 52px;
+}
+
+.email-newsletter > .field {
+  color: #adadad;
+  outline: none;
+  float: left;
+  margin: 5px 0 0 15px;
+  font: 300 16px 'Museo';
+  height: 80%;
+  width: 60%;
 }
 
 .search-form {
@@ -597,12 +638,12 @@ p {
 }
 
 @media (max-width: 510px) {
-  .btn-main.-searchheader {
+  .btn-main.-inside {
     padding: 0 20px;
     font-size: 30px;
   }
 
-  .btn-main.-searchheader:after {
+  .btn-main.-inside:after {
     content: '>';
   }
 
@@ -612,6 +653,16 @@ p {
 
   .header-search > .desc br {
     display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  .newsletter-section > .desc br {
+    display: none;
+  }
+
+  .newsletter-section > .frm {
+    width: 100%;
   }
 }
 
