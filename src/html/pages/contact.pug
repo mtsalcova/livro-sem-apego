@@ -1,0 +1,31 @@
+extends ../main
+
+
+block vars
+    - title = 'Contato'
+
+
+block content
+
+
+    section.title-main
+        h1.title.-line Fale Conosco
+
+    main.about-block.-internal
+        p.desc Possui alguma dúvida sobre o site? Quer fazer uma sugestão? <br> Nos envie uma mensagem ;)
+
+        form.frm-box( method = 'POST' )
+
+            label.field-box
+                span.name Nome:
+                input( type = 'text' name = 'name' )
+
+            label.field-box
+                span.name E-mail:
+                input.field( type = 'text' name = 'email' )
+
+            label.field-box
+                span Mensagem:
+                textarea
+
+            button.btn-main Enviar

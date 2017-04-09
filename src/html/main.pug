@@ -5,16 +5,15 @@ html( lang = 'pt-BR' )
 
     head
         meta( charset = 'UTF-8' )
+        base( href = '/livro-sem-apego/public/' )
         meta( name = 'viewport' content = 'width=device-width, initial-scale=1' )
         meta( name = "theme-color" content = "#625673" )
         link( rel = "stylesheet" href = "css/main.css" )
-        link( rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" )
-        link( rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" )
-        link( rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" )
+        link( rel = 'icon' href = 'img/favicon.ico' )
         
         if title
             - pipe = '-'
-
+            
         title #{title} #{pipe} Livro sem Apego
 
     body
@@ -22,8 +21,8 @@ html( lang = 'pt-BR' )
         mixin menu() 
             a.item( href = '' ) Livros
             a.item( href = '' ) Desejados
-            a.item( href = '' ) Sobre
-            a.item( href = '' ) Contato 
+            a.item( href = 'sobre' ) Sobre
+            a.item( href = 'contato' ) Contato 
 
         include includes/header
 

@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^sobre/?$ about.html
+RewriteRule ^contato/?$ contact.html
+
+AddType image/svg+xml svg svgz

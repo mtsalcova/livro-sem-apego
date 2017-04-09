@@ -1,6 +1,6 @@
 
 
-.header-search
+.title-main
     background linear-gradient(to right, #9d50bb, #6e48aa)
     color #fff
     overflow hidden
@@ -9,13 +9,12 @@
     width 100%
 
     @media ( min-width 850px )
-        height 550px
+        padding 170px 20px 180px
 
     @media ( max-width 849px )
         padding 100px 20px
 
-
-    &:before
+    &.-home:before
         background url(../img/header-woman-bg.png) 0 0 no-repeat
         content ''
         position absolute
@@ -36,12 +35,21 @@
 
     > .title
         color #fff
+        position relative
 
         @media ( max-width 640px )
             font-size 29px
 
-        @media ( min-width 850px )
-            margin-top 170px
+        &.-line::after
+            background-color blush
+            border-radius 30px
+            content ''
+            position absolute
+            bottom -20px
+            left 50%
+            transform translateX(-50%)
+            height 4px
+            width 42px
 
     > .desc
         margin-top 10px
@@ -65,5 +73,4 @@
             transform translateX(-50%)
             height 4px
             width 42px
-
-    
+   
