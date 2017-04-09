@@ -1,0 +1,35 @@
+doctype
+html( lang = 'pt-BR' )
+
+    block vars
+
+    head
+        meta( charset = 'UTF-8' )
+        meta( name = 'viewport' content = 'width=device-width, initial-scale=1' )
+        meta( name = "theme-color" content = "#625673" )
+        link( rel = "stylesheet" href = "css/main.css" )
+        link( rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" )
+        link( rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" )
+        link( rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" )
+        
+        if title
+            - pipe = '-'
+
+        title #{title} #{pipe} Livro sem Apego
+
+    body
+
+        mixin menu() 
+            a.item( href = '' ) Livros
+            a.item( href = '' ) Desejados
+            a.item( href = '' ) Sobre
+            a.item( href = '' ) Contato 
+
+        include includes/header
+
+        block content
+
+        include includes/footer
+            
+        //- script( src="js/main.js" )
+

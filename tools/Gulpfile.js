@@ -17,7 +17,7 @@ var autoprefixerStylus = require('autoprefixer-stylus');
 var combineMq = require('gulp-combine-mq');
 
 gulp.task('stylus', function() {
-    return gulp.src("../src/stylus/main.styl")
+    return gulp.src("../src/css/main.styl")
         .pipe(stylus({
             use: [autoprefixerStylus()]
         }))
@@ -42,7 +42,7 @@ gulp.task('combineMq', ['stylus'], function () {
 var pug = require('gulp-pug');
 
 gulp.task('pug', function() {
-    return gulp.src('../src/pug/pages/*.pug')
+    return gulp.src('../src/html/pages/*.pug')
         .pipe(pug())
         .on('error', setError)
         .pipe(gulp.dest('../public/'));
@@ -82,8 +82,8 @@ gulp.task('svgstore', function () {
 // Task Default
 
 gulp.task('default', function() {
-    gulp.watch('../src/stylus/**/*.styl', ['combineMq']);
-    gulp.watch('../src/pug/**/*.pug', ['pug']);
+    gulp.watch('../src/css/**/*.styl', ['combineMq']);
+    gulp.watch('../src/html/**/*.pug', ['pug']);
 });
 
 

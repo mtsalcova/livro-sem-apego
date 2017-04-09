@@ -1,5 +1,31 @@
 
 
+
+.header-static
+    position absolute
+    top 0
+    left 0
+    width 100%
+    z-index 2
+
+    @media (max-width 849px)
+        display none
+
+    .logo
+        float left
+        margin-top 15px
+        width 160px
+
+        > img
+            width 100%
+
+    .btn-main
+        float right
+        margin 20px 0 0 25px
+        padding 10px 15px
+
+
+
 .header-fixed
     background #fff
     box-shadow 0 2px 3px 0 rgba(0, 0, 0, 0.15)
@@ -29,17 +55,20 @@
             display none
 
 
-    img
-        display block
+    svg
+        float left
         
-        @media ( min-width 950px )  
-            margin-left -250px
+        
+        @media ( min-width 1100px )  
+            margin-left -150px
 
         @media ( min-width 850px )
             height 55px
+            width 49px
 
         @media ( max-width 849px )
             height 35px
+            width 33px
             
 
     .icon

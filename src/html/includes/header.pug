@@ -1,0 +1,20 @@
+
+//-
+//- Header
+//-
+
+header.header-static: .wrap
+
+    a.logo( href = '' ): img( src = 'img/livro-sem-apego-logo.png' alt = 'Livro sem Apego - Logo' )
+    a( class = 'btn-main' href = '' ) Minha conta
+    nav( class = 'menu-nav -static' ): +menu()
+
+header.header-fixed: .wrap
+
+    nav( class = 'menu-nav -fixed' ): +menu()
+    a( href = '' ): svg: use( xlink:href="img/svg.svg#icon-livro-sem-apego" )
+    button.icon: span
+    a( class = 'btn-main' href = '' ) Minha Conta
+
+
+

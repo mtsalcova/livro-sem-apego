@@ -6,10 +6,6 @@
   list-style: none;
 }
 
-body {
-  padding-bottom: 150px;
-}
-
 html,body {
   min-height: 100%;
   width: 100%;
@@ -151,102 +147,36 @@ p {
   content: attr(data-text);
 }
 
-.header-fixed {
-  background: #fff;
-  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15);
-  position: fixed;
-  top: 0;
-  height: 75px;
-  left: 0;
-  width: 100%;
-  z-index: 3;
-}
-
-.header-fixed .wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.header-fixed img {
-  display: block;
-}
-
-.header-fixed .icon {
-  background-color: transparent;
-  cursor: pointer;
-  padding: 0 7px;
+footer {
+  background-image: -webkit-linear-gradient(left, #9d50bb, #6e48aa);
+  background-image: linear-gradient(to right, #9d50bb, #6e48aa);
   text-align: center;
-  height: 35px;
-  margin-right: -5px;
-  width: 45px;
-}
-
-.header-fixed .icon span {
-  display: block;
-  border-top: 2px solid #9d50bb;
-  position: relative;
+  padding-top: 30px;
   width: 100%;
 }
 
-.header-fixed .icon span:after,.header-fixed .icon span:before {
-  border-top: 2px solid #9d50bb;
-  content: '';
-  left: 0;
-  position: absolute;
-  width: 100%;
+footer svg {
+  height: 55px;
+  width: 49px;
 }
 
-.header-fixed .icon span:before {
-  top: -10px;
-}
-
-.header-fixed .icon span:after {
-  bottom: -8px;
-}
-
-.header-menu.-static {
+footer > .menu-nav {
   color: #fff;
-  float: right;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
-.header-menu.-fixed {
-  color: #625673;
+footer > .menu-nav > .item {
+  margin-bottom: 10px;
 }
 
-.header-menu > .menuitem {
-  display: inline-block;
-  margin: 0 10px;
-  font: 300 16px 'Museo';
-  letter-spacing: 0.5px;
-}
-
-.header-menu > .menuitem:after {
-  background-color: #f5807f;
-  border-radius: 50%;
-  content: '';
-  display: inline-block;
-  height: 5px;
-  margin-left: 15px;
-  vertical-align: middle;
-  width: 5px;
-}
-
-.header-menu > .menuitem:hover {
-  text-decoration: underline;
-}
-
-.header-menu > .menuitem:last-child:after {
-  display: none;
+footer > .copyright {
+  background: #625673;
+  display: block;
+  color: #bfaadd;
+  font: 300 12px 'Museo';
+  padding: 20px;
+  margin-top: 20px;
+  width: 100%;
 }
 
 .header-search {
@@ -322,6 +252,68 @@ p {
   padding: 10px 15px;
 }
 
+.header-fixed {
+  background: #fff;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15);
+  position: fixed;
+  top: 0;
+  height: 75px;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.header-fixed .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header-fixed svg {
+  float: left;
+}
+
+.header-fixed .icon {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0 7px;
+  text-align: center;
+  height: 35px;
+  margin-right: -5px;
+  width: 45px;
+}
+
+.header-fixed .icon span {
+  display: block;
+  border-top: 2px solid #9d50bb;
+  position: relative;
+  width: 100%;
+}
+
+.header-fixed .icon span:after,.header-fixed .icon span:before {
+  border-top: 2px solid #9d50bb;
+  content: '';
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.header-fixed .icon span:before {
+  top: -10px;
+}
+
+.header-fixed .icon span:after {
+  bottom: -8px;
+}
+
 .how-works {
   background-color: #f8fbff;
   border-top: 2px solid #f5807f;
@@ -369,9 +361,22 @@ p {
   box-shadow: 0 0 6px 0 rgba(0,0,0,0.05);
   background: #fff;
   border-radius: 50%;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   height: 138px;
   width: 138px;
+}
+
+.step-box > .icon > img {
+  display: inline-block;
+  width: 85px;
 }
 
 .step-box > .name {
@@ -384,20 +389,55 @@ p {
   margin-top: 10px;
 }
 
+.menu-nav.-static {
+  color: #fff;
+  float: right;
+  margin-top: 30px;
+}
+
+.menu-nav.-fixed {
+  color: #625673;
+}
+
+.menu-nav > .item {
+  display: inline-block;
+  margin: 0 10px;
+  font: 300 16px 'Museo';
+  letter-spacing: 0.5px;
+}
+
+.menu-nav > .item:after {
+  background-color: #f5807f;
+  border-radius: 50%;
+  content: '';
+  display: inline-block;
+  height: 5px;
+  margin-left: 15px;
+  vertical-align: middle;
+  width: 5px;
+}
+
+.menu-nav > .item:hover {
+  text-decoration: underline;
+}
+
+.menu-nav > .item:last-child:after {
+  display: none;
+}
+
 .newsletter-section {
-  background: #625673;
   border-top: 2px solid #f5807f;
   text-align: center;
-  padding: 60px 20px;
+  padding: 70px 20px;
   width: 100%;
 }
 
 .newsletter-section > .title {
-  color: #fff;
+  color: #625673;
 }
 
 .newsletter-section > .desc {
-  color: #fff;
+  color: #adadad;
   margin-top: 10px;
   line-height: 1.6;
 }
@@ -409,6 +449,7 @@ p {
 }
 
 .email-newsletter {
+  border: 1px solid #ececec;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 4px 4px 9px 0 rgba(70,58,88,0.15);
@@ -501,18 +542,6 @@ p {
     top: -80px;
   }
 
-  .header-fixed {
-    display: none;
-  }
-
-  .header-fixed img {
-    height: 55px;
-  }
-
-  .header-fixed .icon {
-    display: none;
-  }
-
   .header-search {
     height: 550px;
   }
@@ -520,11 +549,24 @@ p {
   .header-search > .title {
     margin-top: 170px;
   }
+
+  .header-fixed {
+    display: none;
+  }
+
+  .header-fixed svg {
+    height: 55px;
+    width: 49px;
+  }
+
+  .header-fixed .icon {
+    display: none;
+  }
 }
 
-@media (min-width: 950px) {
-  .header-fixed img {
-    margin-left: -250px;
+@media (min-width: 1100px) {
+  .header-fixed svg {
+    margin-left: -150px;
   }
 }
 
@@ -576,6 +618,14 @@ p {
     top: -40px;
   }
 
+  .header-search {
+    padding: 100px 20px;
+  }
+
+  .header-static {
+    display: none;
+  }
+
   .header-fixed {
     height: 55px;
   }
@@ -584,19 +634,12 @@ p {
     display: none;
   }
 
-  .header-fixed img {
+  .header-fixed svg {
     height: 35px;
+    width: 33px;
   }
 
-  .header-menu.-fixed {
-    display: none;
-  }
-
-  .header-search {
-    padding: 100px 20px;
-  }
-
-  .header-static {
+  .menu-nav.-fixed {
     display: none;
   }
 }
