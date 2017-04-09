@@ -4,6 +4,7 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+  border: 0;
 }
 
 html,body {
@@ -35,6 +36,10 @@ p {
   font: 300 16px 'Museo';
 }
 
+textarea {
+  resize: none;
+}
+
 .wrap {
   margin: 0 auto;
   max-width: 1115px;
@@ -48,6 +53,10 @@ p {
   border-radius: 8px;
   margin-top: 20px;
   width: 100%;
+}
+
+.frm-box > .btn-main {
+  width: 100px;
 }
 
 .field-box {
@@ -64,7 +73,19 @@ p {
 
 .field-box > .field {
   display: block;
+  border-radius: 8px;
+  margin-top: 10px;
+  padding-left: 10px;
   width: 100%;
+}
+
+.field-box > input.field {
+  height: 40px;
+}
+
+.field-box > textarea.field {
+  height: 100px;
+  padding: 10px;
 }
 
 .about-block {
@@ -599,7 +620,7 @@ footer > .copyright {
 
 @media (min-width: 410px) {
   body {
-    padding-bottom: 212px;
+    padding-bottom: 250px;
   }
 
   footer {
@@ -794,6 +815,10 @@ footer > .copyright {
 }
 
 @media (max-width: 450px) {
+  .about-block {
+    padding: 0 5% 60px;
+  }
+
   .author-box > .name {
     margin-top: 5px;
   }
