@@ -46,48 +46,6 @@ textarea {
   min-height: 100%;
 }
 
-.frm-box {
-  background: #ececec;
-  position: relative;
-  padding: 20px;
-  border-radius: 8px;
-  margin-top: 20px;
-  width: 100%;
-}
-
-.frm-box > .btn-main {
-  width: 100px;
-}
-
-.field-box {
-  display: block;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.field-box > .name {
-  color: #625673;
-  display: block;
-  font: 300 16px 'Museo';
-}
-
-.field-box > .field {
-  display: block;
-  border-radius: 8px;
-  margin-top: 10px;
-  padding-left: 10px;
-  width: 100%;
-}
-
-.field-box > input.field {
-  height: 40px;
-}
-
-.field-box > textarea.field {
-  height: 100px;
-  padding: 10px;
-}
-
 .about-block {
   position: relative;
   margin: 0 auto;
@@ -271,6 +229,48 @@ footer > .copyright {
   padding: 20px;
   margin-top: 20px;
   width: 100%;
+}
+
+.frm-box {
+  background: #ececec;
+  position: relative;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.frm-box > .btn-main {
+  width: 100px;
+}
+
+.field-box {
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.field-box > .name {
+  color: #625673;
+  display: block;
+  font: 300 16px 'Museo';
+}
+
+.field-box > .field {
+  display: block;
+  border-radius: 8px;
+  margin-top: 10px;
+  padding-left: 10px;
+  width: 100%;
+}
+
+.field-box > input.field {
+  height: 40px;
+}
+
+.field-box > textarea.field {
+  height: 100px;
+  padding: 10px;
 }
 
 .header-static {
