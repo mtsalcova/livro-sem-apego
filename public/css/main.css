@@ -171,6 +171,68 @@ textarea {
   background: url("../img/sprite.png") -49px 0 no-repeat;
 }
 
+.books-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 60px 0;
+  width: 1115px;
+}
+
+.books-container > .filter {
+  width: 250px;
+}
+
+.list-books {
+  width: 800px;
+}
+
+.title-list {
+  padding-top: 20px;
+  border-bottom: 1px solid #ececec;
+}
+
+.grid-books {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.book-box {
+  margin: 20px;
+  width: 120px;
+}
+
+.book-box > .image {
+  width: 100%;
+}
+
+.book-box > .name {
+  color: #625673;
+  font-size: 16px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.book-box > .author {
+  color: #adadad;
+  font: 300 14px 'Museo';
+  margin-top: 5px;
+  display: block;
+}
+
 .btn-main {
   background-color: #f5807f;
   border-radius: 8px;
@@ -197,6 +259,10 @@ textarea {
 
 .btn-main.-inside:after {
   content: attr(data-text);
+}
+
+.btn-main.-full {
+  width: 100%;
 }
 
 footer {
@@ -232,16 +298,8 @@ footer > .copyright {
 }
 
 .frm-box {
-  background: #ececec;
   position: relative;
-  padding: 20px;
-  border-radius: 8px;
-  margin-top: 20px;
   width: 100%;
-}
-
-.frm-box > .btn-main {
-  width: 100px;
 }
 
 .field-box {
@@ -257,14 +315,18 @@ footer > .copyright {
 }
 
 .field-box > .field {
+  border: 1px solid #ececec;
+  background: #fff;
+  color: #adadad;
   display: block;
   border-radius: 8px;
-  margin-top: 10px;
+  margin-top: 8px;
+  font: 300 16px 'Museo';
   padding-left: 10px;
   width: 100%;
 }
 
-.field-box > input.field {
+.field-box > select.field,.field-box > input.field {
   height: 40px;
 }
 
@@ -606,6 +668,10 @@ footer > .copyright {
   width: 42px;
 }
 
+.mt20 {
+  margin-top: 20px;
+}
+
 @font-face {
   font-family:'Museo';font-weight:300;src:url("fonts/museo-300.woff") format('woff');font-style:normal;
 }
@@ -670,6 +736,10 @@ footer > .copyright {
 
   .title-main {
     padding: 170px 20px 180px;
+  }
+
+  .title-main.-alone {
+    padding-bottom: 100px;
   }
 }
 

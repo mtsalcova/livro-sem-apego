@@ -5,5 +5,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteRule ^sobre/?$ about.html
 RewriteRule ^contato/?$ contact.html
+RewriteRule ^livros/?$ books.html
 
 AddType image/svg+xml svg svgz

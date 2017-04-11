@@ -1,0 +1,70 @@
+extends ../main
+
+
+block vars
+    - title = 'Livros'
+
+
+block content
+
+
+    section.title-main.-alone
+        h1.title.-line Livros Disponíveis para Doação
+
+
+    main.books-container
+
+        aside.filter: form.frm-box.-nobrd( method = 'POST' )
+
+            label.field-box
+                span.name Título do Livro:
+                input.field( type = 'text' name = 'title' )
+            
+            label.field-box
+                span.name Autor:
+                input.field( type = 'text' name = 'author' )
+
+            label.field-box
+                span.name Genêro:
+                select.field( name = 'author' )
+                    option( value = '' ) Infantil
+
+            label.field-box
+                span.name Editora:
+                select.field( name = 'editora' )
+                    option( value = '' ) Saraiva
+
+            label.field-box
+                span.name Estado do Livro:
+                select.field( name = 'book-state' )
+                    option( value = '' ) Novo
+                    option( value = '' ) Semi-novo
+                    option( value = '' ) Usado
+
+            label.field-box
+                span.name Estado
+                select.field( name = 'state' )
+                    option( value = '' ) SP
+
+            button.btn-main.-full Filtrar
+
+        
+        .list-books
+
+            .title-list
+
+            .grid-books
+
+                - for( var i = 0; i < 10; i++)
+                    .book-box
+                        .image: img( src = 'img/books/cover.jpg' )
+                        h2.name O Mundo de Sofia
+                        strong.author Jostein Gaarder
+
+
+
+
+            
+
+
+
