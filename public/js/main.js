@@ -1,4 +1,17 @@
-//className is used in JSX for class attribute
-var fooDiv = React.createElement("h1", null, "Hello my friend");
-// Render where div#example is our placeholder for insertion
-ReactDOM.render(fooDiv, document.getElementById('container')); 
+
+(function() {
+    var filter = document.querySelector('.icon-filter');
+    if(!filter) {
+        return false;
+    }
+
+    filter.addEventListener('click', function() {
+
+        window.scrollTo(0,0);
+
+        var booksContainer = document.querySelector('.books-container');
+        booksContainer.classList.toggle( 'active' );
+
+    }, false);
+
+})();

@@ -2,7 +2,7 @@ extends ../main
 
 
 block vars
-    - title = 'Livros'
+    - title = 'Livros Disponíveis para Doação'
 
 
 block content
@@ -13,6 +13,8 @@ block content
 
 
     main.books-container
+
+        .icon-filter
 
         aside.filter: form.frm-box.-nobrd( method = 'POST' )
 
@@ -25,6 +27,10 @@ block content
                 input.field( type = 'text' name = 'author' )
 
             label.field-box
+                span.name Ano:
+                input.field( type = 'text' name = '' )
+
+            label.field-box
                 span.name Genêro:
                 select.field( name = 'author' )
                     option( value = '' ) Infantil
@@ -35,36 +41,47 @@ block content
                     option( value = '' ) Saraiva
 
             label.field-box
-                span.name Estado do Livro:
-                select.field( name = 'book-state' )
-                    option( value = '' ) Novo
-                    option( value = '' ) Semi-novo
-                    option( value = '' ) Usado
-
-            label.field-box
                 span.name Estado
                 select.field( name = 'state' )
+                    option( value = '' ) 
                     option( value = '' ) SP
 
             button.btn-main.-full Filtrar
 
         
+        
         .list-books
 
             .title-list
+                span Listando 20 de 40 livros.
 
-            .grid-books
+            .gridbooks
 
-                - for( var i = 0; i < 10; i++)
+                - for( var i = 0; i < 10; i++ )
                     .book-box
-                        .image: img( src = 'img/books/cover.jpg' )
+                        i.location SP
+                        .image
+                            img( src = 'img/books/cover.jpg' )
+                            .subtitle: strong Adquirir >
                         h2.name O Mundo de Sofia
-                        strong.author Jostein Gaarder
+                        h3.author Jostein Gaarder
 
 
+                    .book-box
+                        i.location SP
+                        .image
+                            img( src = 'img/books/pequeno-principe.jpg' )
+                            .subtitle: strong Adquirir >
+                        h2.name O Pequeno Príncipe
+                        h3.author Antonie de Saint-exupery
 
 
-            
+            .pages-box
+                a.btn-main.-disabled Anterior
+                .pages
+                    input( type = 'text' name = 'page' value = '1' )
+                    span de 2
+                a.btn-main Próximo
 
 
 

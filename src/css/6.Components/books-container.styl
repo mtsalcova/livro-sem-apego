@@ -6,32 +6,198 @@
     flex-wrap wrap
     margin 0 auto
     padding 60px 0
+    position relative
+    overflow hidden
     width 1115px
 
+    @media ( max-width 1160px ) 
+        padding 0
+        width 100%
+
+
+    // Active Filter
+    &.active
+
+        &:after
+            visibility visible
+            opacity 1
+
+        > .filter
+            transform translate3d( 0,0,0 )
+            opacity 1
+
+        > .icon-filter:after
+            transform rotate(45deg)
+
+
+    &:after
+        
+        @media ( max-width 1160px )
+            background rgba(0,0,0,0.3)
+            content ''
+            position absolute
+            transition all 0.4s
+            visibility hidden
+            opacity 0
+            left 0
+            right 0
+            z-index 4
+            height 100%
+            width 100%
+
+
     > .filter
+        padding 0 10px
         width 250px
+
+        @media ( max-width 1160px )
+            height 100%
+            left 0
+            opacity 0
+            overflow-y auto
+            padding 0
+            position absolute
+            right 0
+            transform translate3d( -100%,0,0 )
+            transition all 0.4s ease-in-out
+            width 250px
+            z-index 5
+
+            .frm-box
+                padding 40px 20px
+                background #fff
+        
+    
+    > .icon-filter
+        cursor pointer
+        position fixed
+        bottom 10px
+        right 10px
+        padding 10px 15px
+        z-index 6
+
+        @media ( min-width 1161px )  
+            display none
+
+        &:after
+            box-shadow 0 0 5px rgba(70,58,88,0.5) 
+            padding 10px 16px
+            background blush
+            border-radius 50%
+            display block
+            cursor pointer
+            color #fff
+            content '+'
+            transition transform 0.3s
+            font 700 20px 'Museo'
 
 
 .list-books
     width 800px
 
-.title-list
-    padding-top 20px
-    border-bottom 1px solid lightGrey
-
-.grid-books
-    display flex
-    justify-content flex-start
-    flex-wrap wrap
-    width 100%
-
-
-.book-box
-    margin 20px
-    width 120px
-    
-    > .image
+    @media ( max-width 1160px ) 
+        padding 20px 0 80px 0
         width 100%
+
+
+    > .title-list
+        text-align right
+        padding-bottom 10px
+        width 100%
+
+        @media ( max-width 1160px )
+            padding 0 20px 10px
+
+        > span
+            color purplishGrey
+            display inline-block
+            font 300 14px 'Museo'
+
+    > .gridbooks
+        display flex
+        justify-content flex-start
+        border-top 1px solid lightGrey
+        border-bottom 1px solid lightGrey
+        flex-wrap wrap
+        padding 15px 0
+        width 100%
+
+        @media ( max-width 500px ) 
+            justify-content space-around
+
+
+    
+.book-box
+    cursor pointer
+    position relative
+    width 120px
+
+    @media ( min-width 501px )
+        margin 20px
+
+    @media ( max-width 500px )
+        margin 20px 5px
+
+    &:hover
+
+        .name, .author
+            text-decoration underline
+
+        img
+            transform scale(1.1)
+
+        > .image > .subtitle
+            opacity 1
+        
+            strong
+                opacity 1
+                transform translate(-50%, 0)
+    
+    
+    > .location
+        background blush
+        border-radius 50%
+        position absolute
+        right 5px
+        color #fff
+        top 5px
+        font 300 11px 'Museo'
+        text-align center
+        padding 5px 
+        box-shadow 0 0 3px rgba(0,0,0,0.5)
+        z-index 3
+
+
+    > .image
+        position relative
+        overflow hidden
+        width 100%
+        
+        img
+            display block
+            transition transform 0.3s
+            width 100%
+
+        .subtitle
+            background linear-gradient( to bottom, transparent 40%, rgba(0,0,0,0.6) 100%)
+            position absolute
+            top 0
+            left 0
+            opacity 0
+            transition all 0.3s
+            height 100%
+            width 100%
+            z-index 2
+
+            strong
+                color #fff
+                font 300 12px 'Museo'
+                position absolute
+                bottom 15px
+                left 50%
+                opacity 0
+                transition all 0.3s
+                transform translate(-50%, 10px)
 
     > .name
         color purplishGrey
@@ -44,5 +210,40 @@
         font 300 14px 'Museo'
         margin-top 5px
         display block
+
+
+
+.pages-box
+    margin-top 40px
+    text-align center
+    width 100%
+
+    .btn-main
+        @media (max-width 450px)
+            font-size 14px
+
+    .btn-main
+    .pages
+        display inline-block
+
+    .pages
+        margin 0 20px 
+        color greyish
+        font 300 16px 'Museo'
+
+        > input
+            border 1px solid lightGrey
+            background #fff
+            color greyish
+            border-radius 8px
+            margin-top 8px
+            font 300 16px 'Museo'
+            height 39px
+            text-align center
+            width 40px  
+
+        > span
+            display inline-block
+            margin-left 10px
 
 
