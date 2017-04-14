@@ -1,0 +1,218 @@
+
+
+//
+// About Book
+//
+
+.about-book
+    padding 55px 0
+    margin 0 auto
+    display flex
+    justify-content space-around
+    flex-wrap wrap
+    width 1075px
+
+    @media (max-width 1080px)   
+        padding 55px 20px
+        width 100%
+
+
+
+//
+// Gallery
+
+.gallery-book 
+    text-align left
+    width 41.8604% // 450px
+
+    @media ( min-width 501px ) and ( max-width 840px )
+        width 80%
+    
+    @media ( max-width 500px )
+        width 100%
+
+    > .large
+        height 400px
+        text-align center
+        width 100%
+
+        > img
+            border-radius 8px
+            position absolute
+            height 100%
+            object-fit contain
+            width 100%
+        
+        > svg
+            height 120px
+
+    > .thumb
+        display inline-block
+        cursor pointer
+        height 60px
+        margin 15px 15px 0 0
+        width 65px
+
+        > img
+            border-radius 8px
+            display block
+            object-fit cover
+            max-height 100%
+            width 100%
+
+        > svg
+            height 20px
+
+    > .large
+    > .thumb
+        background #e4e1df
+        border-radius 8px
+        position relative
+
+    > .large > svg
+    > .thumb > svg
+        fill #cac5bf
+        position absolute
+        left 50%
+        top 50%
+        transform translate( -50%, -50% )
+
+    > .large > img
+    > .thumb > img
+        position relative
+        z-index 2
+
+
+
+//
+// Infos Books
+
+.infos-book
+    @media (min-width 851px)   
+        width 51.1627% // 550px
+
+    @media (max-width 850px)   
+        margin-top 20px
+        padding 20px 10%
+        width 100%
+
+    @media (max-width 450px)   
+        padding 20px 0
+
+    > .subtitle
+        color purplishGrey
+
+    > .desc
+        border-bottom 1px solid greyish
+        color greyish
+        margin-top 10px
+        padding-bottom 20px
+
+    > ul
+        color greyish
+        margin-top 20px
+        font 300 16px 'Museo'
+        padding-left 20px   
+
+        > li
+            margin-bottom 10px
+            list-style disc
+
+        strong
+            color purplishGrey
+
+    
+
+//
+// Send Msg
+
+.send-msg   
+    border-top 2px solid blush
+    padding 55px 20px
+    text-align center
+    width 100%
+
+    > .subtitle
+    > .desc
+        margin-bottom 10px
+
+    > .subtitle
+        color purplishGrey
+
+    > .desc
+        color greyish
+
+        strong
+            color purplishGrey
+
+
+.giver-box
+    display flex
+    justify-content center
+    flex-wrap wrap
+    margin-top 50px
+    align-items center
+    width 100%
+
+
+    > .form-styl
+        text-align left
+        width 450px
+
+
+//
+// Giver Data
+
+.giver-data
+    display flex
+    justify-content center
+    margin-left 100px
+    flex-wrap wrap
+
+    @media ( max-width 980px )
+        margin 80px 0 0 0
+        width 100%
+
+    > .perfil
+
+        > .photo
+            border-radius 50%
+            object-fit cover
+            height 70px
+            width 70px
+        
+        > .city
+        > .name
+            color purplishGrey
+            font 500 12px 'Museo'
+            margin-top 5px
+
+        > .city
+            font-weight 300
+
+    
+    > .data
+        color greyish
+        margin-left 30px
+        text-align left
+        font 16px 'Museo'
+
+        li
+            margin-top 10px
+            
+        strong
+            color purplishGrey
+
+        
+
+
+        
+
+
+
+
+
+
+
+
+    

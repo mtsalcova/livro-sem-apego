@@ -30,11 +30,10 @@
         @media ( max-width 850px )
             display none
 
-    
-
     > .title
     > .desc
     > .search-form
+    > .subtitle
         position relative
 
     > .title
@@ -44,16 +43,22 @@
         @media ( max-width 640px )
             font-size 29px
 
-        &.-line::after
-            background-color blush
-            border-radius 30px
-            content ''
-            position absolute
-            bottom -20px
-            left 50%
-            transform translateX(-50%)
-            height 4px
-            width 42px
+
+    > .subtitle
+        font-weight 300
+        font-size 20px
+        margin-top 10px 
+
+    > .-line::after
+        background-color blush
+        border-radius 30px
+        content ''
+        position absolute
+        bottom -20px
+        left 50%
+        transform translateX(-50%)
+        height 4px
+        width 42px
 
     > .desc
         margin-top 10px

@@ -16,7 +16,7 @@ block content
 
         .icon-filter
 
-        aside.filter: form.frm-box.-nobrd( method = 'POST' )
+        aside.filter: form.form-styl.-nobrd( method = 'POST' )
 
             label.field-box
                 span.name Título do Livro:
@@ -59,6 +59,7 @@ block content
 
                 - for( var i = 0; i < 10; i++ )
                     .book-box
+                        a.link( href = 'livros/teste' )
                         i.location SP
                         .image
                             img( src = 'img/books/cover.jpg' )
@@ -68,6 +69,7 @@ block content
 
 
                     .book-box
+                        a.link( href = 'livros/teste' )
                         i.location SP
                         .image
                             img( src = 'img/books/pequeno-principe.jpg' )
