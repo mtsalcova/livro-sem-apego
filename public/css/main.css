@@ -609,6 +609,18 @@ textarea {
   pointer-events: none;
 }
 
+.create-account {
+  margin: 0 auto;
+  padding: 60px 0;
+  text-align: center;
+  width: 400px;
+}
+
+.create-account > .desc {
+  color: #adadad;
+  margin-bottom: 30px;
+}
+
 footer {
   background-image: -webkit-linear-gradient(left, #9d50bb, #6e48aa);
   background-image: linear-gradient(to right, #9d50bb, #6e48aa);
@@ -676,6 +688,55 @@ footer > .copyright {
 .field-box {
   display: block;
   margin-bottom: 20px;
+  width: 100%;
+}
+
+.field-box.-cep > .field {
+  display: inline-block;
+  width: 150px;
+}
+
+.field-box.-cep > a {
+  color: #adadad;
+  display: inline-block;
+  margin-left: 15px;
+  font: 15px 'Museo';
+}
+
+.field-box.-cep > a:hover {
+  text-decoration: underline;
+}
+
+.field-box.-picture > span strong {
+  font-weight: 300;
+  color: #adadad;
+  font-size: 13px;
+}
+
+.field-box.-picture > .photo {
+  display: inline-block;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 70px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+  width: 70px;
+}
+
+.field-box.-picture > .photo > svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.field-box.-picture > .photo > input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
 }
 
@@ -866,27 +927,80 @@ footer > .copyright {
   margin-top: 10px;
 }
 
-.login-box {
+.login-page {
   margin: 0 auto;
   padding: 60px 0;
   text-align: center;
   width: 350px;
 }
 
-.login-box > .social {
-  border-top: 1px solid #ececec;
-  margin-top: 30px;
+.login-page > .register {
+  color: #adadad;
+  display: inline-block;
+  margin-top: 20px;
+  font: 300 14px 'Museo';
+  width: 100%;
+}
+
+.login-page > .register > strong {
+  color: #625673;
+}
+
+.login-page > .register:hover {
+  text-decoration: underline;
+}
+
+.login-social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-top: 20px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  color: #625673;
+  font: 300 16px 'Museo';
   width: 100%;
 }
 
-.login-box > .social > .item {
+.login-social.-border {
+  padding-top: 20px;
+  margin-top: 30px;
+  border-top: 1px solid #ececec;
+}
+
+.login-social > .subtitle {
+  margin-bottom: 20px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 300;
+  width: 100%;
+}
+
+.login-social > .or {
+  margin: 30px 0;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-social > .or:after,.login-social > .or:before {
+  border-top: 1px solid #d3d3d3;
+  content: '';
+  display: inline-block;
+  width: 44%;
+}
+
+.login-social > .item {
   border-radius: 8px;
   cursor: pointer;
   height: 40px;
@@ -902,33 +1016,17 @@ footer > .copyright {
   width: 45%;
 }
 
-.login-box > .social > .item.-fb {
+.login-social > .item.-fb {
   background: #3b5998;
 }
 
-.login-box > .social > .item.-gg {
+.login-social > .item.-gg {
   background: #dd4b39;
 }
 
-.login-box > .social > .item > svg {
+.login-social > .item > svg {
   height: 25px;
   width: 25px;
-}
-
-.login-box > .register {
-  color: #adadad;
-  display: inline-block;
-  margin-top: 20px;
-  font: 300 14px 'Museo';
-  width: 100%;
-}
-
-.login-box > .register > strong {
-  color: #625673;
-}
-
-.login-box > .register:hover {
-  text-decoration: underline;
 }
 
 .menu-nav.-static {
@@ -1476,6 +1574,11 @@ footer > .copyright {
   .pages-box .btn-main {
     font-size: 14px;
   }
+
+  .create-account {
+    padding: 60px 20px;
+    width: 100%;
+  }
 }
 
 @media (max-width: 400px) {
@@ -1484,7 +1587,7 @@ footer > .copyright {
     width: 100%;
   }
 
-  .login-box {
+  .login-page {
     padding: 60px 20px;
     width: 100%;
   }

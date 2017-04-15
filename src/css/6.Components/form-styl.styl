@@ -23,6 +23,53 @@
     margin-bottom 20px
     width 100%
 
+    &.-cep
+
+        > .field
+            display inline-block
+            width 150px
+
+        > a
+            color greyish
+            display inline-block
+            margin-left 15px
+            font 15px 'Museo'
+
+            &:hover
+                text-decoration underline
+
+    
+    &.-picture
+
+
+        > span strong
+            font-weight 300
+            color greyish
+            font-size 13px
+
+        > .photo
+            display inline-block
+            border-radius 50%
+            object-fit cover
+            height 70px
+            position relative
+            overflow hidden
+            margin-top 10px 
+            width 70px
+
+            > svg
+                display block
+                height 100%
+                width 100%
+
+            > input
+                opacity 0
+                position absolute
+                top 0
+                left 0
+                height 100%
+                width 100%
+
     > .name
         color purplishGrey
         display block
