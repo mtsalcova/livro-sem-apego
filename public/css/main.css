@@ -641,6 +641,18 @@ footer > .copyright {
   width: 100%;
 }
 
+.forget-password {
+  margin: 0 auto;
+  padding: 60px 0;
+  text-align: center;
+  width: 350px;
+}
+
+.forget-password > .desc {
+  color: #adadad;
+  margin-bottom: 30px;
+}
+
 .form-styl {
   position: relative;
   text-align: left;
@@ -1467,8 +1479,13 @@ footer > .copyright {
 }
 
 @media (max-width: 400px) {
+  .forget-password {
+    padding: 60px 20px;
+    width: 100%;
+  }
+
   .login-box {
-    padding: 20px;
+    padding: 60px 20px;
     width: 100%;
   }
 }
