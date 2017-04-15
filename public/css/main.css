@@ -643,7 +643,22 @@ footer > .copyright {
 
 .form-styl {
   position: relative;
+  text-align: left;
   width: 100%;
+}
+
+.form-styl > .forgetpass {
+  color: #adadad;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+  font: 300 14px 'Museo';
+  text-align: center;
+  width: 100%;
+}
+
+.form-styl > .forgetpass:hover {
+  text-decoration: underline;
 }
 
 .field-box {
@@ -837,6 +852,71 @@ footer > .copyright {
 .step-box > .desc {
   line-height: 1.38;
   margin-top: 10px;
+}
+
+.login-box {
+  margin: 0 auto;
+  padding: 60px 0;
+  text-align: center;
+  width: 350px;
+}
+
+.login-box > .social {
+  border-top: 1px solid #ececec;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.login-box > .social > .item {
+  border-radius: 8px;
+  cursor: pointer;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 45%;
+}
+
+.login-box > .social > .item.-fb {
+  background: #3b5998;
+}
+
+.login-box > .social > .item.-gg {
+  background: #dd4b39;
+}
+
+.login-box > .social > .item > svg {
+  height: 25px;
+  width: 25px;
+}
+
+.login-box > .register {
+  color: #adadad;
+  display: inline-block;
+  margin-top: 20px;
+  font: 300 14px 'Museo';
+  width: 100%;
+}
+
+.login-box > .register > strong {
+  color: #625673;
+}
+
+.login-box > .register:hover {
+  text-decoration: underline;
 }
 
 .menu-nav.-static {
@@ -1124,7 +1204,7 @@ footer > .copyright {
   }
 
   .title-main.-alone {
-    padding-bottom: 100px;
+    padding-bottom: 85px;
   }
 }
 
@@ -1383,6 +1463,13 @@ footer > .copyright {
 
   .pages-box .btn-main {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .login-box {
+    padding: 20px;
+    width: 100%;
   }
 }
 

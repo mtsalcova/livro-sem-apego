@@ -7,5 +7,6 @@ RewriteRule ^sobre/?$ about.html
 RewriteRule ^contato/?$ contact.html
 RewriteRule ^livros/?$ books.html
 RewriteRule ^livros/([^/]+)/?$ books-internal.html
+RewriteRule ^login/?$ login.html
 
 AddType image/svg+xml svg svgz
