@@ -24,10 +24,6 @@ input,button {
   border: 0;
 }
 
-h1 {
-  font: 700 36px 'Museo';
-}
-
 h2 {
   font: 700 26px 'Museo';
 }
@@ -758,6 +754,10 @@ footer > .copyright {
   width: 100%;
 }
 
+.field-box > .field.-pass {
+  width: 300px;
+}
+
 .field-box > select.field,.field-box > input.field {
   height: 40px;
 }
@@ -1191,6 +1191,7 @@ footer > .copyright {
 .title-main > .title {
   color: #fff;
   position: relative;
+  font: 700 36px 'Museo';
 }
 
 .title-main > .subtitle {
@@ -1229,6 +1230,57 @@ footer > .copyright {
   transform: translateX(-50%);
   height: 4px;
   width: 42px;
+}
+
+.user-panel {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.user-panel > .content > .form-styl {
+  margin-top: 30px;
+  width: 65%;
+}
+
+.sidebar-nav {
+  width: 100%;
+}
+
+.sidebar-nav > .baritem {
+  border-bottom: 1px solid #ececec;
+  color: #625673;
+  display: block;
+  font: 300 16px 'Museo';
+  width: 100%;
+}
+
+.sidebar-nav > .baritem:hover {
+  text-decoration: underline;
+}
+
+.header-panel {
+  width: 100%;
+}
+
+.header-panel > .title {
+  color: #625673;
+  font: 700 26px 'Museo';
+}
+
+.header-panel > .title > span {
+  font-weight: 500;
+}
+
+.header-panel > .desc {
+  color: #adadad;
+  margin-top: 10px;
 }
 
 .mt20 {
@@ -1330,6 +1382,35 @@ footer > .copyright {
   }
 }
 
+@media (min-width: 1121px) {
+  .user-panel {
+    width: 1075px;
+  }
+
+  .user-panel > .sidebar {
+    border-right: 1px solid #ececec;
+    width: 200px;
+  }
+
+  .user-panel > .sidebar > strong {
+    display: none;
+  }
+
+  .user-panel > .content {
+    padding: 50px 0;
+    width: 75%;
+  }
+
+  .sidebar-nav {
+    padding: 50px 0;
+  }
+
+  .sidebar-nav > .baritem {
+    padding: 10px;
+    border-bottom: 1px solid #ececec;
+  }
+}
+
 @media (min-width: 1130px) {
   .about-block {
     padding: 0 220px 60px;
@@ -1417,6 +1498,59 @@ footer > .copyright {
   .about-block {
     padding: 0 10% 60px;
     width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 1120px) {
+  .user-panel {
+    width: 100%;
+  }
+
+  .user-panel > .sidebar {
+    background: #ececec;
+    overflow: hidden;
+    height: 40px;
+    position: relative;
+    width: 100%;
+  }
+
+  .user-panel > .sidebar > strong {
+    color: #625673;
+    cursor: pointer;
+    padding: 10px 20px;
+    display: block;
+    position: relative;
+    font: 500 16px 'Museo';
+    z-index: 2;
+  }
+
+  .user-panel > .sidebar:after {
+    border-top: 8px solid #625673;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 16px;
+  }
+
+  .user-panel > .content {
+    padding: 50px 20px;
+    width: 100%;
+  }
+
+  .sidebar-nav {
+    padding: 0 20px 20px;
+    margin-top: 5px;
+  }
+
+  .sidebar-nav > .baritem {
+    padding: 10px 0;
+    border-bottom: 1px solid #c5c5c5;
+  }
+
+  .sidebar-nav > .baritem:first-child {
+    border-top: 1px solid #c5c5c5;
   }
 }
 
@@ -1545,6 +1679,10 @@ footer > .copyright {
 
   .book-box {
     margin: 20px 5px;
+  }
+
+  .user-panel > .content > .form-styl {
+    width: 100%;
   }
 }
 

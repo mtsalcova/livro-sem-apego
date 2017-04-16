@@ -1,0 +1,120 @@
+
+
+//
+// User Panel
+//
+
+.user-panel
+    margin 0 auto
+    display flex
+    justify-content space-between
+    flex-wrap wrap
+
+    @media ( min-width 1121px )
+        width 1075px
+
+    @media ( max-width 1120px )
+        width 100%
+
+
+    > .sidebar
+
+        @media ( min-width 1121px )
+            border-right 1px solid lightGrey
+            width 200px
+
+            > strong
+                display none
+
+        @media ( max-width 1120px )
+            background lightGrey
+            overflow hidden
+            height 40px
+            position relative
+            width 100%
+
+            > strong
+                color purplishGrey
+                cursor pointer
+                padding 10px 20px
+                display block
+                position relative
+                font 500 16px 'Museo'
+                z-index 2
+
+            &:after
+                border-top 8px solid purplishGrey
+                border-right 7px solid transparent
+                border-left 7px solid transparent
+                content ''
+                position absolute
+                right 20px
+                top 16px
+        
+    > .content
+
+        @media ( min-width 1121px )
+            padding 50px 0 
+            width 75%
+
+        @media ( max-width 1120px )
+            padding 50px 20px
+            width 100%
+
+
+        > .form-styl
+            margin-top 30px
+            width 65%
+
+            @media ( max-width 500px )
+                width 100%
+
+
+.sidebar-nav    
+    width 100%
+
+    @media ( min-width 1121px )
+        padding 50px 0 
+
+    @media ( max-width 1120px )
+        padding 0 20px 20px
+        margin-top 5px
+        
+
+
+    > .baritem
+        border-bottom 1px solid lightGrey
+        color purplishGrey
+        display block
+        font 300 16px 'Museo'
+        width 100%
+        
+        &:hover
+            text-decoration underline
+
+        @media ( min-width 1121px )
+            padding 10px
+            border-bottom 1px solid lightGrey
+
+        @media ( max-width 1120px )
+            padding 10px 0
+            border-bottom 1px solid #c5c5c5
+
+            &:first-child
+                border-top 1px solid #c5c5c5
+
+
+
+.header-panel
+    width 100%
+
+    > .title
+        color purplishGrey
+        font 700 26px 'Museo'
+
+        > span
+            font-weight 500
+    
+    > .desc
+        color greyish
+        margin-top 10px

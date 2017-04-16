@@ -1,0 +1,20 @@
+extends ../main
+
+
+block vars
+    - title = 'Painel do Usuário'
+
+
+block content
+
+    include ../includes/user-panel-title
+    section.user-panel
+
+        include ../includes/user-sidebar
+        main.content
+
+            .header-panel
+                h1.title <span>Seja Bem vindo</span>, Mateus Alcova!
+                p.desc Obrigado por fazer parte desse projeto.
+            
+
