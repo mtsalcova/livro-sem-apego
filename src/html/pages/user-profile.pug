@@ -26,10 +26,6 @@ block content
                     span.name E-mail:
                     input.field( type = 'email' name = 'email' )
 
-                label.field-box
-                    span.name Senha:
-                    input.field.-pass( type = 'password' name = 'password' )
-
                 label.field-box.-cep
                     span.name CEP:
                     input.field( type = 'text' name = 'name' )
@@ -40,6 +36,15 @@ block content
                     .photo
                         svg: use( xlink:href = 'img/svg.svg#icon-profile-photo' )
                         input( type = 'file' )  
+                
+                label.field-box.-border
+                    span.name Nova Senha:
+                    input.field.-pass( type = 'password' name = 'pass' )
+
+                label.field-box
+                    span.name Confirme a nova senha:
+                    input.field.-pass( type = 'password' name = 'cpass' )
+
 
                 button.btn-main Editar Cadastro
 

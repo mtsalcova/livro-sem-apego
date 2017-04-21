@@ -14,12 +14,11 @@ block content
         main.content
 
             .header-panel
-                h1.title <span>Seja Bem vindo</span>, Mateus Alcova!
-                p.desc Aqui você terá acesso as suas informações de perfil, cadastrar livros para doação, entre outras coisas! :)
-
+                a.btn-main( href = '' ) + Doar Livros
+                h1.title Livros
+                p.desc Listagem de livros cadastrados para doação.
+            
             .donated-books
-
-                h2.title Últimos livros cadastrados:
                 //- p.nobooks Ops, não encontramos nenhum livro. <a>Clique aqui</a> para fazer sua primeira doação :)
 
                 .donated-book
@@ -37,5 +36,4 @@ block content
                                 label( for = 'status' )
                     
                     a.btn-main( href = '' ) + Informações
-
 

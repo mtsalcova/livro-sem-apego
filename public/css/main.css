@@ -617,6 +617,160 @@ textarea {
   margin-bottom: 30px;
 }
 
+.donated-books {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  width: 100%;
+}
+
+.donated-books > .nobooks {
+  color: #adadad;
+}
+
+.donated-books > .nobooks > a {
+  color: #625673;
+}
+
+.donated-books > .title {
+  color: #625673;
+  font-size: 18px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.donated-book {
+  border-radius: 8px;
+  border: 1px solid #ececec;
+  padding: 20px;
+  margin-bottom: 30px;
+  max-width: 380px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.donated-book > .btn-main {
+  display: inline-block;
+  margin-top: auto;
+  width: 50%;
+}
+
+.donated-book > .image,.donated-book > .infos {
+  vertical-align: top;
+  display: inline-block;
+}
+
+.donated-book > .image {
+  background: #adadad;
+  width: 35.294%;
+}
+
+.donated-book > .image > img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.donated-book > .infos {
+  text-align: left;
+  color: #adadad;
+  padding-left: 20px;
+  width: 60%;
+}
+
+.donated-book > .infos > .name {
+  color: #625673;
+  font-size: 20px;
+}
+
+.donated-book > .infos > .author {
+  border-bottom: 1px solid #ececec;
+  font: 500 16px 'Museo';
+  padding-bottom: 10px;
+  margin-top: 5px;
+}
+
+.donated-book > .infos > p {
+  margin-top: 10px;
+}
+
+.donated-book > .infos > p strong {
+  color: #625673;
+}
+
+.donated-book > .infos > .btn-main {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.status-book {
+  padding: 10px 0;
+  margin-bottom: 15px;
+}
+
+.status-book > p {
+  display: inline-block;
+}
+
+.status-book > .status {
+  display: inline-block;
+  margin: 5px 0 0 5px;
+  position: relative;
+}
+
+.status-book > .status > label {
+  background: #adadad;
+  border-radius: 8px;
+  color: #fff;
+  padding: 5px 10px 3px;
+  font: 300 14px/1 'Museo';
+  display: inline-block;
+  text-transform: uppercase;
+  text-align: center;
+  width: 51px;
+}
+
+.status-book > .status > label:after {
+  content: 'Não';
+}
+
+.status-book > .status > input {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.status-book > .status > input:checked + label {
+  background: #63cc67;
+}
+
+.status-book > .status > input:checked + label:after {
+  content: 'Sim';
+}
+
 footer {
   background-image: -webkit-linear-gradient(left, #9d50bb, #6e48aa);
   background-image: linear-gradient(to right, #9d50bb, #6e48aa);
@@ -681,6 +835,10 @@ footer > .copyright {
   text-decoration: underline;
 }
 
+.form-styl > .btn-main {
+  margin-top: 20px;
+}
+
 .field-box {
   display: block;
   margin-bottom: 20px;
@@ -734,6 +892,12 @@ footer > .copyright {
   left: 0;
   height: 100%;
   width: 100%;
+}
+
+.field-box.-border {
+  border-top: 1px solid #ececec;
+  padding-top: 30px;
+  margin-top: 10px;
 }
 
 .field-box > .name {
@@ -1249,6 +1413,11 @@ footer > .copyright {
   width: 65%;
 }
 
+.user-panel > .content > .donated-books {
+  border-top: 1px solid #ececec;
+  margin-top: 30px;
+}
+
 .sidebar-nav {
   width: 100%;
 }
@@ -1281,6 +1450,11 @@ footer > .copyright {
 .header-panel > .desc {
   color: #adadad;
   margin-top: 10px;
+}
+
+.header-panel > .btn-main {
+  float: right;
+  margin-top: 5px;
 }
 
 .mt20 {
@@ -1618,6 +1792,17 @@ footer > .copyright {
   }
 }
 
+@media (max-width: 825px) {
+  .donated-books {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-line-pack: center;
+    align-content: center;
+  }
+}
+
 @media (max-width: 660px) {
   .search-form.-header {
     width: 100%;
@@ -1716,6 +1901,20 @@ footer > .copyright {
   .create-account {
     padding: 60px 20px;
     width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  .donated-book > .btn-main {
+    width: 100%;
+  }
+
+  .donated-book > .image {
+    width: 30%;
+  }
+
+  .donated-book > .infos {
+    width: 70%;
   }
 }
 
