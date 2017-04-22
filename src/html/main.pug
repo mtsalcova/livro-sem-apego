@@ -16,7 +16,7 @@ html( lang = 'pt-BR' )
             
         title #{title} #{pipe} Livro sem Apego
 
-    body
+    body( data-js=bodyjs )
 
         mixin menu() 
             a.item( href = 'books.html' ) Livros
@@ -29,6 +29,6 @@ html( lang = 'pt-BR' )
         block content
 
         include includes/footer
-            
-        script( src="js/main.js" )
+
+        script( src="js/app.js" )    
 

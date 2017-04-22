@@ -25,6 +25,7 @@ gulp.task('stylus', function() {
         .pipe(gulp.dest("../public/css"))
 });
 
+
 gulp.task('combineMq', ['stylus'], function () {
     return gulp.src('../public/css/main.css')
     .pipe(combineMq({
@@ -77,6 +78,32 @@ gulp.task('svgstore', function () {
 
 
 
+//
+// JS
+//
+
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var pump = require('pump');
+
+ 
+gulp.task('js', function() {
+    var srcJs = '../src/js';
+    return gulp.src([srcJs+'/_init.js', srcJs+'/1.modules/*.js',srcJs+'/2.resources/*.js',srcJs+'/3.services/*.js',srcJs+'/4.controllers/*.js', '../src/js/main.js'])
+        .pipe(concat('app.js'))
+        .pipe(gulp.dest('../public/js/'));
+});
+ 
+gulp.task('compress', ['js'], function (cb) {
+    pump([
+        gulp.src('../public/js/app.js'),
+        uglify(),
+        gulp.dest('../public/js/')
+    ], cb);
+});
+
+
+
 
 //
 // Task Default
@@ -84,6 +111,7 @@ gulp.task('svgstore', function () {
 gulp.task('default', function() {
     gulp.watch('../src/css/**/*.styl', ['combineMq']);
     gulp.watch('../src/html/**/*.pug', ['pug']);
+    gulp.watch(['../src/js/*.js', '../src/js/**/*.js'], ['compress']);
 });
 
 
