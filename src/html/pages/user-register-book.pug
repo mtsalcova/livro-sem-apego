@@ -1,0 +1,90 @@
+extends ../main
+
+
+block vars
+    - title = 'Doar um Livro'
+
+
+block content
+
+    include ../includes/user-panel-title
+    section.user-panel
+
+        include ../includes/user-sidebar
+        main.content
+
+            .header-panel
+                a.btn-main( href = 'user-books.html' ) < Voltar
+                h1.title Doar um Livro
+                p.desc Cadastre o livro que deseja doar abaixo e obrigado por essa ação! :)
+            
+            form.form-styl( method = 'post' )
+
+                label.field-box
+                    span.name Título do Livro:
+                    input.field( type = 'text' )
+
+                label.field-box
+                    span.name Autor:
+                    input.field( type = 'text' )
+                
+                label.field-box
+                    span.name Descrição: <i>Máximo de 255 caracteres</i>
+                    textarea.field
+
+                label.field-box.-small
+                    span.name Gênero:
+                    select.field( )
+                        option( value = '' ) Infantil
+
+                label.field-box.-small
+                    span.name Editora:
+                    select.field( )
+                        option( value = '' ) Saraiva
+
+                label.field-box.-small
+                    span.name Idioma:
+                    select.field( )
+                        option( value = '' ) Português
+
+                label.field-box.-small
+                    span.name Estado do Livro:
+                    select.field( )
+                        option( value = '' ) Novo
+                        option( value = '' ) Semi-novo
+                        option( value = '' ) Usado
+
+                label.field-box.-small
+                    span.name Ano de Fabricação:
+                    input.field( type = 'number' )
+
+                label.field-box.-small
+                    span.name Quantidade:
+                    input.field( type = 'number' )
+
+
+                .field-box.-picture
+                    span.name Fotos: <strong>(Tamanho Máx. 5MB e Extensão .png ou .jpg)</strong>
+                    
+                    .photo
+                        svg: use( xlink:href = 'img/svg.svg#icon-no-img' )
+                        input( type = 'file' )
+
+                    .photo
+                        svg: use( xlink:href = 'img/svg.svg#icon-no-img' )
+                        input( type = 'file' )  
+                
+
+                    
+                .field-box
+                    span.name Aparecer no site após o cadastro?
+
+                    label.radio
+                        input( type = 'radio' name = 'status' checked )    
+                        span Sim
+
+                    label.radio
+                        input( type = 'radio' name = 'status' )    
+                        span Não
+
+                button.btn-main Cadastrar Livro

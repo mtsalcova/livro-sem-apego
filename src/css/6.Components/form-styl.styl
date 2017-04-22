@@ -3,6 +3,9 @@
 .form-styl
     position relative
     text-align left
+    display flex
+    justify-content flex-start
+    flex-wrap wrap
     width 100%
 
     > .forgetpass
@@ -22,9 +25,15 @@
 
 
 .field-box
-    display block
     margin-bottom 20px
     width 100%
+
+    &.-small    
+        margin-right 20px
+        width 150px
+
+    &.-medium
+        width 300px
 
     &.-cep
 
@@ -44,25 +53,39 @@
     
     &.-picture
 
+        &.-circle
+
+            > .photo
+                border-radius 50%
+
+            > svg
+                display block
+                height 100%
+                width 100%
+
         > span strong
             font-weight 300
             color greyish
             font-size 13px
 
         > .photo
+            background #e4e1df
             display inline-block
-            border-radius 50%
+            border-radius 8px
             object-fit cover
             height 70px
             position relative
             overflow hidden
-            margin-top 10px 
+            margin 10px 20px 0 0
             width 70px
 
             > svg
-                display block
-                height 100%
-                width 100%
+                fill #cac5bf
+                position absolute
+                left 50%
+                top 50%
+                transform translate(-50%, -50%)
+                height 20px
 
             > input
                 opacity 0
@@ -82,6 +105,11 @@
         color purplishGrey
         display block
         font 300 16px 'Museo'
+
+        i
+            color greyish
+            font-style normal
+            font-size 14px
 
     > .field
         border 1px solid lightGrey
@@ -107,5 +135,17 @@
         padding 10px
 
 
-    
+    > .radio
+        display inline-block
+        color greyish
+        font 300 16px 'Museo'
+        margin 10px 10px 0 0
+        
+        > span
+        > input
+            display inline-block
+            vertical-align middle
+
+        > input
+            margin-right 5px
 

@@ -818,6 +818,14 @@ footer > .copyright {
 .form-styl {
   position: relative;
   text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -840,9 +848,17 @@ footer > .copyright {
 }
 
 .field-box {
-  display: block;
   margin-bottom: 20px;
   width: 100%;
+}
+
+.field-box.-small {
+  margin-right: 20px;
+  width: 150px;
+}
+
+.field-box.-medium {
+  width: 300px;
 }
 
 .field-box.-cep > .field {
@@ -861,6 +877,16 @@ footer > .copyright {
   text-decoration: underline;
 }
 
+.field-box.-picture.-circle > .photo {
+  border-radius: 50%;
+}
+
+.field-box.-picture.-circle > svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 .field-box.-picture > span strong {
   font-weight: 300;
   color: #adadad;
@@ -868,21 +894,26 @@ footer > .copyright {
 }
 
 .field-box.-picture > .photo {
+  background: #e4e1df;
   display: inline-block;
-  border-radius: 50%;
+  border-radius: 8px;
   -o-object-fit: cover;
   object-fit: cover;
   height: 70px;
   position: relative;
   overflow: hidden;
-  margin-top: 10px;
+  margin: 10px 20px 0 0;
   width: 70px;
 }
 
 .field-box.-picture > .photo > svg {
-  display: block;
-  height: 100%;
-  width: 100%;
+  fill: #cac5bf;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 20px;
 }
 
 .field-box.-picture > .photo > input {
@@ -904,6 +935,12 @@ footer > .copyright {
   color: #625673;
   display: block;
   font: 300 16px 'Museo';
+}
+
+.field-box > .name i {
+  color: #adadad;
+  font-style: normal;
+  font-size: 14px;
 }
 
 .field-box > .field {
@@ -929,6 +966,22 @@ footer > .copyright {
 .field-box > textarea.field {
   height: 100px;
   padding: 10px;
+}
+
+.field-box > .radio {
+  display: inline-block;
+  color: #adadad;
+  font: 300 16px 'Museo';
+  margin: 10px 10px 0 0;
+}
+
+.field-box > .radio > span,.field-box > .radio > input {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.field-box > .radio > input {
+  margin-right: 5px;
 }
 
 .header-static {
@@ -1491,6 +1544,12 @@ footer > .copyright {
   }
 }
 
+@media (min-width: 500px) and (max-width: 1000px) {
+  .user-panel > .content > .form-styl {
+    width: 80%;
+  }
+}
+
 @media (min-width: 501px) and (max-width: 840px) {
   .gallery-book {
     width: 80%;
@@ -1803,6 +1862,12 @@ footer > .copyright {
   }
 }
 
+@media (max-width: 700px) {
+  .user-panel > .content > .form-styl {
+    width: 100%;
+  }
+}
+
 @media (max-width: 660px) {
   .search-form.-header {
     width: 100%;
@@ -1864,10 +1929,6 @@ footer > .copyright {
 
   .book-box {
     margin: 20px 5px;
-  }
-
-  .user-panel > .content > .form-styl {
-    width: 100%;
   }
 }
 
