@@ -2,21 +2,20 @@
     'use strict';
 
 
+    win.APP.Ctrls.Common = Common();
+
 
     function Common() {
 
-        var $public  = {};
+        var $public = {};
 
         $public.init = function init() {
-            APP.Services.HeaderAnimateScroll.init();
+            APP.Services.Newsletter.init();
         }
 
         return $public;
 
     }
-
-
-    win.APP.Ctrls.Common = Common();
 
 
 })( window, document ); 

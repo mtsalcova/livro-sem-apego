@@ -2,22 +2,22 @@
     'use strict';
 
 
-    function HeaderAnimateScroll() {
+    win.APP.Services.ToggleMenuMobile = ToggleMenuMobile();
+
+    
+    function ToggleMenuMobile() {
 
         var $public  = {};
         var $private = {};
 
 
         $public.init = function init() {
-            // console.log('chegou até mim');
+            // $private.setEvent();
         }
 
         return $public;
 
     }
-
-
-    win.APP.Services.HeaderAnimateScroll = HeaderAnimateScroll();
 
 
 })( window, document ); 

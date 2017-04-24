@@ -21,14 +21,16 @@
         }
 
 
-        $private.loadCtrls = function routers() {
+        $private.loadCtrls = function loadCtrls() {
             
             var ctrlsList = ['Common'];
             var body = doc.body;
 
             if( body.hasAttribute('data-js') ) {
                 var dataJS = body.getAttribute('data-js');
-                ctrlsList.push(dataJS);
+                dataJS.split(' ').map(function(val, i){
+                    ctrlsList.push(val);
+                }); 
             }
 
             ctrlsList.forEach(function(ctrl) {
@@ -39,7 +41,9 @@
 
         }
 
+
         return $public;
+        
 
     }
 

@@ -2,9 +2,10 @@
     'use strict';
 
 
+    win.APP.Services.AsideFilterBooks = AsideFilterBooks();
+
 
     function AsideFilterBooks() {
-
 
         var $public  = {};
         var $private = {};
@@ -28,14 +29,9 @@
 
         }
 
-
         return $public;
 
-
     }
-
-
-    win.APP.Services.AsideFilterBooks = AsideFilterBooks();
 
 
 })( window, document ); 

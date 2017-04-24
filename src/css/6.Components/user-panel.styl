@@ -18,6 +18,12 @@
 
 
     > .sidebar
+        transition height 0.4s ease-in-out
+
+        &.active::after
+            border-bottom 8px solid #625673
+            border-top 0
+
 
         @media ( min-width 1121px )
             border-right 1px solid lightGrey
@@ -108,7 +114,9 @@
 
             &:first-child
                 border-top 1px solid #c5c5c5
-
+            
+            &:last-child
+                border-bottom 0
 
 
 .header-panel

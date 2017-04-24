@@ -2,15 +2,15 @@
     'use strict';
 
 
-    win.APP.Ctrls.Books = Books();
+    win.APP.Ctrls.User = User();
 
 
-    function Books() {
+    function User() {
 
         var $public = {};
 
         $public.init = function init() {
-            APP.Services.AsideFilterBooks.init();
+            APP.Services.ToggleMenuUser.init();
         }
 
         return $public;
