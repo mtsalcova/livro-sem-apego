@@ -1,1 +1,4 @@
 tools/node_modules
+src/vue/node_modules
+src/vue/npm-debug.log
+public/js/build.js

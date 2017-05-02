@@ -7,29 +7,16 @@ block vars
 
 block content
 
-
     section.title-main.-alone
         h1.title.-line Acesse sua Conta :)
     
     section.login-page
-
-        form.form-styl( method = 'post' )
-
-            label.field-box
-                span.name E-mail:
-                input.field( type = 'text' name = 'email' )
-            
-            label.field-box
-                span.name Senha:
-                input.field( type = 'password' name = 'pass' )
-
-            button.btn-main.-full Entrar
-            a.forgetpass( href = 'forget-password.html' ) Esqueceu sua senha?
-
-
-        .login-social.-border
-            .item.-fb: svg: use( xlink:href = 'img/svg.svg#icon-fb' )   
-            .item.-gg: svg: use( xlink:href = 'img/svg.svg#icon-gg' )   
+        
+        login
+        
+        //- .login-social.-border
+        //-     .item.-fb: svg: use( xlink:href = 'img/svg.svg#icon-fb' )   
+        //-     .item.-gg: svg: use( xlink:href = 'img/svg.svg#icon-gg' )   
 
         a.register( href = 'create-account.html' )  Ainda não possui uma conta? <strong>Criar Conta</strong>
 

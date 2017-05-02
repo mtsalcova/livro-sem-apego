@@ -9,6 +9,7 @@ html( lang = 'pt-BR' )
         meta( name = 'viewport' content = 'width=device-width, initial-scale=1' )
         meta( name = "theme-color" content = "#625673" )
         link( rel = "stylesheet" href = "css/main.css" )
+        link( rel = "stylesheet" href = "css/build.css" )
         link( rel = 'icon' href = 'img/favicon.ico' )
         
         if title
@@ -17,18 +18,22 @@ html( lang = 'pt-BR' )
         title #{title} #{pipe} Livro sem Apego
 
     body( data-js=bodyjs )
-
+        
         mixin menu() 
             a.item( href = 'books.html' ) Livros
             //- a.item( href = '' ) Desejados
             a.item( href = 'about.html' ) Sobre
             a.item( href = 'contact.html' ) Contato 
+            
 
         include includes/header
 
-        block content
+        .container: block content
 
         include includes/footer
 
+        //- script( src="js/app.min.js" )
+
+        script( src="js/build.js" )    
         script( src="js/app.js" )    
 

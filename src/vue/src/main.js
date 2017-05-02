@@ -1,7 +1,12 @@
+
 import Vue from 'vue'
-import App from './App.vue'
+import VueResource from 'vue-resource'
+import Login from './components/Login.vue'
+
+Vue.use(VueResource)
+
+Vue.component('Login', Login)  
 
 new Vue({
-  el: '#app',
-  render: h => h(App)
+    el: '.container'
 })

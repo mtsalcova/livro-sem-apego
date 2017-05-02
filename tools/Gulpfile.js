@@ -103,12 +103,21 @@ gulp.task('compress', ['js'], function (cb) {
 });
 
 
+// gulp.task('concatUglify', function() {
+//     var srcJs = '../public/js';
+//     gulp.src(srcJs+'/*.js')
+//         .pipe(uglify())
+//         .pipe(concat('app.min.js'))
+//         .pipe(gulp.dest('../public/js/'))
+// })
+
 
 
 //
 // Task Default
 
 gulp.task('default', function() {
+    // gulp.watch('../public/js/*.js', ['concatUglify'] );
     gulp.watch('../src/css/**/*.styl', ['combineMq']);
     gulp.watch('../src/html/**/*.pug', ['pug']);
     gulp.watch(['../src/js/*.js', '../src/js/**/*.js'], ['compress']);

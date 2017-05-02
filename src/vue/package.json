@@ -1,26 +1,45 @@
 {
-  "name": "livro-sem-apego",
-  "description": "Um site de doação de livros, sem fins lucrativos",
-  "version": "1.0.0",
+  "name": "masd",
+  "version": "0.1.0",
+  "description": "asd",
   "author": "Mateus Alcova <mateusalcova@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "watchify": "watchify -vd -p browserify-hmr -e src/main.js src/auth/index.js -o ../../public/js/build.js",
+    "serve": "http-server -o -c 1 -a localhost",
+    "dev": "npm-run-all --parallel watchify serve",
+    "build": "cross-env NODE_ENV=production browserify -g envify -p [ vueify/plugins/extract-css -o ../../public/css/build.css ] -e src/main.js | uglifyjs -c warnings=false -m > ../../public/js/build.js"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "vueify"
+    ]
+  },
+  "browser": {
+    "vue": "vue/dist/vue.common.js"
   },
   "dependencies": {
-    "vue": "^2.2.1"
+    "vue": "^2.0.1",
+    "vue-resource": "^1.3.1"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
-    "babel-loader": "^6.0.0",
-    "babel-preset-latest": "^6.0.0",
-    "cross-env": "^3.0.0",
-    "css-loader": "^0.25.0",
-    "file-loader": "^0.9.0",
-    "vue-loader": "^11.1.4",
-    "vue-template-compiler": "^2.2.1",
-    "webpack": "^2.2.0",
-    "webpack-dev-server": "^2.2.0"
+    "babel-plugin-transform-runtime": "^6.0.0",
+    "babel-preset-es2015": "^6.0.0",
+    "babel-preset-stage-2": "^6.0.0",
+    "babel-runtime": "^6.0.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.1.0",
+    "browserify-hmr": "^0.3.1",
+    "cross-env": "^2.0.0",
+    "envify": "^3.4.1",
+    "http-server": "^0.9.0",
+    "npm-run-all": "^2.3.0",
+    "proxyquireify": "^3.0.1",
+    "stylus": "^0.54.5",
+    "uglify-js": "^2.5.0",
+    "vueify": "^9.0.0",
+    "watchify": "^3.4.0"
   }
 }
