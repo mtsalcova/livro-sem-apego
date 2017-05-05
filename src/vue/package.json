@@ -35,6 +35,7 @@
     "cross-env": "^2.0.0",
     "envify": "^3.4.1",
     "http-server": "^0.9.0",
+    "jade": "^1.11.0",
     "npm-run-all": "^2.3.0",
     "proxyquireify": "^3.0.1",
     "stylus": "^0.54.5",

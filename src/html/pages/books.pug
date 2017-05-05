@@ -16,74 +16,9 @@ block content
 
         .icon-filter
 
-        aside.filter: form.form-styl.-nobrd( method = 'POST' )
+        // src/vue/components/FilterBooks
+        filter-books
 
-            label.field-box
-                span.name Título do Livro:
-                input.field( type = 'text' name = 'title' )
-            
-            label.field-box
-                span.name Autor:
-                input.field( type = 'text' name = 'author' )
-
-            label.field-box
-                span.name Ano:
-                input.field( type = 'text' name = '' )
-
-            label.field-box
-                span.name Genêro:
-                select.field( name = 'author' )
-                    option( value = '' ) Infantil
-
-            label.field-box
-                span.name Editora:
-                select.field( name = 'editora' )
-                    option( value = '' ) Saraiva
-
-            label.field-box
-                span.name Estado
-                select.field( name = 'state' )
-                    option( value = '' ) 
-                    option( value = '' ) SP
-
-            button.btn-main.-full Filtrar
-
-        
-        
-        .list-books
-
-            .title-list
-                span Listando 20 de 40 livros.
-
-            .gridbooks
-
-                - for( var i = 0; i < 10; i++ )
-                    .book-box
-                        a.link( href = 'books-internal.html' )
-                        i.location SP
-                        .image
-                            img( src = 'img/books/cover.jpg' )
-                            .subtitle: strong Adquirir >
-                        h2.name O Mundo de Sofia
-                        h3.author Jostein Gaarder
-
-
-                    .book-box
-                        a.link( href = 'books-internal.html' )
-                        i.location SP
-                        .image
-                            img( src = 'img/books/pequeno-principe.jpg' )
-                            .subtitle: strong Adquirir >
-                        h2.name O Pequeno Príncipe
-                        h3.author Antonie de Saint-exupery
-
-
-            .pages-box
-                a.btn-main.-disabled Anterior
-                .pages
-                    input( type = 'text' name = 'page' value = '1' )
-                    span de 2
-                a.btn-main Próximo
-
-
+        // src/vue/components/ListBooks
+        list-books
 
