@@ -4,6 +4,7 @@ import Vue from 'vue'
 
 
 // Components
+import PanelDashboard from './components/PanelDashboard.vue'
 import CreateAccount from './components/CreateAccount.vue'
 import Login from './components/Login.vue'
 import SendPassword from './components/SendPassword.vue'
@@ -20,6 +21,7 @@ Vue.use(VeeValidate)
 
 
 // Global Components
+Vue.component('PanelDashboard', PanelDashboard)
 Vue.component('CreateAccount', CreateAccount)
 Vue.component('Login', Login)
 Vue.component('FilterBooks', FilterBooks)
