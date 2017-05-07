@@ -13,41 +13,17 @@ block content
     
     section.create-account
 
-        .login-social
-            h2.subtitle Crie sua conta com:
-            .item.-fb: svg: use( xlink:href = 'img/svg.svg#icon-fb' )   
-            .item.-gg: svg: use( xlink:href = 'img/svg.svg#icon-gg' ) 
-            .or ou
+        //- .login-social
+        //-     h2.subtitle Crie sua conta com:
+        //-     .item.-fb: svg: use( xlink:href = 'img/svg.svg#icon-fb' )   
+        //-     .item.-gg: svg: use( xlink:href = 'img/svg.svg#icon-gg' ) 
+        //-     .or ou
 
 
-        form.form-styl( method = 'post' )
+        //- src/vue/src/components/Register
+        create-account
 
-            label.field-box
-                span.name Nome:
-                input.field( type = 'text' name = 'name' )
-
-            label.field-box
-                span.name E-mail:
-                input.field( type = 'email' name = 'email' )
-
-            label.field-box
-                span.name Senha:
-                input.field.-pass( type = 'password' name = 'password' )
-
-            label.field-box.-cep
-                span.name CEP:
-                input.field( type = 'text' name = 'name' )
-                a( href = 'http://www.buscacep.correios.com.br/' target = '_blank' ) Não sei meu cep
-
-            .field-box.-picture
-                span.name Foto de Perfil: <strong>(Tamanho Máx. 5MB e Extensão .png ou .jpg)</strong>
-                .photo
-                    svg: use( xlink:href = 'img/svg.svg#icon-profile-photo' )
-                    input( type = 'file' )  
-
-
-            button.btn-main.-full Criar Conta
-
+        
 
 
 

@@ -1,7 +1,7 @@
 {
-  "name": "masd",
-  "version": "0.1.0",
-  "description": "asd",
+  "name": "livro-sem-apego",
+  "version": "0.0.1",
+  "description": "Site de doação de livros, sem fins-lucrativos.",
   "author": "Mateus Alcova <mateusalcova@gmail.com>",
   "private": true,
   "scripts": {
@@ -20,6 +20,7 @@
     "vue": "vue/dist/vue.common.js"
   },
   "dependencies": {
+    "vee-validate": "^2.0.0-rc.3",
     "vue": "^2.0.1",
     "vue-resource": "^1.3.1"
   },

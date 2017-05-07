@@ -58,10 +58,10 @@
             > .photo
                 border-radius 50%
 
-            > svg
-                display block
-                height 100%
-                width 100%
+                > svg
+                    display block
+                    height 100%
+                    width 100%
 
         > span strong
             font-weight 300
@@ -86,15 +86,22 @@
                 top 50%
                 transform translate(-50%, -50%)
                 height 20px
-
+            
+            > img
             > input
-                opacity 0
                 position absolute
                 top 0
                 left 0
                 height 100%
                 width 100%
+            
+            > input
+                opacity 0
+                z-index 3
 
+            > img
+                object-fit cover
+                z-index 2
 
     &.-border
         border-top  1px solid lightGrey
@@ -121,6 +128,9 @@
         font 300 16px 'Museo'
         padding-left 10px
         width 100%
+
+        &.-invalid
+            border 1px solid error
 
         &.-pass
             width 300px
@@ -149,3 +159,8 @@
         > input
             margin-right 5px
 
+
+    > .error
+        color error
+        margin-top 10px
+        font-size 13px
