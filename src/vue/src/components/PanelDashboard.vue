@@ -15,14 +15,13 @@
 <script>
     
     import auth from '../auth'
-    import DonatedBook from './DonatedBook.vue'
+    import DonatedBook from './reusable/DonatedBook.vue'
 
     export default {
 
-        beforeCreate() {
-            if(!auth.user.authenticated) window.location = './login'
-        },
-        name: 'panel-dashboard',
+        // beforeCreate() {
+        //     if(!auth.user.authenticated) window.location = './login'
+        // },
         components: {
             'donated-book': DonatedBook
         }
