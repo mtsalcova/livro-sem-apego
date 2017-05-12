@@ -1,5 +1,7 @@
 RewriteEngine On
 
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
@@ -8,5 +10,6 @@ RewriteRule ^contato/?$ contact.html
 RewriteRule ^livros/?$ books.html
 RewriteRule ^livros/([^/]+)/?$ books-internal.html
 RewriteRule ^login/?$ login.html
+RewriteRule ^painel/?$ user-dashboard.html
 
 AddType image/svg+xml svg svgz

@@ -19,11 +19,23 @@
 
     export default {
 
-        // beforeCreate() {
-        //     if(!auth.user.authenticated) window.location = './login'
-        // },
+        beforeCreate() {
+            auth.checkAuth();
+        },
+
         components: {
             'donated-book': DonatedBook
+        },
+        
+
+        created() {
+            
+            // this.$http.get('http://localhost/api/users', {headers: auth.getAuthHeader()}).then( rs => {
+            //     console.log(rs);
+            // }, error => {
+
+            // });
+
         }
 
 

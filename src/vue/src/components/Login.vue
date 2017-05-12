@@ -1,6 +1,6 @@
 <template lang="jade">
 
-    form( method="post" class="form-styl" @submit.prevent="sendFormLogin" )
+    form( method="post" data-form="login" class="form-styl" @submit.prevent="sendFormLogin" )
         
         label.field-box
             span.name E-mail: *
@@ -9,7 +9,7 @@
         
         label.field-box
             span.name Senha: * <i>(Mínimo 6 caracteres)</i>
-            input( v-validate="'required|min:6'" v-bind:class="{'-invalid': errors.has('pass') }" type="password" name = 'pass' v-model="pass" class="field" )
+            input( v-validate="'required|min:6'" v-bind:class="{'-invalid': errors.has('pass') }" type="password" name = 'password' v-model="pass" class="field" )
             p.error( v-if="errors.has('pass')" ) Digite uma senha válida.
 
         button( class="btn-main -full" v-bind:class="{ sending: btnActive}" type="submit" ) {{ btnText }}
@@ -39,25 +39,26 @@ export default {
 
             this.$validator.validateAll().then(() => {
                 
-                let obj = {}
-                obj.user = this.user
-                obj.pass = this.pass
-                
+                let frm = document.querySelector("[data-form=login]");
+                let data = new FormData(frm);
+
                 this.btnText = 'Logando...'
                 this.btnActive = true
-                
-                this.sentSuccess()
+
+                auth.login(this, data)
 
             }).catch(() => {});
 
-            // auth.login(this, obj, 'secretquote')
         }, 
         
-        sentSuccess() {
+        setError() {
+            
+            this.btnText = 'Dados inválidos!'
 
-            this.btnActive = false
-            this.btnText = 'Entrar'
-            alert('enviado!')
+            setTimeout(() => {
+                this.btnText = 'Entrar'
+                this.btnActive = false
+            }, 2000)
 
         }
 

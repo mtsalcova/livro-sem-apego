@@ -1,78 +1,69 @@
 
 
 // URL and endpoint constants
-const API_URL = 'http://localhost/api/index.php'
-const LOGIN_URL = API_URL
-const SIGNUP_URL = API_URL
+const API_URL = 'http://localhost/api'
+const LOGIN_URL = API_URL + '/auth'
+const SIGNUP_URL = API_URL + '/user'
 
 
 export default {
 
-    // User object will let us check authentication status
     user: {
         authenticated: false
     },
 
-    // Send a request to the login URL and save the returned JWT
-    login(context, creds, redirect) {
-
+    login(context, creds) {
 
         context.$http.post(LOGIN_URL, creds).then(rs => {
             
-            console.log(rs.data);
-            // localStorage.setItem('id_token', data.id_token)
-            // localStorage.setItem('access_token', data.access_token)
+            rs.json().then( data => {
+                localStorage.setItem('access_token', data.access_token);
+                this.user.authenticated = true;
+                location.href = './painel'
 
-            // this.user.authenticated = true
+            }, rs => { context.setError() });
 
-            // // Redirect to a specified route
-            // if(redirect) {
-            //   router.go(redirect)        
-            // }
-
-        }, rs => {
-            console.log('error');
-        });
+        }, rs => { context.setError() });
 
     },
 
-    signup(context, creds, redirect) {
-        context.$http.post(SIGNUP_URL, creds, (data) => {
-            localStorage.setItem('id_token', data.id_token)
-            localStorage.setItem('access_token', data.access_token)
 
-            this.user.authenticated = true
+    signup(context, creds) {
 
-            if(redirect) {
-                router.go(redirect)        
-            }
+        context.$http.post(SIGNUP_URL, creds).then(rs => {
+            
+            rs.json().then( data => {
+                console.log(data);
+                // localStorage.setItem('access_token', data.access_token);
+                // this.user.authenticated = true;
+                // location.href = './painel'
 
-        }).error((err) => {
-            context.error = err
-        })
+            }, rs => { context.setError() });
+
+        }, rs => { context.setError() });
+
     },
 
-    // To log out, we just need to remove the token
     logout() {
-        localStorage.removeItem('id_token')
         localStorage.removeItem('access_token')
         this.user.authenticated = false
     },
 
     checkAuth() {
-        var jwt = localStorage.getItem('id_token')
-        if(jwt) {
-            this.user.authenticated = true
-        }
+
+        var jwt = localStorage.getItem('access_token')
+
+        if(jwt) this.user.authenticated = true
         else {
-            this.user.authenticated = false      
+            this.user.authenticated = false
+            location.href = './login' 
         }
+
     },
 
-    // The object to be passed as a header for authenticated requests
     getAuthHeader() {
         return {
-            'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+            'Authorization': 'Bearer {' + localStorage.getItem('access_token') +'}'
         }
     }
 }

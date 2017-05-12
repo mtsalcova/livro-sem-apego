@@ -27,8 +27,9 @@
             span.name Foto de Perfil: <strong>(Tamanho Máx. 2MB e Extensão .png ou .jpg)</strong>
             .photo
                 svg: use( xlink:href = 'img/svg.svg#icon-profile-photo' )
-                input( type = 'file' name = 'avatar' v-on:change="setFileReader" )
+                input( type = 'file' v-on:change="setFileReader" )
                 img( v-bind:src="avatarSrc" v-if="avatarSrc" )
+                input( type = "hidden" name = "avatar" v-bind:value="avatarSrc" v-if="avatarSrc" )
             
             p.error( v-if="onlyImage" ) Insira uma imagem válida.
 
@@ -38,6 +39,8 @@
 
 
 <script>
+
+import auth from '../auth'
 
 export default {
 
@@ -78,30 +81,26 @@ export default {
 
             this.$validator.validateAll().then(() => {
                 
-                this.btnText = 'Criando...'
-                this.btnActive = true
+                this.btnText = 'Criando...';
+                this.btnActive = true;
+
+                let frm = document.querySelector("[data-form=createAccount]");
+                let data = new FormData(frm);
                 
-                this.send()
+                auth.signup(this, data);
+
 
             }).catch(() => {});
 
-        }, 
-        
-        send() {
+        },
 
-            let frm = document.querySelector("[data-form=createAccount]");
-            let data = new FormData(frm);
+        setError() {
+            this.btnText = 'Ocorreu um erro inesperado :('
 
-            this.$http.post('http://localhost/test/index.php', data).then(rs => {
-                console.log(rs.data)
-            }, rs => {
-                console.log('error')
-            });
-
-            this.btnActive = false
-            this.btnText = 'Entrar'
-            // alert('enviado!')
-
+            setTimeout(() => {
+                this.btnActive = false
+                this.btnText = 'Criar Conta'
+            }, 2000)
         }
 
     }
