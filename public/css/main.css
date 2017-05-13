@@ -958,7 +958,7 @@ footer > .copyright {
   width: 100%;
 }
 
-.field-box > .field.-invalid {
+.field-box > .field.-existemail,.field-box > .field.-invalid {
   border: 1px solid #ff3939;
 }
 

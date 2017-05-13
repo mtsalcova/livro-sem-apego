@@ -10,13 +10,14 @@
 
         label.field-box
             span.name E-mail: *
-            input( v-validate="'required|email'" v-model = "user" v-bind:class="{'-invalid': errors.has('email') }" name = "email" type="email" class="field" )
+            input( v-validate="'required|email'" @blur="verifyExistEmail" v-model = "email" v-bind:class="{'-invalid': errors.has('email'), '-existemail': existEmail  }" name = "email" type="email" class="field" )
             p.error( v-if="errors.has('email')" ) Digite um e-mail válido.
+            p.error( v-if="existEmail" ) Esse e-mail já está cadastrado.
 
         label.field-box
             span.name Senha: * <i>(Mínimo 6 caracteres)</i>
-            input( v-validate="'required|min:6'" v-bind:class="{'-invalid': errors.has('pass') }" type="password" name = 'pass' v-model="pass" class="field" )
-            p.error( v-if="errors.has('pass')" ) Digite uma senha válida.
+            input( v-validate="'required|min:6'" v-bind:class="{'-invalid': errors.has('password')}" type="password" name = 'password' v-model="password" class="field" )
+            p.error( v-if="errors.has('password')" ) Digite uma senha válida.
 
         label.field-box.-cep
             span.name CEP: <i>(Apenas números)</i>
@@ -79,6 +80,8 @@ export default {
 
         validateForm() {  
 
+            if( this.existEmail ) return false;
+
             this.$validator.validateAll().then(() => {
                 
                 this.btnText = 'Criando...';
@@ -91,6 +94,7 @@ export default {
 
 
             }).catch(() => {});
+            
 
         },
 
@@ -101,6 +105,24 @@ export default {
                 this.btnActive = false
                 this.btnText = 'Criar Conta'
             }, 2000)
+        },
+
+        verifyExistEmail() {
+
+            if( !this.email ) return this.existEmail = false
+
+            var obj = new FormData();
+            obj.append( 'email', this.email );
+
+            this.$http.post( 'http://localhost/api/user/email', obj ).then( rs => {
+
+                rs.json().then( rs => {
+                    if (rs.existEmail) this.existEmail = true;
+                    else this.existEmail = false;
+                }, error => {this.existEmail = false});
+
+            }, error => {});
+
         }
 
     }

@@ -2,7 +2,6 @@
 
 import Vue from 'vue'
 
-
 // Components
 import PanelDashboard from './components/PanelDashboard.vue'
 import PanelProfile from './components/PanelProfile.vue'
@@ -29,6 +28,7 @@ Vue.component('Login', Login)
 Vue.component('FilterBooks', FilterBooks)
 Vue.component('ListBooks', ListBooks)
 Vue.component('SendPassword', SendPassword)
+
 
 new Vue({
     el: '.container'

@@ -3,7 +3,7 @@
 // URL and endpoint constants
 const API_URL = 'http://localhost/api'
 const LOGIN_URL = API_URL + '/auth'
-const SIGNUP_URL = API_URL + '/user'
+const SIGNUP_URL = API_URL + '/user/register'
 
 
 export default {
@@ -33,14 +33,19 @@ export default {
         context.$http.post(SIGNUP_URL, creds).then(rs => {
             
             rs.json().then( data => {
-                console.log(data);
-                // localStorage.setItem('access_token', data.access_token);
-                // this.user.authenticated = true;
-                // location.href = './painel'
+                
+                if( data.error ) {
+                    if( data.existEmail ) context.existEmail = true;
+                    return context.setError();
+                }
 
-            }, rs => { context.setError() });
+                localStorage.setItem('access_token', data.access_token);
+                this.user.authenticated = true;
+                location.href = './painel'
+            
+            }, () => { context.setError() });
 
-        }, rs => { context.setError() });
+        }, () => { context.setError() });
 
     },
 
