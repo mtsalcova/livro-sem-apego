@@ -12,7 +12,7 @@
             input( v-validate="'required|min:6'" v-bind:class="{'-invalid': errors.has('password') }" type="password" name = 'password' v-model="password" class="field" )
             p.error( v-if="errors.has('password')" ) Digite uma senha válida.
 
-        button( class="btn-main -full" v-bind:class="{ sending: btnActive}" type="submit" ) {{ btnText }}
+        button( class="btn-main -full" v-bind:class="{ '-sending': btnActive}" type="submit" ) {{ btnText }}
         
         a( href="forget-password.html" class="forgetpass" ) Esqueceu sua senha?
 
@@ -24,6 +24,11 @@ import auth from '../auth'
     
 export default {
 
+    beforeCreate() {
+        auth.checkAuth();
+        if( auth.user.authenticated ) location.href = './painel'
+    },
+    
     data() {
         return {
             email: '',

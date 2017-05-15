@@ -34,7 +34,7 @@
             
             p.error( v-if="onlyImage" ) Insira uma imagem válida.
 
-        button( class="btn-main -full" v-bind:class="{ sending: btnActive }" type="submit" ) {{ btnText }}
+        button( class="btn-main -full" v-bind:class="{ '-sending': btnActive }" type="submit" ) {{ btnText }}
 
 </template>
 

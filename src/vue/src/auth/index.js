@@ -1,9 +1,9 @@
 
 
 // URL and endpoint constants
-const API_URL = 'http://localhost/api'
-const LOGIN_URL = API_URL + '/auth'
-const SIGNUP_URL = API_URL + '/user/register'
+const API_URL = 'http://localhost/api';
+const LOGIN_URL = API_URL + '/auth';
+const SIGNUP_URL = API_URL + '/user/register';
 
 
 export default {
@@ -18,8 +18,9 @@ export default {
             
             rs.json().then( data => {
                 localStorage.setItem('access_token', data.access_token);
+                localStorage.setItem('id_token', data.id_token);
                 this.user.authenticated = true;
-                location.href = './painel'
+                location.href = './painel';
 
             }, rs => { context.setError() });
 
@@ -40,8 +41,9 @@ export default {
                 }
 
                 localStorage.setItem('access_token', data.access_token);
+                localStorage.setItem('id_token', data.id_token);
                 this.user.authenticated = true;
-                location.href = './painel'
+                location.href = './painel';
             
             }, () => { context.setError() });
 
@@ -50,19 +52,18 @@ export default {
     },
 
     logout() {
-        localStorage.removeItem('access_token')
-        this.user.authenticated = false
+        localStorage.removeItem('access_token');
+        localStorage.removeItem('id_token');
+        this.user.authenticated = false;
+        location.href = './login';
     },
 
     checkAuth() {
 
-        var jwt = localStorage.getItem('access_token')
+        var jwt = localStorage.getItem('id_token');
 
-        if(jwt) this.user.authenticated = true
-        else {
-            this.user.authenticated = false
-            location.href = './login' 
-        }
+        if(jwt) this.user.authenticated = true;
+        else this.user.authenticated = false;
 
     },
 

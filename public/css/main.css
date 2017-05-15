@@ -599,6 +599,11 @@ textarea {
   pointer-events: none;
 }
 
+.btn-main.-sending {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
 .create-account {
   margin: 0 auto;
   padding: 60px 0;
@@ -1533,6 +1538,12 @@ footer > .copyright {
 
 .mt20 {
   margin-top: 20px;
+}
+
+.container .preloader {
+  display: inline-block;
+  text-align: center;
+  max-width: 100%;
 }
 
 @font-face {
