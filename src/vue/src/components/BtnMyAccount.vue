@@ -1,5 +1,5 @@
 
-<template lang="jade">
+<template lang="pug">
     a( class = 'btn-main' v-bind:href = 'valueHref' ) Minha conta
 </template>
 

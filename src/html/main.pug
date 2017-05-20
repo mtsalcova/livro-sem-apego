@@ -33,7 +33,9 @@ html( lang = 'pt-BR' )
 
             include includes/footer
 
-        //- script( src="js/app.min.js" )
+
+        script.
+            window.APIUrl = '/api/v1';
 
         script( src="js/build.js" )    
         script( src="js/app.js" )    

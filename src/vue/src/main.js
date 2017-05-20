@@ -6,7 +6,9 @@ import Vue from 'vue'
 import BtnMyAccount from './components/BtnMyAccount.vue'
 import PanelAside from './components/PanelAside.vue'
 import PanelDashboard from './components/PanelDashboard.vue'
+import PanelDonatedBooks from './components/PanelDonatedBooks.vue'
 import PanelProfile from './components/PanelProfile.vue'
+import PanelRegisterBook from './components/PanelRegisterBook.vue'
 import CreateAccount from './components/CreateAccount.vue'
 import Login from './components/Login.vue'
 import SendPassword from './components/SendPassword.vue'
@@ -26,7 +28,9 @@ Vue.use(VeeValidate)
 Vue.component('BtnMyAccount', BtnMyAccount)
 Vue.component('PanelAside', PanelAside)
 Vue.component('PanelDashboard', PanelDashboard)
+Vue.component('PanelDonatedBooks', PanelDonatedBooks)
 Vue.component('PanelProfile', PanelProfile)
+Vue.component('PanelRegisterBook', PanelRegisterBook)
 Vue.component('CreateAccount', CreateAccount)
 Vue.component('Login', Login)
 Vue.component('FilterBooks', FilterBooks)

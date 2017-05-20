@@ -1,5 +1,5 @@
 
-<template lang="jade">
+<template lang="pug">
 
     main.content
 
@@ -20,19 +20,17 @@
                 p.error( v-if="existEmail" ) Esse e-mail já está cadastrado.
 
             label.field-box.-cep
-                span.name CEP: <i>(Apenas números)</i>
-                input.field( type = 'text' name = 'cep' v-model = "cep" )
+                span.name CEP: * <i>(Apenas números)</i>
+                input.field( v-validate="'required'" v-bind:class="{'-invalid': errors.has('cep')}" type = 'text'  name = 'cep' v-model = "cep" )
                 a( href = 'http://www.buscacep.correios.com.br/' target = '_blank' ) Não sei meu cep
+                p.error( v-if="errors.has('cep')" ) Digite um CEP válido.
 
-            .field-box.-picture.-circle
-                span.name Foto de Perfil: <strong>(Tamanho Máx. 2MB e Extensão .png ou .jpg)</strong>
-                .photo
-                    svg: use( xlink:href = 'img/svg.svg#icon-profile-photo' )
-                    input( type = 'file' v-on:change="setFileReader" )
-                    img( v-bind:src="avatarSrc" v-if="avatarSrc" )
-                    input( type = "hidden" name = "avatar" v-bind:value="avatarFileReader" v-if="avatarFileReader" )
-                
-                p.error( v-if="onlyImage" ) Insira uma imagem válida.
+            preview-image( 
+                :icon = "previewImage.icon",
+                :title = "previewImage.title",
+                :circle = "previewImage.circle",
+                :src = "previewImage.src"
+            )
                 
             label.field-box
                 span.name Nova Senha: <i>(Mínimo 6 caracteres)</i>
@@ -52,7 +50,13 @@
 <script>
 
     import auth from '../auth'
+    import PreviewImage from './reusable/PreviewImage.vue'
+    
     export default {
+
+        components: {
+            'preview-image': PreviewImage
+        },
 
         beforeCreate() {
             auth.checkAuth();
@@ -64,13 +68,16 @@
             return {
                 btnText: 'Editar Cadastro',
                 btnActive: false,
-                onlyImage: false,
                 existEmail: false,
                 name: null,
                 email: null,
-                avatarSrc: null,
-                avatarFileReader: null,
                 cep: null,
+                previewImage: {
+                    icon: "img/svg.svg#icon-profile-photo",
+                    title: "Foto de Perfil: <strong>(Tamanho Máx. 5MB e Extensão .png ou .jpg)</strong>",
+                    circle: true,
+                    src: false
+                }
                 
             }
         },
@@ -78,7 +85,7 @@
         created() {
 
             let user_id = localStorage.getItem('id_token');
-            this.$http.get('http://localhost/api/user/'+user_id, 
+            this.$http.get( window.APIUrl + '/user/' + user_id, 
                 {
                     headers: auth.getAuthHeader()
                 
@@ -99,8 +106,9 @@
                 var objs = data.json()
                 
                 objs.then(obj => {
-                    if( obj.user.avatar ) {
-                        this.avatarSrc = '/livro-sem-apego/public/img/avatar/' + obj.user.avatar;
+
+                    if( obj.user.image ) {
+                        this.previewImage.src = '/livro-sem-apego/public/img/avatar/' + obj.user.image;
                     }
 
                     this.name = obj.user.name;
@@ -145,8 +153,11 @@
                 let frm = document.querySelector("[data-form=profileUser]");
                 let data = new FormData(frm);
 
+                var file = document.querySelector('.photo [type=file]').files[0]
+                if ( file ) data.append( 'image', file);
+
                 var user_id = localStorage.getItem('id_token');
-                var url = 'http://localhost/api/user/edit/'+user_id;
+                var url = window.APIUrl + '/user/edit/' + user_id;
                 
                 var request = this.$http.post(url, data, {headers: auth.getAuthHeader()});
                 
@@ -178,28 +189,6 @@
                 }, 3000);
             },
 
-            setFileReader(e) {
-
-                let files = e.target.files || e.dataTransfer.files;
-                if (!files.length) return;
-
-                var file = files[0];
-
-                if(!/image\/jpeg|png/.test(file.type) || parseInt(file.size/1024/1024) > 2) {
-                    e.target.value = '';
-                    return this.onlyImage = true;
-
-                } else this.onlyImage = false;
-                
-                var reader = new FileReader();
-                reader.onload = (e) => { 
-                    this.avatarSrc = e.target.result
-                    this.avatarFileReader = e.target.result
-                 };
-                reader.readAsDataURL(file);
-
-            },
-
             verifyExistEmail() {
 
                 if( !this.email ) return this.existEmail = false
@@ -207,7 +196,7 @@
                 var obj = new FormData();
                 obj.append( 'email', this.email );
 
-                this.$http.post( 'http://localhost/api/user/email', obj ).then( rs => {
+                this.$http.post( window.APIUrl + '/user/email', obj ).then( rs => {
 
                     rs.json().then( rs => {
                         if (rs.existEmail) this.existEmail = true;

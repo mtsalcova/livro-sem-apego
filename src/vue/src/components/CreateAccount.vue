@@ -1,5 +1,5 @@
 
-<template lang="jade">
+<template lang="pug">
 
     form.form-styl( method = 'post' data-form="createAccount" enctype="multipart/form-data" @submit.prevent="validateForm" )
 
@@ -20,19 +20,17 @@
             p.error( v-if="errors.has('password')" ) Digite uma senha válida.
 
         label.field-box.-cep
-            span.name CEP: <i>(Apenas números)</i>
-            input.field( type = 'text' name = 'cep' v-model = "cep" )
+            span.name CEP: * <i>(Apenas números)</i>
+            input.field( v-validate="'required'" v-bind:class="{'-invalid': errors.has('cep')}" type = 'text'  name = 'cep' v-model = "cep" )
             a( href = 'http://www.buscacep.correios.com.br/' target = '_blank' ) Não sei meu cep
+            p.error( v-if="errors.has('cep')" ) Digite um CEP válido.
 
-        .field-box.-picture.-circle
-            span.name Foto de Perfil: <strong>(Tamanho Máx. 2MB e Extensão .png ou .jpg)</strong>
-            .photo
-                svg: use( xlink:href = 'img/svg.svg#icon-profile-photo' )
-                input( type = 'file' v-on:change="setFileReader" )
-                img( v-bind:src="avatarSrc" v-if="avatarSrc" )
-                input( type = "hidden" name = "avatar" v-bind:value="avatarSrc" v-if="avatarSrc" )
-            
-            p.error( v-if="onlyImage" ) Insira uma imagem válida.
+        preview-image( 
+            :icon = "previewImage.icon",
+            :title = "previewImage.title",
+            :circle = "previewImage.circle",
+            :src = "previewImage.src"
+        )
 
         button( class="btn-main -full" v-bind:class="{ '-sending': btnActive }" type="submit" ) {{ btnText }}
 
@@ -41,92 +39,85 @@
 
 <script>
 
-import auth from '../auth'
+    import auth from '../auth'
+    import PreviewImage from './reusable/PreviewImage.vue'
 
-export default {
+    export default {
 
-    data() {
-        return {
-            btnText: 'Criar Conta',
-            btnActive: false,
-            avatarSrc: false,
-            onlyImage: false,
-            existEmail: false
-        }
-    },
-
-    methods: {
-
-        setFileReader(e) {
-
-            let files = e.target.files || e.dataTransfer.files;
-            if (!files.length) return;
-
-            var file = files[0];
-
-            if(!/image\/jpeg|png/.test(file.type) || parseInt(file.size/1024/1024) > 2) {
-                e.target.value = '';
-                return this.onlyImage = true;
-
-            } else this.onlyImage = false;
-            
-            var reader = new FileReader();
-            reader.onload = (e) => {
-                this.avatarSrc = e.target.result;
-            };
-            reader.readAsDataURL(file);
-
+        components: {
+            'preview-image': PreviewImage
         },
 
-        validateForm() {  
+        data() {
+            return {
+                btnText: 'Criar Conta',
+                btnActive: false,
+                existEmail: false,
+                previewImage: {
+                    icon: "img/svg.svg#icon-profile-photo",
+                    title: "Foto de Perfil: <strong>(Tamanho Máx. 5MB e Extensão .png ou .jpg)</strong>",
+                    circle: true,
+                    src: false
+                }
 
-            if( this.existEmail ) return false;
+            }
+        },
 
-            this.$validator.validateAll().then(() => {
+        methods: {
+
+            validateForm() {  
+
+                if( this.existEmail ) return false;
+
+                this.$validator.validateAll().then(() => {
+                    
+                    this.btnText = 'Criando...';
+                    this.btnActive = true;
+
+                    let frm = document.querySelector("[data-form=createAccount]");
+                    let data = new FormData(frm);
+
+                    var file = document.querySelector('.photo [type=file]').files[0]
+                    if ( file ) data.append('image', file);
+                    
+                    auth.signup(this, data);
+
+
+                }).catch(() => {});
                 
-                this.btnText = 'Criando...';
-                this.btnActive = true;
 
-                let frm = document.querySelector("[data-form=createAccount]");
-                let data = new FormData(frm);
-                
-                auth.signup(this, data);
+            },
 
+            setError() {
+                this.btnText = 'Ocorreu um erro inesperado :('
 
-            }).catch(() => {});
-            
+                setTimeout(() => {
+                    this.btnActive = false
+                    this.btnText = 'Criar Conta'
+                }, 2000)
+            },
 
-        },
+            verifyExistEmail() {
 
-        setError() {
-            this.btnText = 'Ocorreu um erro inesperado :('
+                if( !this.email ) return this.existEmail = false
 
-            setTimeout(() => {
-                this.btnActive = false
-                this.btnText = 'Criar Conta'
-            }, 2000)
-        },
+                var obj = new FormData();
+                obj.append( 'email', this.email );
 
-        verifyExistEmail() {
+                this.$http.post( window.APIUrl + '/user/email', obj ).then( rs => {
 
-            if( !this.email ) return this.existEmail = false
+                    rs.json().then( rs => {
+                        if (rs.existEmail) this.existEmail = true;
+                        else this.existEmail = false;
+                    }, error => {this.existEmail = false});
 
-            var obj = new FormData();
-            obj.append( 'email', this.email );
+                }, error => {});
 
-            this.$http.post( 'http://localhost/api/user/email', obj ).then( rs => {
-
-                rs.json().then( rs => {
-                    if (rs.existEmail) this.existEmail = true;
-                    else this.existEmail = false;
-                }, error => {this.existEmail = false});
-
-            }, error => {});
+            }
 
         }
-
+    
     }
-}
 
 </script>
 

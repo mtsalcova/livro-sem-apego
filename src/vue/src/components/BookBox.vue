@@ -1,6 +1,6 @@
 
 
-<template lang="jade">
+<template lang="pug">
     .book-box
         a.link( href = 'books-internal.html' )
         i.location SP

@@ -1,10 +1,5 @@
 
 
-// URL and endpoint constants
-const API_URL = 'http://localhost/api';
-const LOGIN_URL = API_URL + '/auth';
-const SIGNUP_URL = API_URL + '/user/register';
-
 
 export default {
 
@@ -14,7 +9,7 @@ export default {
 
     login(context, creds) {
 
-        context.$http.post(LOGIN_URL, creds).then(rs => {
+        context.$http.post(window.APIUrl + '/auth', creds).then(rs => {
             
             rs.json().then( data => {
                 localStorage.setItem('access_token', data.access_token);
@@ -31,7 +26,7 @@ export default {
 
     signup(context, creds) {
 
-        context.$http.post(SIGNUP_URL, creds).then(rs => {
+        context.$http.post(window.APIUrl + '/user/register', creds).then(rs => {
             
             rs.json().then( data => {
                 

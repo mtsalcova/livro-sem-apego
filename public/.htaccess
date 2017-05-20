@@ -9,6 +9,9 @@ RewriteRule ^livros/?$ books.html
 RewriteRule ^livros/([^/]+)/?$ books-internal.html
 RewriteRule ^login/?$ login.html
 RewriteRule ^painel/?$ user-dashboard.html
-RewriteRule ^painel/perfil?$ user-profile.html
+RewriteRule ^painel/perfil/?$ user-profile.html
+RewriteRule ^painel/livros/?$ user-donated-books.html
+RewriteRule ^painel/livros/doar-livros?$ user-register-book.html
+
 
 AddType image/svg+xml svg svgz

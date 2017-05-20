@@ -1,5 +1,5 @@
 
-<template lang="jade">
+<template lang="pug">
 
     aside.sidebar
 
@@ -8,7 +8,7 @@
         nav.sidebar-nav
             a.baritem( href = 'painel' ) Início
             a.baritem( href = 'painel/perfil' ) Editar Cadastro
-            a.baritem( href = 'user-books.html' ) Livros
+            a.baritem( href = 'painel/livros' ) Livros
             a.baritem( @click = "logoutUser" ) Sair
 
 </template>

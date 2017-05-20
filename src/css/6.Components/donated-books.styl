@@ -52,7 +52,11 @@
         display inline-block
 
     > .image
-        background greyish
+        background lightGrey
+        height 180px
+        display flex
+        justify-content center
+        align-items center
         width 35.294% // 120px
 
         @media ( max-width 425px )
@@ -60,9 +64,15 @@
 
         > img
             object-fit cover
-            display block
             height 100%
             width 100%
+
+            &[src="img/books/book.png"]
+                object-fit initial
+                max-height 100%
+                height auto
+                opacity 0.5
+                width 80%
 
     > .infos
         text-align left

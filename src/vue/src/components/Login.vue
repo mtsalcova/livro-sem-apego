@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
 
     form( method="post" data-form="login" class="form-styl" @submit.prevent="sendFormLogin" )
         

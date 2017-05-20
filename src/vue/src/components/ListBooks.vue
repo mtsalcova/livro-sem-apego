@@ -1,6 +1,6 @@
 
 
-<template lang="jade">
+<template lang="pug">
 
     .list-books
 

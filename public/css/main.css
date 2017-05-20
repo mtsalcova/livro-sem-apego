@@ -677,16 +677,34 @@ textarea {
 }
 
 .donated-book > .image {
-  background: #adadad;
+  background: #ececec;
+  height: 180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 35.294%;
 }
 
 .donated-book > .image > img {
   -o-object-fit: cover;
   object-fit: cover;
-  display: block;
   height: 100%;
   width: 100%;
+}
+
+.donated-book > .image > img[src="img/books/book.png"] {
+  -o-object-fit: initial;
+  object-fit: initial;
+  max-height: 100%;
+  height: auto;
+  opacity: 0.5;
+  width: 80%;
 }
 
 .donated-book > .infos {
@@ -1476,6 +1494,7 @@ footer > .copyright {
   justify-content: space-between;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  min-height: 500px;
 }
 
 .user-panel > .sidebar {

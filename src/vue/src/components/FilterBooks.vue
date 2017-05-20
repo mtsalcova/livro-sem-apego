@@ -1,6 +1,6 @@
 
 
-<template lang="jade">
+<template lang="pug">
 
     aside.filter: form.form-styl.-nobrd( method = 'POST' )
     

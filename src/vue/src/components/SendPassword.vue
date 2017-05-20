@@ -1,5 +1,5 @@
 
-<template lang="jade">
+<template lang="pug">
 
     form.form-styl( method = 'post' @submit.prevent="sendPassword" )
 
@@ -45,7 +45,7 @@
 
             sendEmail(obj) {
 
-                this.$http.post('http://localhost/api/user/forget-password', obj).then(rs => {
+                this.$http.post( window.APIUrl + '/user/forget-password', obj).then(rs => {
                     rs.json().then( data => {
                         if( data.error ) this.error(data.error)
                         else this.success();
@@ -59,8 +59,6 @@
                 this.btnText = 'E-mail enviado com sucesso!'
                 this.btnActive = false;
                 this.reset(); 
-                
-                
 
             },
 
