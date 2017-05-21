@@ -6,7 +6,7 @@
         .infos
             h2.name {{ title }}
             h3.author {{ author }}
-            p Contatos Enviados: <strong>{{ contacts }}</strong>
+            p Contatos Recebidos: <strong>{{ contacts }}</strong>
             p Data do Cadastro: <strong>{{ date }}</strong>
 
             .status-book

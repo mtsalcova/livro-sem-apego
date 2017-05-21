@@ -23,7 +23,10 @@
         methods: {
 
             logoutUser() {
-                auth.logout();
+
+                var logout = this.$http.get( window.APIUrl + '/user/logout', {headers: auth.getAuthHeader()});
+                logout.then( () => { auth.logout() });
+
             }
 
         }

@@ -166,7 +166,8 @@
                         if( data.success ) this.sentSuccess()
                         else this.sentError()
                     }, () => { this.sentError() });
-                }, () => { this.sentError() });
+
+                }).catch( (error) => { if( error.status === 401 ) auth.logout() });
 
             },
 
@@ -203,7 +204,7 @@
                         else this.existEmail = false;
                     }, error => {this.existEmail = false});
 
-                }, error => {});
+                }).catch( (error) => { if( error.status === 401 ) auth.logout() });
 
             }
 

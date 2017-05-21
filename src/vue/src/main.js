@@ -9,6 +9,7 @@ import PanelDashboard from './components/PanelDashboard.vue'
 import PanelDonatedBooks from './components/PanelDonatedBooks.vue'
 import PanelProfile from './components/PanelProfile.vue'
 import PanelRegisterBook from './components/PanelRegisterBook.vue'
+import PanelEditBook from './components/PanelEditBook.vue'
 import CreateAccount from './components/CreateAccount.vue'
 import Login from './components/Login.vue'
 import SendPassword from './components/SendPassword.vue'
@@ -31,6 +32,7 @@ Vue.component('PanelDashboard', PanelDashboard)
 Vue.component('PanelDonatedBooks', PanelDonatedBooks)
 Vue.component('PanelProfile', PanelProfile)
 Vue.component('PanelRegisterBook', PanelRegisterBook)
+Vue.component('PanelEditBook', PanelEditBook)
 Vue.component('CreateAccount', CreateAccount)
 Vue.component('Login', Login)
 Vue.component('FilterBooks', FilterBooks)

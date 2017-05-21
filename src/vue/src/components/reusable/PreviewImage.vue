@@ -34,7 +34,6 @@
                 let files = e.target.files || e.dataTransfer.files;
                 if (!files.length) return;
                 var file = files[0];
-
                 
                 if(!/image\/jpeg|png/.test(file.type) || parseInt(file.size/1024/1024) > 5) {
                     e.target.value = '';
@@ -46,7 +45,7 @@
                 var reader = new FileReader();
                 reader.onload = (e) => { 
                     this.imageSrc = e.target.result
-                 }
+                }
                 reader.readAsDataURL(file); 
 
             }
