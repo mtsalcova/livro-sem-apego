@@ -17,13 +17,15 @@ html( lang = 'pt-BR' )
             
         title #{title} #{pipe} Livro sem Apego
 
+        if recaptcha
+            script(src='https://www.google.com/recaptcha/api.js?render=explicit' async defer )
+
     body( data-js=bodyjs )
         
         mixin menu() 
-            a.item( href = 'books.html' ) Livros
-            //- a.item( href = '' ) Desejados
-            a.item( href = 'about.html' ) Sobre
-            a.item( href = 'contact.html' ) Contato 
+            a.item( href = 'livros' ) Livros
+            a.item( href = 'sobre' ) Sobre
+            a.item( href = 'contato' ) Contato 
             
         .container
         

@@ -55,7 +55,7 @@
 
             label.field-box.-small
                 span.name Quantidade: *
-                input.field( v-validate="'required'" v-bind:class="{'-invalid': errors.has('quantity') }" type = 'number' name = 'quantity' )
+                input.field( v-validate="'required'" v-bind:class="{'-invalid': errors.has('quantity') }" type = 'number' name = 'quantity' value = '1' )
                 p.error( v-if="errors.has('quantity')" ) Preencha a quantidde.
 
 

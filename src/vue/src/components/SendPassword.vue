@@ -58,7 +58,10 @@
 
                 this.btnText = 'E-mail enviado com sucesso!'
                 this.btnActive = false;
-                this.reset(); 
+
+                setTimeout(() => {
+                    location.href = 'login'
+                }, 2000);
 
             },
 

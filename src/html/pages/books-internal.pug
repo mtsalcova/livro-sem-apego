@@ -1,88 +1,10 @@
 extends ../main
 
 
+block vars
+    - recaptcha = true
+
+
 block content
 
-    section.title-main.-alone
-        h1.title Nome do Livro
-        h2.subtitle.-line Autor
-
-
-    .about-book
-
-        .gallery-book
-
-            .large
-                img( src = 'img/books/livro-test.jpeg' )
-                svg: use( xlink:href = 'img/svg.svg#icon-no-img' )
-
-            .thumb
-                //- img( src = '' )
-                svg: use( xlink:href = 'img/svg.svg#icon-no-img' )
-
-            .thumb
-                //- img( src = '' )
-                svg: use( xlink:href = 'img/svg.svg#icon-no-img' )
-
-        
-        .infos-book
-            h2.subtitle Descrição
-            p.desc Livro em regular estado de conservação. Capa vincada e com bordas gastas. Páginas amareladas devido ação do tempo. Grifos a marca texto e anotações a lápis grafite.
-            
-            ul
-                li <strong>Genêro:</strong> Infantil
-                li <strong>Editora:</strong> Saraiva
-                li <strong>Idioma:</strong> Português
-                li <strong>Estado do Livro:</strong> Novo
-                li <strong>Ano:</strong> 2010
-                li <strong>Quantidade:</strong> 1
-
-    
-    .send-msg
-        h2.subtitle Gostaria de ganhar esse livro?
-        p.desc Então entre em contato com o doador abaixo, quem sabe dê tempo! ;)
-        p.desc <strong>Contatos enviados para o doador:</strong> 1
-
-        .giver-box
-
-            form.form-styl( method = 'POST' )
-
-                label.field-box
-                    span.name Nome:
-                    input.field( type = 'text' name = 'name' )
-
-                label.field-box
-                    span.name E-mail:
-                    input.field( type = 'text' name = 'email' )
-
-                label.field-box
-                    span.name Mensagem:
-                    textarea.field
-
-                button.btn-main Enviar
-
-            
-            .giver-data
-                
-                .perfil
-                    img.photo( src = 'img/authors/mateus-alcova.jpg' )
-                    h3.name Mateus Alcova
-                    p.city Itu-SP
-
-
-                .data
-
-                    ul
-                        li <strong>Livros Doados:</strong>  10
-                        li <strong>Livros Cadastrados:</strong> 12
-                        li <strong>Usuário desde:</strong> 11/10/2007 
-                    
-                    .social-networks
-                        a.fb(href = '' title = 'Facebook'  target = '_blank' )
-                        a.in(href = '' title = 'Instagram'  target = '_blank' )
-                        a.tw(href = '' title = 'Twitter'  target = '_blank' )
-
-
-
-
-
+    book-internal

@@ -120,10 +120,14 @@
         border-bottom 1px solid lightGrey
         flex-wrap wrap
         padding 15px 0
+        align-items flex-start
         width 100%
 
         @media ( max-width 500px ) 
             justify-content space-around
+
+        @media ( min-width 1061px )
+            min-height 570px
 
 
     
@@ -179,13 +183,22 @@
 
     > .image
         position relative
+        background lightGrey
+        min-height 215px
         overflow hidden
+        display flex
+        align-items center
+        justify-content center
         width 100%
         
         img
             display block
             transition transform 0.3s
             width 100%
+
+            &[src="img/books/book.png"]
+                opacity 0.5
+                width 80%
 
         .subtitle
             background linear-gradient( to bottom, transparent 40%, rgba(0,0,0,0.6) 100%)

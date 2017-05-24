@@ -4,6 +4,7 @@ import Vue from 'vue'
 
 // Components
 import BtnMyAccount from './components/BtnMyAccount.vue'
+import BookInternal from './components/BookInternal.vue'
 import PanelAside from './components/PanelAside.vue'
 import PanelDashboard from './components/PanelDashboard.vue'
 import PanelDonatedBooks from './components/PanelDonatedBooks.vue'
@@ -27,6 +28,7 @@ Vue.use(VeeValidate)
 
 // Global Components
 Vue.component('BtnMyAccount', BtnMyAccount)
+Vue.component('BookInternal', BookInternal)
 Vue.component('PanelAside', PanelAside)
 Vue.component('PanelDashboard', PanelDashboard)
 Vue.component('PanelDonatedBooks', PanelDonatedBooks)

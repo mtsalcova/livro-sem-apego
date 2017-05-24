@@ -53,7 +53,6 @@
 
         created() {
             
-            
             let latest = this.$http.get( window.APIUrl + '/book/donated', {headers: auth.getAuthHeader()});
             latest.then( success => { 
 

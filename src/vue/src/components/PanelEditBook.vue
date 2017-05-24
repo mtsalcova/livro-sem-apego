@@ -123,7 +123,7 @@
             }, error => { if( error.status === 401 ) auth.logout()});
 
             var book_id = this.getIDBook();
-            var book = this.$http.get(window.APIUrl + '/book/load/' + book_id, {headers: auth.getAuthHeader()});
+            var book = this.$http.get(window.APIUrl + '/book/edit/' + book_id, {headers: auth.getAuthHeader()});
 
             book.then( (data) => {
                 data.json().then( (res) => {this.book = res.books})

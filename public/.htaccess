@@ -6,7 +6,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^sobre/?$ about.html
 RewriteRule ^contato/?$ contact.html
 RewriteRule ^livros/?$ books.html
-RewriteRule ^livros/([^/]+)/?$ books-internal.html
+RewriteRule ^livros/([^/]+)/([^/]+)/?$ books-internal.html
 RewriteRule ^login/?$ login.html
 RewriteRule ^painel/?$ user-dashboard.html
 RewriteRule ^painel/perfil/?$ user-profile.html

@@ -36,12 +36,6 @@ textarea {
   resize: none;
 }
 
-.wrap {
-  margin: 0 auto;
-  max-width: 1115px;
-  min-height: 100%;
-}
-
 .about-block {
   position: relative;
   margin: 0 auto;
@@ -172,9 +166,8 @@ textarea {
   border-radius: 8px;
   position: absolute;
   height: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
-  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .gallery-book > .large > svg {
@@ -249,6 +242,11 @@ textarea {
   color: #625673;
 }
 
+.infos-book > .btn-main {
+  margin-top: 20px;
+  display: inline-block;
+}
+
 .send-msg {
   border-top: 2px solid #f5807f;
   padding: 55px 20px;
@@ -305,12 +303,41 @@ textarea {
   flex-wrap: wrap;
 }
 
+.giver-data > .perfil {
+  text-align: center;
+  max-width: 120px;
+}
+
 .giver-data > .perfil > .photo {
+  background: #e4e1df;
   border-radius: 50%;
-  -o-object-fit: cover;
-  object-fit: cover;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 5px;
   height: 70px;
   width: 70px;
+}
+
+.giver-data > .perfil > .photo svg {
+  fill: #cac5bf;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 100%;
+}
+
+.giver-data > .perfil > .photo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  z-index: 2;
 }
 
 .giver-data > .perfil > .city,.giver-data > .perfil > .name {
@@ -330,8 +357,21 @@ textarea {
   font: 16px 'Museo';
 }
 
+.giver-data > .data ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 240px;
+  height: 100%;
+}
+
 .giver-data > .data li {
-  margin-top: 10px;
+  display: block;
+  margin: 5px 0;
 }
 
 .giver-data > .data strong {
@@ -427,6 +467,9 @@ textarea {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 15px 0;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   width: 100%;
 }
 
@@ -480,7 +523,18 @@ textarea {
 
 .book-box > .image {
   position: relative;
+  background: #ececec;
+  min-height: 215px;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 100%;
 }
 
@@ -490,6 +544,11 @@ textarea {
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
   width: 100%;
+}
+
+.book-box > .image img[src="img/books/book.png"] {
+  opacity: 0.5;
+  width: 80%;
 }
 
 .book-box > .image .subtitle {
@@ -1565,6 +1624,16 @@ footer > .copyright {
   max-width: 100%;
 }
 
+.wrap {
+  margin: 0 auto;
+  max-width: 1115px;
+  min-height: 100%;
+}
+
+.g-recaptcha {
+  width: 100%;
+}
+
 @font-face {
   font-family:'Museo';font-weight:300;src:url("fonts/museo-300.woff") format('woff');font-style:normal;
 }
@@ -1579,7 +1648,7 @@ footer > .copyright {
 
 @media (min-width: 410px) {
   body {
-    padding-bottom: 218px;
+    padding-bottom: 212px;
   }
 
   footer {
@@ -1657,6 +1726,12 @@ footer > .copyright {
 @media (min-width: 851px) {
   .infos-book {
     width: 51.1627%;
+  }
+}
+
+@media (min-width: 1061px) {
+  .list-books > .gridbooks {
+    min-height: 570px;
   }
 }
 

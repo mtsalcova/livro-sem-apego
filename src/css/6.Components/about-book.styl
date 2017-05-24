@@ -40,8 +40,8 @@
             border-radius 8px
             position absolute
             height 100%
-            object-fit contain
-            width 100%
+            top 0
+            left 0
             
         > svg
             height 120px
@@ -121,6 +121,11 @@
         strong
             color purplishGrey
 
+
+    > .btn-main
+        margin-top 20px
+        display inline-block
+
     
 
 //
@@ -174,12 +179,36 @@
         width 100%
 
     > .perfil
+        text-align center
+        max-width 120px
 
         > .photo
+            background #e4e1df
             border-radius 50%
-            object-fit cover
+            display inline-block
+            overflow hidden
+            position relative
+            margin-bottom 5px
             height 70px
             width 70px
+
+            svg
+                fill #cac5bf
+                position absolute
+                left 50%
+                top 50%
+                transform translate(-50%, -50%)
+                height 100%
+            
+            img
+                position absolute
+                top 0
+                left 0
+                height 100%
+                width 100%
+                object-fit cover
+                z-index 2
+
         
         > .city
         > .name
@@ -197,8 +226,16 @@
         text-align left
         font 16px 'Museo'
 
+        ul
+            display flex
+            align-content center
+            flex-wrap wrap
+            max-width 240px 
+            height 100%
+
         li
-            margin-top 10px
+            display block
+            margin 5px 0
             
         strong
             color purplishGrey
