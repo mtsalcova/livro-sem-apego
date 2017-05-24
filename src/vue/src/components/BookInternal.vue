@@ -144,7 +144,7 @@
                 setTimeout( () => {
                     if( typeof grecaptcha === 'undefined' ) return self.initReCaptcha();
                     grecaptcha.render('recaptcha', {
-                        sitekey: '6LfPqyIUAAAAAHSB_jfzZq_0fifUM_rbuvOTkS5Q',
+                        sitekey: '6Le1uyIUAAAAAEHKPHJtkx2HW6hJusMHIUq5ICF6',
                         badge: 'inline',
                         callback: self.setTokenReCaptcha
                     });
@@ -153,7 +153,7 @@
             },
 
             setTokenReCaptcha(e) {
-                this.tokenReCaptcha = true
+                this.tokenReCaptcha = e
             },
 
 
@@ -164,8 +164,8 @@
                     if( !this.tokenReCaptcha ) return alert('Por favor, clique no reCAPTCHA.')
                     else this.recaptchaError = false;
 
-                    this.btnText = 'Editando...';
-                    // this.btnActive = true;
+                    this.btnText = 'Enviando...';
+                    this.btnActive = true;
 
                     let frm = document.querySelector("[data-form=msgBook]");
                     
@@ -179,9 +179,15 @@
                     
                     request.then( (result) => {
                         let obj = result.json()
-                        obj.then( (data) => {this.sentSuccess(data)});
-                        obj.catch( (error) => {this.sentError(error)} );
-                    }).catch((error) => {this.sentError(error)});
+                        obj.then( (data) => {
+                            if( data.success ) {
+                                this.sentSuccess(data.success);
+                                frm.reset();
+                            } else this.sentError( data.error );
+                        });
+
+                        obj.catch( () => {this.sentError()} );
+                    }).catch(() => {this.sentError()});
 
                 }).catch(() => {});
 
@@ -189,13 +195,31 @@
 
 
             sentSuccess(data) {
-                console.log(data)
+                this.btnText = data
+                grecaptcha.reset();
+                this.btnReset();
             },
 
 
-            sentError(data) {
-                console.log(data)
+            sentError(error = false) {
+                var txt = false;
+                if( error ) txt = error
+                else txt = 'Ocorreu um erro inesperado'
+
+                this.btnText = txt
+                this.btnReset();
+
+            },
+
+            btnReset() {
+
+                setTimeout( () => {
+                    this.btnText = 'Enviar'
+                    this.btnActive = false;
+                }, 2000)
+
             }
+
 
 
 
