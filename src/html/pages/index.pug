@@ -7,9 +7,9 @@ block content
         h1.title Tá a fim de ganhar um livro?
         p.desc Faça uma pesquisa e descubra se o livro que você deseja <br>está disponível para doação ainda hoje (:
         
-        form.search-form.-header( method = 'POST' )
+        form.search-form.-header( method = 'GET' action = 'livros' )
             label.icon( for = 'search' ): svg: use( xlink:href="img/svg.svg#icon-search" )
-            input.field( type = 'text' name = 'search' id = 'search' placeholder = 'Faça aqui sua pesquisa' )
+            input.field( type = 'text' name = 'q' id = 'search' placeholder = 'Escreva o título do livro' )
             button.btn-main.-inside( data-text = 'pesquisar' )
 
         

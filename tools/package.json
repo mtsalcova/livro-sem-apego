@@ -18,6 +18,7 @@
     "gulp-svgmin": "^1.2.3",
     "gulp-svgstore": "^6.1.0",
     "gulp-uglify": "^2.1.2",
+    "gulp-webserver": "^0.9.1",
     "pump": "^1.0.2"
   }
 }

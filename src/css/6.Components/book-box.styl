@@ -1,0 +1,109 @@
+
+
+
+    
+.book-box
+    cursor pointer
+    position relative
+    transition all 0.3s ease
+    transform translateY(0)
+    width 120px
+
+    @media ( min-width 501px )
+        margin 20px
+
+    @media ( max-width 500px )
+        margin 20px 5px
+
+    &:hover
+
+        .name, .author
+            text-decoration underline
+
+        img
+            transform scale(1.1)
+
+        > .image > .subtitle
+            opacity 1
+        
+            strong
+                opacity 1
+                transform translate(-50%, 0)
+    
+    
+    > .link
+        position absolute
+        top 0
+        left 0
+        height 100%
+        width 100%
+        z-index 4
+
+
+    > .location
+        background blush
+        border-radius 50%
+        position absolute
+        right 5px
+        color #fff
+        top 5px
+        font 300 11px 'Museo'
+        text-align center
+        padding 5px 
+        box-shadow 0 0 3px rgba(0,0,0,0.5)
+        z-index 3
+
+
+    > .image
+        position relative
+        background lightGrey
+        // min-height 215px
+        height 185px
+        overflow hidden
+        display flex
+        align-items center
+        justify-content center
+        width 100%
+        
+        img
+            display block
+            transition transform 0.3s
+            height 100%
+
+            &[src="img/books/book.png"]
+                opacity 0.5
+                height auto
+                width 80%
+
+        .subtitle
+            background linear-gradient( to bottom, transparent 40%, rgba(0,0,0,0.6) 100%)
+            position absolute
+            top 0
+            left 0
+            opacity 0
+            transition all 0.3s
+            height 100%
+            width 100%
+            z-index 2
+
+            strong
+                color #fff
+                font 300 12px 'Museo'
+                position absolute
+                bottom 15px
+                left 50%
+                opacity 0
+                transition all 0.3s
+                transform translate(-50%, 10px)
+
+    > .name
+        color purplishGrey
+        font-size 16px
+        margin-top 10px
+        width 100%
+
+    > .author
+        color greyish
+        font 300 14px 'Museo'
+        margin-top 5px
+        display block

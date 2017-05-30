@@ -34,7 +34,7 @@
 
             label.field-box.-small
                 span.name Editora: *
-                input( v-model = "book.author" type="text" name = 'publisher' v-validate="'required'" v-bind:class="{'-invalid': errors.has('publisher') }" class="field" )
+                input( v-model = "book.publisher" type="text" name = 'publisher' v-validate="'required'" v-bind:class="{'-invalid': errors.has('publisher') }" class="field" )
                 p.error( v-if="errors.has('publisher')" ) Preencha a Editora.
 
             label.field-box.-small
@@ -63,7 +63,6 @@
                 span.name Quantidade: *
                 input.field( v-model = "book.quantity" v-validate="'required'" v-bind:class="{'-invalid': errors.has('quantity') }" type = 'number' name = 'quantity' )
                 p.error( v-if="errors.has('quantity')" ) Preencha a quantidde.
-
 
             preview-image( v-for = "preview in previewImage"
                 :icon = "preview.icon",
