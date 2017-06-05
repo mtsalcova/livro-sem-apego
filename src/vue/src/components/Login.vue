@@ -14,7 +14,7 @@
 
         button( class="btn-main -full" v-bind:class="{ '-sending': btnActive}" type="submit" ) {{ btnText }}
         
-        a( href="forget-password.html" class="forgetpass" ) Esqueceu sua senha?
+        a( href="redefinir-senha" class="forgetpass" ) Esqueceu sua senha?
 
 </template>
 

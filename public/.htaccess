@@ -13,5 +13,9 @@ RewriteRule ^painel/perfil/?$ user-profile.html
 RewriteRule ^painel/livros/?$ user-donated-books.html
 RewriteRule ^painel/livros/doar-livros/?$ user-register-book.html
 RewriteRule ^painel/livros/doar-livros/([^\/]+)/?$ user-edit-book.html
+RewriteRule ^criar-conta/?$ create-account.html
+RewriteRule ^redefinir-senha/?$ forget-password.html
+
+
 
 AddType image/svg+xml svg svgz
