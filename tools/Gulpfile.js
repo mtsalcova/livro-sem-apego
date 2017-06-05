@@ -28,11 +28,19 @@ gulp.task('stylus', function() {
 
 gulp.task('combineMq', ['stylus'], function () {
     return gulp.src('../public/css/main.css')
-    .pipe(combineMq({
-        beautify: true
-    }))
-    .on('error', setError)
-    .pipe(gulp.dest('../public/css/'));
+        .pipe(combineMq({
+            beautify: true
+        }))
+        .on('error', setError)
+        .pipe(gulp.dest('../public/css/'));
+});
+
+
+var cssmin = require('gulp-cssmin');
+gulp.task('compresscss', function () {
+    gulp.src('../public/css/main.css')
+        .pipe(cssmin())
+        .pipe(gulp.dest('../public/css/'));
 });
 
 
@@ -123,7 +131,7 @@ gulp.task('default', function() {
     gulp.watch(['../src/js/*.js', '../src/js/**/*.js'], ['compress']);
 });
 
-
+gulp.task('build', ['compresscss']);
 gulp.task('svg', ['svgstore']);
 
 

@@ -5,11 +5,10 @@ html( lang = 'pt-BR' )
 
     head
         meta( charset = 'UTF-8' )
-        base( href = '/livro-sem-apego/public/' )
+        base( href = '/' )
         meta( name = 'viewport' content = 'width=device-width, initial-scale=1' )
         meta( name = "theme-color" content = "#625673" )
         link( rel = "stylesheet" href = "css/main.css" )
-        link( rel = "stylesheet" href = "css/build.css" )
         link( rel = 'icon' href = 'img/favicon.ico' )
         
         if title
@@ -19,6 +18,17 @@ html( lang = 'pt-BR' )
 
         if recaptcha
             script(src='https://www.google.com/recaptcha/api.js?render=explicit' async defer )
+
+
+        script.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-100491623-1', 'auto');
+            ga('send', 'pageview');
+
 
     body( data-js=bodyjs )
         

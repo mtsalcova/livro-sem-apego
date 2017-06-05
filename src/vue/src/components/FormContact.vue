@@ -59,14 +59,43 @@
                     var frm = document.querySelector('[data-form=sendContact]');
                     var data = new FormData(frm)
 
-                    // var request = this.$http.post( window.APIUrl + '/contact', obj);
+                    var request = this.$http.post( window.APIUrl + '/contact', data);
+                    request.then( (obj) => {
+                        obj.json().then( (rs) => {
+                            
+                            if(rs.sent) this.setSuccess(frm );
+                            else this.setError();
 
-                    // request
+                        }).catch( () => {this.setError()});
+                    }).catch( () => {this.setError()});
+
 
                     
                 }).catch(() => {});
 
+            },
+
+            setError() {
+                this.btnText = 'Ocorreu um erro ao enviar! :/';
+                this.resetFrm();
+            },
+
+            setSuccess(frm) {
+                this.btnText = 'Contato enviado com sucesso, obrigado! :)'
+                frm.reset();
+                this.resetFrm();
+            },
+
+            resetFrm() {
+
+                var self = this;
+                setTimeout(() => {
+                    self.btnActive = false;
+                    self.btnText = 'Enviar'
+                }, 3000);
+
             }
+
 
         }
 

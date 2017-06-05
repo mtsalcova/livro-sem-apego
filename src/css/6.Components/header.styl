@@ -67,7 +67,7 @@
             width 49px
 
         @media ( max-width 849px )
-            height 35px
+            height 55px
             width 33px
             
 
@@ -104,5 +104,94 @@
                 bottom -8px
 
 
-            
+
+
+.menu-mobile     
+    overflow hidden       
+    
+    @media (min-width 850px)
+        display none
+
+    @media (max-width 849px)
+        background rgba(0,0,0,0.3)
+        position fixed
+        height 100%
+        right 0
+        top 0
+        text-align right
+        visibility hidden
+        transition all 0.3s ease
+        opacity 0
+        width 100%
+        z-index 10
+
+        &.-active
+            visibility visible
+            opacity 1
+
+           
+
+        > .items
+            transform translateX(20%)
+            opacity 0
+            background purplishGrey
+            height 100%
+            display inline-block
+            transition all 0.3s ease-in-out
+
+            @media ( min-width 401px )
+                width 250px
+
+            @media ( max-width 400px )
+                width 80%
+
+            &.-active
+                transform translateX(0)
+                opacity 1
+                
+
+
+        .icon   
+            background none
+            fill #fff
+            float right
+            cursor pointer
+            height 55px
+            text-align center
+            position relative
+            display flex
+            align-items center
+            justify-content center
+            width 75px
+
+            svg
+                pointer-events none
+                display inline-block
+                height 50%
+                width 50%
+
+
+        nav
+            float left
+            text-align left
+            padding 10px 0
+            width 100%
+
+            a
+                color #fff
+                display block
+                font 700 21px 'Museo'
+                padding 20px 25px
+                position relative
+
+                &:after
+                    background-color blush
+                    border-radius 30px
+                    content ''
+                    position absolute
+                    bottom -4px
+                    left 25px
+                    height 4px
+                    width 42px
+
 
