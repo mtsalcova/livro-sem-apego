@@ -3,5 +3,6 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^livrosemapego.com.br$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^www.livrosemapego.com.br$
 RewriteCond %{REQUEST_URI} !public/
-RewriteRule ^api/v1$ /public/api [L]
+RewriteCond %{REQUEST_URI} !public/api/v1
+RewriteRule ^api/v1$ /public/api/v1 [L]
 RewriteRule (.*) /public/$1 [L]
