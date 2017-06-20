@@ -2,5 +2,6 @@ tools/node_modules
 src/vue/node_modules
 src/vue/npm-debug.log
 api
+public/api
 public/img/avatar
 public/img/books
