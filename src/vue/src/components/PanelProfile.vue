@@ -108,7 +108,7 @@
                 objs.then(obj => {
 
                     if( obj.user.image ) {
-                        this.previewImage.src = '/livro-sem-apego/public/img/avatar/' + obj.user.image;
+                        this.previewImage.src = 'img/avatar/' + obj.user.image;
                     }
 
                     this.name = obj.user.name;
