@@ -1,7 +1,5 @@
 RewriteEngine On
 
-RewriteRule ^api/v1/?$ api [L]
-
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
