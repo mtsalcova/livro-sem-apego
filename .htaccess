@@ -1,5 +1,7 @@
 RewriteEngine On
 
+RewriteBase /public
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
@@ -15,7 +17,6 @@ RewriteRule ^painel/livros/doar-livros/?$ user-register-book.html
 RewriteRule ^painel/livros/doar-livros/([^\/]+)/?$ user-edit-book.html
 RewriteRule ^criar-conta/?$ create-account.html
 RewriteRule ^redefinir-senha/?$ forget-password.html
-
 
 
 AddType image/svg+xml svg svgz
