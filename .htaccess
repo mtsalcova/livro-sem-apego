@@ -1,4 +1,5 @@
 RewriteEngine on
+
 RewriteCond %{HTTP_HOST} ^livrosemapego.com.br$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^www.livrosemapego.com.br$
 RewriteCond %{REQUEST_URI} !public/
