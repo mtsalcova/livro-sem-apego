@@ -1,6 +1,6 @@
 RewriteEngine on
 
-RewriteRule ^/api/v1/?$ /api [L]
+RewriteRule ^api/v1/?$ /api [L]
 
 RewriteCond %{HTTP_HOST} ^livrosemapego.com.br$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^www.livrosemapego.com.br$
