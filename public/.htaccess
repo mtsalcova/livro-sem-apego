@@ -3,7 +3,6 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule ^api/?$ api
 RewriteRule ^sobre/?$ about.html
 RewriteRule ^contato/?$ contact.html
 RewriteRule ^livros/?$ books.html
