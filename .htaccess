@@ -1,9 +1,0 @@
-RewriteEngine on
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-
-RewriteCond %{HTTP_HOST} ^livrosemapego.com.br$ [NC,OR]
-RewriteCond %{HTTP_HOST} ^www.livrosemapego.com.br$
-RewriteCond %{REQUEST_URI} !public/
-RewriteRule (.*) /public/$1 [L]
