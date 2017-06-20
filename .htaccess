@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteBase /public/
+DirectoryIndex public/index.html
