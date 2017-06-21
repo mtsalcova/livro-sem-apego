@@ -83,7 +83,7 @@ textarea {
 }
 
 .about-block > .btn-main {
-  margin-top: 80px;
+  margin-top: 40px;
   display: inline-block;
 }
 
@@ -2151,10 +2151,6 @@ footer > .copyright {
 }
 
 @media (max-width: 644px) {
-  .about-block > .btn-main {
-    margin-top: 30px;
-  }
-
   .author-boxes {
     margin-top: 50px;
   }
