@@ -50,7 +50,7 @@ npm run build
 
 
 ## Licença
-[MIT Licence](LICENCE) © [Livro sem Apego](http://livrosemapego.com.br)
+[MIT Licence](https://github.com/mtsalcova/livro-sem-apego/blob/master/LICENSE) © [Livro sem Apego](http://livrosemapego.com.br)
 
 
 
