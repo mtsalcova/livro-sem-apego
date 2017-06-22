@@ -44,7 +44,7 @@
 
         data() {
             return {
-                nameuser: false,
+                nameuser: '',
                 books: []
             }
 

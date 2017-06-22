@@ -21,7 +21,7 @@
 
             label.field-box.-cep
                 span.name CEP: * <i>(Apenas números)</i>
-                input.field( v-validate="'required'" v-bind:class="{'-invalid': errors.has('cep')}" type = 'text'  name = 'cep' v-model = "cep" )
+                input.field( v-validate="'required'" maxlength="8" v-bind:class="{'-invalid': errors.has('cep')}" type = 'text'  name = 'cep' v-model = "cep" )
                 a( href = 'http://www.buscacep.correios.com.br/' target = '_blank' ) Não sei meu cep
                 p.error( v-if="errors.has('cep')" ) Digite um CEP válido.
 
