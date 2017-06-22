@@ -4,66 +4,57 @@ block content
 
     // Search 
     main.title-main.-home
-        h1.title Tá a fim de ganhar um livro?
-        p.desc Faça uma pesquisa e descubra se o livro que você deseja <br>está disponível para doação ainda hoje (:
-        
-        form.search-form.-header( method = 'GET' action = 'livros' )
-            label.icon( for = 'search' ): svg: use( xlink:href="img/svg.svg#icon-search" )
-            input.field( type = 'text' name = 'q' id = 'search' placeholder = 'Escreva o título do livro' )
-            button.btn-main.-inside( data-text = 'pesquisar' )
-
-        
-    // About Project
-    section.about-block
-        h2.subtitle Sobre o projeto
-        p.desc 
-            | Livro sem Apego é um site de doação de livros, sem fins lucrativos.
-            | A ideia do projeto surgiu através de uma necessidade de ajudar alguém que esteja 
-            | precisando de um livro, mas não tem condições de comprá-lo ou simplesmente gostaria de ganhá-lo.
-
-        //- h3 Criadores
-        //- .author-boxes
-        //-     .author-box
-        //-         .photo: img( src = 'img/authors/gustavo-feijo.jpg' alt = 'Gustavo Feijó'  )
-        //-         h4.name Gustavo F. Lima
-        //-     .author-box
-        //-         .photo: img( src = 'img/authors/mateus-alcova.jpg' alt = 'Mateus Alcova'  )
-        //-         h4.name Mateus Alcova
-
-        a.btn-main( href = 'sobre' ) Saiba mais
-
+        h1.title Tá a fim de doar um livro?
+        p.desc Aqui no Livro Sem Apego você cadastra os livros <br>que não precisa mais e passa conhecimento adiante!
+        a.btn-main( href = 'painel' ) Doe agora :)
 
     
     // How it Works
     section.how-works
+        h2.subtitle Entenda como funciona
+        p.desc É muito simples e fácil:
 
-        h2.subtitle Ta a fim de doar um livro?
-        p.desc É muito simples e fácil, veja como funciona:
-        
         .process-steps
 
             .step-box
                 .icon: img( src = 'img/icone-tela-cadastro.png' )
                 h3.name 1
-                p.desc Escolha o livro que deseja doar e faça seu cadastro
+                p.desc Faça seu cadastro <br>no nosso site
             
             .step-box
                 .icon: img( src = 'img/icone-tela-painel.png' )
                 h3.name 2
-                p.desc No seu painel, cadastre todas as informações sobre o livro
+                p.desc No seu painel, cadastre todos os livros que deseja doar
             
             .step-box
                 .icon: img( src = 'img/icone-tela-livros.png' )
                 h3.name 3
-                p.desc Seu livro será publicado e ficará disponível para doação
+                p.desc Seus livros serão publicados e ficarão disponíveis para doação
             
             .step-box
                 .icon: img( src = 'img/icone-livro-sem-apego.png' )
                 h3.name 4
-                p.desc Prontinho! Agora é só esperar alguém entrar em contato
+                p.desc Pronto! Agora é só esperar algum interessado entrar em contato
 
-        a.btn-main( href = 'login' ) Doe um livro
+        a.btn-main( href = 'painel' ) Doe um livro
 
+    section.need-books
+
+        h2.title Tá precisando de um livro?
+        p.desc Veja a lista completa de livros disponíveis para doação
+        a.btn-main( href = 'livros' ) Ver Livros
+        
+
+    // About Project
+    section.about-block.-home
+        h2.subtitle Sobre o Projeto
+        p.desc 
+            | Livro sem Apego é um site de doação de livros, sem fins lucrativos.
+            | A ideia do projeto surgiu através de uma necessidade de ajudar alguém que esteja 
+            | precisando de um livro, mas não tem condições de comprá-lo ou simplesmente gostaria de ganhá-lo.
+
+        a.btn-main( href = 'sobre' ) Saiba Mais
+
+       
+        
     
-    // Newsletter
-    include ../includes/newsletter

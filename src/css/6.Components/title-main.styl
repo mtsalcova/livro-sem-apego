@@ -35,6 +35,7 @@
     > .search-form
     > .subtitle
         position relative
+        z-index 3
 
     > .title
         color #fff
@@ -73,14 +74,24 @@
             br 
                 display none
 
-        &:after
-            background-color blush
-            border-radius 30px
-            content ''
-            position absolute
-            bottom -20px
-            left 50%
-            transform translateX(-50%)
-            height 4px
-            width 42px
-   
+        // &:after
+        //     background-color blush
+        //     border-radius 30px
+        //     content ''
+        //     position absolute
+        //     bottom -20px
+        //     left 50%
+        //     transform translateX(-50%)
+        //     height 4px
+        //     width 42px 
+
+
+    .btn-main
+        cursor pointer
+        display inline-block
+        margin-top 30px
+        width 200px
+        font-weight bold
+        padding 11px 16px
+        font-size 18px
+        position relative

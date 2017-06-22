@@ -2,13 +2,41 @@
 
 .how-works
     background-color iceBlue
-    border-top 2px solid blush
+    border-bottom 2px solid blush
     padding 70px 20px
     text-align center
+    position relative
     width 100%
+
+    &:before
+        box-shadow 3px -5px 5px -1px rgba(0,0,0,0.05), -3px -5px 5px -1px rgba(0,0,0,0.05)
+        border-top-right-radius 8px
+        border-top-left-radius 8px
+        background-color iceBlue
+        content ''
+        position absolute
+        left 50%
+        height 165px
+        transform translateX(-50%)
+        width 95%
+
+        @media ( min-width 1130px )
+            // padding 0 220px 60px
+            width 1152px
+
+        @media ( min-width 850px )
+            top -80px
+
+        @media ( max-width 849px )
+            top -40px
+            
+    > .subtitle
+    > .desc
+        position relative
 
     > .subtitle
         color purplishGrey
+        margin-top -80px
     
     > .desc
         color greyish
@@ -18,6 +46,7 @@
         display flex
         justify-content space-between
         flex-wrap wrap
+        position relative
         margin 40px auto 0
 
         @media ( min-width 1200px )
@@ -39,7 +68,7 @@
 
 .step-box
     color #959fad
-    width 230px
+    width 250px
 
     > .icon
         box-shadow 0 0 6px 0 rgba(0, 0, 0, 0.05)
