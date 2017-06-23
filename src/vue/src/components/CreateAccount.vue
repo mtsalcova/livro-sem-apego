@@ -19,6 +19,11 @@
             input( v-validate="'required|min:6'" v-bind:class="{'-invalid': errors.has('password')}" type="password" name = 'password' v-model="password" class="field" )
             p.error( v-if="errors.has('password')" ) Digite uma senha válida.
 
+        label.field-box
+            span.name Confirme a Senha: *
+            input( v-validate="'required|min:6|confirmed:password'" v-bind:class="{'-invalid': errors.has('c_password') }" type="password" name = 'c_password' class="field" )
+            p.error( v-if="errors.has('c_password')" ) As senhas não conferem.
+
         label.field-box.-cep
             span.name CEP: * <i>(Apenas números)</i>
             input.field( v-validate="'required'" v-bind:class="{'-invalid': errors.has('cep')}" type = 'text'  name = 'cep' v-model = "cep" maxlength="8" )
