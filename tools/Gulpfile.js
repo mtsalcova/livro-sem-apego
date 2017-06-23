@@ -115,7 +115,7 @@ gulp.task('compress', ['js'], function (cb) {
 //
 var connect = require( 'gulp-connect' );
 var modrewrite = require( 'connect-modrewrite' );
-gulp.task( 'serve', function() {
+gulp.task( 'serve', ['default'], function() {
     connect.server({
         root: '../public',
         port: 8000,
