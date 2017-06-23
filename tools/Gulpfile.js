@@ -110,6 +110,39 @@ gulp.task('compress', ['js'], function (cb) {
     ], cb);
 });
 
+//
+// Connect Server
+//
+var connect = require( 'gulp-connect' );
+var modrewrite = require( 'connect-modrewrite' );
+gulp.task( 'serve', function() {
+    connect.server({
+        root: '../public',
+        port: 8000,
+        middleware: function() {
+            return [
+                modrewrite(
+                    [
+                        '^/sobre/?$ /about.html',
+                        '^/contato/?$ /contact.html',
+                        '^/livros/?$ /books.html',
+                        '^/livros/([^/]+)/([^/]+)/?$ /books-internal.html',
+                        '^/login/?$ /login.html',
+                        '^/painel/?$ /user-dashboard.html',
+                        '^/painel/perfil/?$ /user-profile.html',
+                        '^/painel/livros/?$ /user-donated-books.html',
+                        '^/painel/livros/doar-livros/?$ /user-register-book.html',
+                        '^/painel/livros/doar-livros/([^\/]+)/?$ /user-edit-book.html',
+                        '^/criar-conta/?$ /create-account.html',
+                        '^/redefinir-senha/?$ /forget-password.html'
+                    ]
+                )
+            ];
+        }
+    });
+});
+
+
 
 // gulp.task('concatUglify', function() {
 //     var srcJs = '../public/js';
