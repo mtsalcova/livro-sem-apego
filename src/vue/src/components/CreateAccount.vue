@@ -21,7 +21,7 @@
 
         label.field-box
             span.name Confirme a Senha: *
-            input( v-validate="'required|min:6|confirmed:password'" v-bind:class="{'-invalid': errors.has('c_password') }" type="password" name = 'c_password' class="field" )
+            input( v-validate="'required|min:6|confirmed:password'" name = 'c_password' v-bind:class="{'-invalid': errors.has('c_password') }" type="password" class="field" )
             p.error( v-if="errors.has('c_password')" ) As senhas não conferem.
 
         label.field-box.-cep
@@ -81,6 +81,8 @@
 
                     let frm = document.querySelector("[data-form=createAccount]");
                     let data = new FormData(frm);
+
+                    data.delete('c_password');
 
                     var file = document.querySelector('.photo [type=file]').files[0]
                     if ( file ) data.append('image', file);
