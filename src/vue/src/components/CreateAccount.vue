@@ -82,8 +82,6 @@
                     let frm = document.querySelector("[data-form=createAccount]");
                     let data = new FormData(frm);
 
-                    data.delete('c_password');
-
                     var file = document.querySelector('.photo [type=file]').files[0]
                     if ( file ) data.append('image', file);
                     
