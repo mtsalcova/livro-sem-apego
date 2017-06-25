@@ -39,7 +39,9 @@
             label.field-box.-small
                 span.name Idioma: *
                 select.field( name = 'language_id' v-validate="'required'" v-bind:class="{'-invalid': errors.has('languages') }" )
-                    option( v-for="lang of languages" v-bind:value="lang.id" ) {{ lang.name }}
+                    option( v-for="lang of languages" 
+                        v-bind:value="lang.id"
+                        :selected = "lang.id == 7 ? 'selected' : ''" ) {{ lang.name }}
                 p.error( v-if="errors.has('languages')" ) Preencha o Idioma.
 
             label.field-box.-small
