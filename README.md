@@ -1,6 +1,6 @@
 # Livro sem Apego
 
-> O [Livro sem Apego](http://livrosemapego.com.br) é um site de doação de livros sem fins lucrativos com objetivo de ajuda alguém que esteja precisando de um livro mas não tem condições de comprá-lo ou simplesmente gostaria de ganhá-lo.
+> O [Livro sem Apego](http://livrosemapego.com.br) é um site de doação de livros sem fins lucrativos com objetivo de ajudar alguém que esteja precisando de um livro mas não tem condições de comprá-lo ou simplesmente gostaria de ganhá-lo.
 
 
 ## Estrutura do Projeto
@@ -14,11 +14,12 @@ Para renderizar alguns componentes que precisam de dados do banco de dados, util
 
 ### Rodando o Projeto
 
-O projeto precisa ser rodado em cima de um servidor Apache, pois utilizamos urls amigáveis graças ao **.htaccess**. Enfim, para os arquivos estáticos utilizamos o **Gulp.js** como automatizar de tarefas, então para rodar basta acessar o diretório ```src/tools``` e rode os comandos:
+Para os arquivos estáticos utilizamos o **Gulp.js** como automatizador de tarefas, então para rodar basta acessar o diretório ```src/tools``` e rode os comandos:
 
 ```
 1. npm install
-2. npm run gulp
+2. npm run gulp serve
+3. E Acessar http://localhost:8000 :)
 ``` 
 
 #### Rodando os componentes 
@@ -37,7 +38,7 @@ Utilizamos uma template do **vue-cli** com **Browerify** e implementamos em noss
 git clone git@github.com:mtsalcova/livro-sem-apego.git
 ```
 
-Só aceitamos deploy na branch **dev** e antes de fazer o **push**, não se esqueça de executar os comandos nos seguintes diretórios o/: 
+Só aceitamos deploy na branch **[dev](https://github.com/mtsalcova/livro-sem-apego/tree/dev)** e antes de fazer o **push**, não se esqueça de executar os comandos nos seguintes diretórios o/: 
 
 * **src/tools**
 ```
