@@ -60,7 +60,7 @@
                 this.btnActive = false;
 
                 setTimeout(() => {
-                    location.href = 'login'
+                    location.href = '/login'
                 }, 2000);
 
             },

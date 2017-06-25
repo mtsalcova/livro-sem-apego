@@ -108,8 +108,8 @@
                 let objs = data.json();
                 objs.then( (objs) => { 
                     this.book = objs.book;
-                }).catch(() => { location.href = 'livros' });
-            }).catch( () => { location.href = 'livros' });
+                }).catch(() => { location.href = '/livros' });
+            }).catch( () => { location.href = '/livros' });
 
             this.initReCaptcha();
 

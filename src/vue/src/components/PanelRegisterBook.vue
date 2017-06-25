@@ -159,7 +159,7 @@
                 this.btnText = text;
 
                 setTimeout(() => {
-                    location.href = 'painel/livros'
+                    location.href = '/painel/livros'
                 }, 3000);
                 
             },
