@@ -6,11 +6,11 @@ html( lang = 'pt-BR' )
     head
         meta( charset = 'UTF-8' )
         base( href = '/' )
-        //- base( href = '/livro-sem-apego/public/' )
         meta( name = 'viewport' content = 'width=device-width, initial-scale=1' )
         meta( name = "theme-color" content = "#625673" )
         link( rel = "stylesheet" href = "css/main.css?v=0.0.1" )
         link( rel = 'icon' href = 'img/favicon.ico' )
+
         meta( property="og:title" content="Livro sem Apego" )
         meta( property="og:url" content="http://www.livrosemapego.com.br" )
         meta( property="og:description" content=" Livro sem Apego é um site de doação de livros, sem fins lucrativos. A ideia do projeto surgiu através de uma necessidade de ajudar alguém que esteja precisando de um livro, mas não tem condições de comprá-lo ou simplesmente gostaria de ganhá-lo." )
@@ -55,8 +55,8 @@ html( lang = 'pt-BR' )
 
 
         script.
-            window.APIUrl = '/api/v1';
+            window.APIUrl = 'http://livrosemapego.com.br/api/v1';
 
-        script( src="js/build.js?v=0.0.2" )    
-        script( src="js/app.js" )    
+        script( src="js/build.js?v=0.0.2" ) 
+        script( src="js/app.js" )
 
