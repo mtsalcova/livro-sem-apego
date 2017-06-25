@@ -601,34 +601,6 @@ textarea {
   font: 300 14px 'Museo';
 }
 
-.list-books > .gridbooks {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  border-top: 1px solid #ececec;
-  border-bottom: 1px solid #ececec;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  padding: 15px 0;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  width: 100%;
-}
-
-.list-books > .gridbooks.active > .book-box {
-  opacity: 0;
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px);
-}
-
-.list-books > .gridbooks > p {
-  padding: 0 20px;
-}
-
 .pages-box {
   margin-top: 40px;
   text-align: center;
@@ -1117,6 +1089,44 @@ footer > .copyright {
   color: #ff3939;
   margin-top: 10px;
   font-size: 13px;
+}
+
+.grid-books {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 15px 0;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.grid-books.-home {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.grid-books.-list {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+}
+
+.grid-books.active > .book-box {
+  opacity: 0;
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+
+.grid-books > p {
+  padding: 0 20px;
 }
 
 .header-static {
@@ -1844,7 +1854,7 @@ footer > .copyright {
 }
 
 @media (min-width: 1061px) {
-  .list-books > .gridbooks {
+  .grid-books.-list {
     min-height: 570px;
   }
 }
@@ -2284,7 +2294,7 @@ footer > .copyright {
     margin: 20px 5px;
   }
 
-  .list-books > .gridbooks {
+  .grid-books {
     -ms-flex-pack: distribute;
     justify-content: space-around;
   }

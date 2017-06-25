@@ -3,6 +3,7 @@
 import Vue from 'vue'
 
 // Components
+import LatestBooks from './components/LatestBooks.vue'
 import ListBooks from './components/ListBooks.vue'
 import BtnMyAccount from './components/BtnMyAccount.vue'
 import BookInternal from './components/BookInternal.vue'
@@ -28,6 +29,7 @@ Vue.use(VeeValidate)
 
 
 // Global Components
+Vue.component('LatestBooks', LatestBooks)
 Vue.component('ListBooks', ListBooks)
 Vue.component('BtnMyAccount', BtnMyAccount)
 Vue.component('BookInternal', BookInternal)

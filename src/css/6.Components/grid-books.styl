@@ -1,0 +1,36 @@
+
+//
+// Grid Books
+//
+
+.grid-books
+    display flex
+    flex-wrap wrap
+    padding 15px 0
+    align-items flex-start
+    width 100%
+
+    &.-home
+        justify-content center
+        margin-top 15px
+
+    &.-list
+        justify-content flex-start
+        border-top 1px solid lightGrey
+        border-bottom 1px solid lightGrey
+
+        @media ( min-width 1061px )
+            min-height 570px
+
+    @media ( max-width 500px ) 
+        justify-content space-around
+
+    &.active
+
+        > .book-box
+            opacity 0
+            transform translateY(-5px)
+
+    > p
+        padding 0 20px
+

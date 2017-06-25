@@ -40,7 +40,7 @@
             .title-list
                 span Listando {{ booksTotal }} livro(s).
 
-            .gridbooks( :class="gridbooks" )
+            .grid-books.-list( :class="gridbooks" )
 
                 book-box( v-if = "books" v-for = "book in books"
                     :title = 'book.title',
