@@ -12,6 +12,11 @@ Ao construir o site, utilizamos uma estrutura criada do zero utilizando alguns p
 Para renderizar alguns componentes que precisam de dados do banco de dados, utilizamos **Vue.js**, que foi nossa primeira experiência com uma lib js para criação de componentes, por conta disso não fizemos o site em SPA.
 
 
+### API
+
+Você conseguirá acessar a API que está online via ```http://localhost:8000```, por tanto qualquer livro cadastrado localmente, irá aparecer no site online e as pessoas poderão visualizar, então cuidado ao criar cadastrar livros de teste. A **documentação** da API está em Desenvolvimento.
+
+
 ### Rodando o Projeto
 
 Para os arquivos estáticos utilizamos o **Gulp.js** como automatizador de tarefas, então para rodar basta acessar o diretório ```src/tools``` e rode os comandos:

@@ -7,7 +7,6 @@
     margin 0 auto
     padding 60px 0
     position relative
-    overflow hidden
     min-height 400px
     width 1115px
 
@@ -49,7 +48,15 @@
 
     > .filter
         padding 0 10px
+        position relative
+        min-height 100%
         width 250px
+
+        .field-box
+            margin-bottom 15px
+
+            &:last-of-type
+                margin-bottom 0
 
         @media ( max-width 1160px )
             height 100%
@@ -67,6 +74,8 @@
             .form-styl
                 padding 40px 20px
                 background #fff
+
+            
         
     
     > .icon-filter

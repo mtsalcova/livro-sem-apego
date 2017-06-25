@@ -6,7 +6,7 @@
         
         .icon-filter( @click = 'MobileFilterBooks' )
 
-        aside.filter: form.form-styl.-nobrd( data-form = 'filter' method = 'POST' @submit.prevent="sendFilters" )
+        aside.filter: form.form-styl.-sticky( data-form = 'filter' method = 'POST' @submit.prevent="sendFilters" )
     
             label.field-box
                 span.name Título do Livro:
@@ -27,7 +27,7 @@
                 input.field( type = 'text' name = 'publisher' )
 
             label.field-box
-                span.name Estado
+                span.name Estado:
                 select.field( name = 'state' )
                     each uf, value in { "": "", "AC": "AC", "AL": "AL", "AM": "AM", "AP": "AP","BA": "BA","CE": "CE","DF": "DF","ES": "ES","GO": "GO","MA": "MA","MT": "MT","MS": "MS","MG": "MG","PA": "PA","PB": "PB","PR": "PR","PE": "PE","PI": "PI","RJ": "RJ","RN": "RN","RO": "RO","RS": "RS","RR": "RR","SC": "SC","SE": "SE","SP": "SP","TO": "TO" }
                         option( value =value ) #{uf}
