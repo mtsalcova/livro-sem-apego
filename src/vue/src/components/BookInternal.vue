@@ -33,7 +33,7 @@
         .send-msg( id = 'getbook' )
             h2.subtitle Gostaria de ganhar esse livro?
             p.desc Então entre em contato com o doador abaixo, quem sabe dê tempo! ;)
-            p.desc <strong>Contatos enviados para o doador:</strong> {{book.number_contacts}}
+            p.desc Contatos enviados para o doador: <strong>{{book.number_contacts}}</strong>
 
             .giver-box
 
