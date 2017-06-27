@@ -890,6 +890,20 @@ footer > .copyright {
   width: 100%;
 }
 
+footer > .social {
+  margin: 20px 0;
+  text-align: center;
+}
+
+footer > .social a {
+  display: inline-block;
+}
+
+footer > .social a svg {
+  height: 22px;
+  width: 22px;
+}
+
 .forget-password {
   margin: 0 auto;
   padding: 60px 0;
@@ -1759,7 +1773,7 @@ footer > .copyright {
 
 @media (min-width: 410px) {
   body {
-    padding-bottom: 212px;
+    padding-bottom: 260px;
   }
 
   footer {
