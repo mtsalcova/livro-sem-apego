@@ -98,21 +98,42 @@
 
         },
 
+
         created() {
 
             var params = this.getParamsUrl();
             var url = window.APIUrl + '/book/internal/' + params.link + '/'+ params.id;
             let book = this.$http.get( url );
+            var self = this;
             
             book.then( data => { 
                 let objs = data.json();
                 objs.then( (objs) => { 
                     this.book = objs.book;
+                    self.$emit('updateHead');
+
                 }).catch(() => { location.href = '/livros' });
             }).catch( () => { location.href = '/livros' });
 
             this.initReCaptcha();
 
+        },
+
+        head: {
+            title() {
+                return {
+                    inner: this.book.title + ' de ' + this.book.author
+                }
+            },
+            meta() {
+                return [
+                    { p: 'og:title', c: 'Livro para Doação: ' + this.book.title + ' - ' + this.book.author },
+                    { p: 'og:description', c: this.book.description },
+                    { p: 'og:url', c: window.location.href },
+                    { p: 'og:image', c: window.location.origin + '/' + this.book.image },
+                    { name: 'description', content: this.book.description }
+                ]
+            }
         },
 
         methods: {

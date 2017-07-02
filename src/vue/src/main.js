@@ -2,6 +2,7 @@
 
 import Vue from 'vue'
 
+
 // Components
 import LatestBooks from './components/LatestBooks.vue'
 import ListBooks from './components/ListBooks.vue'
@@ -26,6 +27,9 @@ Vue.use(VueResource)
 
 import VeeValidate from 'vee-validate'
 Vue.use(VeeValidate)
+
+import VueHead from 'vue-head'
+Vue.use(VueHead)
 
 
 // Global Components
