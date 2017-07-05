@@ -50,6 +50,10 @@
                         p.error( v-if="errors.has('email')" ) Este campo é obrigatório.
 
                     label.field-box
+                        span.name Celular: 
+                        input.field( type = 'text' name = 'phone' maxlength="16" )
+
+                    label.field-box
                         span.name Mensagem: *
                         textarea.field( v-validate="'required|max:225'" v-bind:class="{'-invalid': errors.has('message') }" name = 'message' )
                         p.error( v-if="errors.has('message')" ) Este campo é obrigatório.
