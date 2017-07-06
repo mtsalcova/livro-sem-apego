@@ -3,12 +3,14 @@ html( lang = 'pt-BR' )
 
     block vars
 
+    - version = '0.0.7'
+
     head
         meta( charset = 'UTF-8' )
         base( href = '/' )
         meta( name = 'viewport' content = 'width=device-width, initial-scale=1' )
         meta( name = "theme-color" content = "#625673" )
-        link( rel = "stylesheet" href = "css/main.css?v=0.0.5" )
+        link( rel = "stylesheet" href = 'css/main.css?v='+version )
         link( rel = 'icon' href = 'img/favicon.ico' )
 
 
@@ -60,6 +62,6 @@ html( lang = 'pt-BR' )
         script.
             window.APIUrl = ( window.location.origin.indexOf('localhost') ? 'http://livrosemapego.com.br' : window.location.origin ) + '/api/v1';
 
-        script( src="js/build.js?v=0.0.5" ) 
+        script( src='js/build.js?v='+version ) 
         script( src="js/app.js" )
 
