@@ -8,7 +8,7 @@
             p.desc Aqui você terá acesso as suas informações de perfil, cadastrar livros para doação, entre outras coisas! :)
 
             .details
-                h2 Alguns pontos importantes:
+                h2 Alguns avisos importantes:
 
                 ul
                     li Caso tenha recebido algum contato via site, verifique se não caiu na caixa de spam/lixeira em seu e-mail por favor;
