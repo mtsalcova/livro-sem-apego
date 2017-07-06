@@ -7,6 +7,14 @@
             h1.title <span>Seja Bem vindo</span>, {{nameuser}}!
             p.desc Aqui você terá acesso as suas informações de perfil, cadastrar livros para doação, entre outras coisas! :)
 
+            .details
+                h2 Alguns pontos importantes:
+
+                ul
+                    li Caso tenha recebido algum contato via site, verifique se não caiu na caixa de spam/lixeira em seu e-mail por favor;
+                    li Caso já tenha doado o livro, não se esqueça de desativá-lo, pra não aparecer mais no site.
+
+
         .donated-books
             h2.title Últimos livros cadastrados:
             
