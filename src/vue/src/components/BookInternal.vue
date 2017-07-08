@@ -54,8 +54,8 @@
                         input.field( type = 'text' name = 'phone' maxlength="16" )
 
                     label.field-box
-                        span.name Mensagem: *
-                        textarea.field( v-validate="'required|max:225'" v-bind:class="{'-invalid': errors.has('message') }" name = 'message' )
+                        span.name Mensagem: (<i>Máximo de 500 caracteres</i>) *
+                        textarea.field( v-validate="'required|max:500'" v-bind:class="{'-invalid': errors.has('message') }" name = 'message' )
                         p.error( v-if="errors.has('message')" ) Este campo é obrigatório.
 
                     div( class="g-recaptcha" id = 'recaptcha' )
