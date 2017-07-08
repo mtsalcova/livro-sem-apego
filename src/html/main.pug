@@ -10,8 +10,10 @@ html( lang = 'pt-BR' )
         base( href = '/' )
         meta( name = 'viewport' content = 'width=device-width, initial-scale=1' )
         meta( name = "theme-color" content = "#625673" )
+        meta( name = 'description' content=description )
         link( rel = "stylesheet" href = 'css/main.css?v='+version )
         link( rel = 'icon' href = 'img/favicon.ico' )
+        
 
 
         if !book_internal
@@ -27,7 +29,7 @@ html( lang = 'pt-BR' )
         if title
             - pipe = '-'
             
-        title #{title} #{pipe} Livro sem Apego
+        title #{title} #{pipe} Livro sem Apego | Site de Doação de Livros
 
         if recaptcha
             script(src='https://www.google.com/recaptcha/api.js?render=explicit' async defer )
