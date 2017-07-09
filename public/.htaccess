@@ -1,5 +1,8 @@
 RewriteEngine On
 
+RewriteCond %{HTTP_HOST} ^www.livrosemapego.com.br [NC]
+RewriteRule ^(.*)$ http://livrosemapego.com.br/$1 [L,R=301]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
