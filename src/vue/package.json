@@ -20,6 +20,7 @@
     "vue": "vue/dist/vue.common.js"
   },
   "dependencies": {
+    "jade": "^1.11.0",
     "vee-validate": "^2.0.0-rc.3",
     "vue": "^2.0.1",
     "vue-head": "^2.0.11",
