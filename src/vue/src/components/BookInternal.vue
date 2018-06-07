@@ -173,7 +173,7 @@
                         badge: 'inline',
                         callback: self.setTokenReCaptcha
                     });
-                }, 100);
+                }, 300);
                 
             },
 
