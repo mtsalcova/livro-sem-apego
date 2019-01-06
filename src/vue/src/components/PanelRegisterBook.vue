@@ -124,7 +124,9 @@
 
             registerBook() {
 
-                this.$validator.validateAll().then(() => {
+                this.$validator.validateAll().then((result) => {
+                    
+                    if( !result ) return false;
                     
                     this.btnText = 'Cadastrando...';
                     this.btnActive = true;

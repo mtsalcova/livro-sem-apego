@@ -51,8 +51,10 @@
 
             sendContact() {
 
-                this.$validator.validateAll().then(() => {
+                this.$validator.validateAll().then((result) => {
 
+                    if( !result ) return false;
+                    
                     this.btnText = 'Enviando...';
                     this.btnActive = true;
 

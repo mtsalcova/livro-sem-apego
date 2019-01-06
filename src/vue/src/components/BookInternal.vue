@@ -197,6 +197,9 @@
                     var request = this.$http.post(url, data);
                     
                     request.then( (result) => {
+
+                        if( !result ) return false;
+                        
                         let obj = result.json()
                         obj.then( (data) => {
                             if( data.success ) {

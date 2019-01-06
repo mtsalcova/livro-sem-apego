@@ -121,8 +121,9 @@
             
             validateForm() {  
 
-                this.$validator.validateAll().then(() => {
+                this.$validator.validateAll().then((result) => {
                     
+                    if( !result ) return false;
                     this.btnText = 'Criando...'
                     this.btnActive = true
                     

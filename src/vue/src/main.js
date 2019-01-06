@@ -26,7 +26,9 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
 import VeeValidate from 'vee-validate'
-Vue.use(VeeValidate)
+Vue.use(VeeValidate, {
+  events: 'blur'
+})
 
 import VueHead from 'vue-head'
 Vue.use(VueHead)

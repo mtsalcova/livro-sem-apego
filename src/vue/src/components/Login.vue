@@ -42,7 +42,9 @@ export default {
 
         sendFormLogin() {  
 
-            this.$validator.validateAll().then(() => {
+            this.$validator.validateAll().then((result) => {
+
+                if( !result ) return false;
                 
                 let frm = document.querySelector("[data-form=login]");
                 let data = new FormData(frm);

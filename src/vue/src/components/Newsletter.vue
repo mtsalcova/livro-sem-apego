@@ -33,7 +33,9 @@
 
             sendEmail(e) {
 
-                this.$validator.validateAll().then(() => {
+                this.$validator.validateAll().then((result) => {
+
+                    if( !result ) return false;
 
                     let frm = document.querySelector('[data-form=newsletter]');
                     let data = new FormData(frm);

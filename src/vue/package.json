@@ -20,7 +20,7 @@
     "vue": "vue/dist/vue.common.js"
   },
   "dependencies": {
-    "vee-validate": "^2.0.0-rc.3",
+    "vee-validate": "^2.1.5",
     "vue": "^2.0.1",
     "vue-head": "^2.0.11",
     "vue-recaptcha": "^1.1.1",
@@ -37,7 +37,7 @@
     "browserify-hmr": "^0.3.1",
     "cross-env": "^2.0.0",
     "envify": "^3.4.1",
-    "http-server": "^0.9.0",
+    "http-server": "^0.11.1",
     "jade": "^1.11.0",
     "npm-run-all": "^2.3.0",
     "proxyquireify": "^3.0.1",
