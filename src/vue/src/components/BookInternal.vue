@@ -58,7 +58,12 @@
                         textarea.field( v-validate="'required|max:500'" v-bind:class="{'-invalid': errors.has('message') }" name = 'message' )
                         p.error( v-if="errors.has('message')" ) Este campo é obrigatório.
 
-                    div( class="g-recaptcha" id = 'recaptcha' )
+                    vue-recaptcha( 
+                        class="g-recaptcha" 
+                        sitekey="6Le1uyIUAAAAAEHKPHJtkx2HW6hJusMHIUq5ICF6" 
+                        @verify="setTokenReCaptcha"
+                    )
+                    
                     button( class="btn-main" v-bind:class="{ '-sending': btnActive }" type="submit" ) {{ btnText }}
 
                 
@@ -89,7 +94,11 @@
 
 <script>
     
+    import VueRecaptcha from 'vue-recaptcha';
+
     export default {
+
+        components: { VueRecaptcha },
 
         data() {
             return {
@@ -118,8 +127,6 @@
 
                 }).catch(() => { location.href = '/livros' });
             }).catch( () => { location.href = '/livros' });
-
-            this.initReCaptcha();
 
         },
 
@@ -162,19 +169,6 @@
                     link: link
                 }
 
-            },
-
-            initReCaptcha() {
-                var self = this;
-                setTimeout( () => {
-                    if( typeof grecaptcha === 'undefined' ) return self.initReCaptcha();
-                    grecaptcha.render('recaptcha', {
-                        sitekey: '6Le1uyIUAAAAAEHKPHJtkx2HW6hJusMHIUq5ICF6',
-                        badge: 'inline',
-                        callback: self.setTokenReCaptcha
-                    });
-                }, 300);
-                
             },
 
             setTokenReCaptcha(e) {
@@ -220,8 +214,8 @@
 
 
             sentSuccess(data) {
-                this.btnText = data
-                grecaptcha.reset();
+                this.btnText = data;
+                if( grecaptcha ) grecaptcha.reset();
                 this.btnReset();
             },
 

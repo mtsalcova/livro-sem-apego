@@ -3,7 +3,7 @@ html( lang = 'pt-BR' )
 
     block vars
 
-    - version = '0.1.0'
+    - version = '0.2.0'
 
     head
         meta( charset = 'UTF-8' )
@@ -34,7 +34,7 @@ html( lang = 'pt-BR' )
         title #{title} #{pipe} Livro sem Apego
 
         if recaptcha
-            script(src='https://www.google.com/recaptcha/api.js?render=explicit' async defer )
+            script( src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer )
 
 
         script.
