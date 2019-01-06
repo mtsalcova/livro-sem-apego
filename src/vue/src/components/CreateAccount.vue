@@ -16,7 +16,7 @@
 
         label.field-box
             span.name Senha: * <i>(Mínimo 6 caracteres)</i>
-            input( v-validate="'required|min:6'" v-bind:class="{'-invalid': errors.has('password')}" type="password" name = 'password' v-model="password" class="field" )
+            input( v-validate="'required|min:6'" ref="password" v-bind:class="{'-invalid': errors.has('password')}" type="password" name = 'password' v-model="password" class="field" )
             p.error( v-if="errors.has('password')" ) Digite uma senha válida.
 
         label.field-box
