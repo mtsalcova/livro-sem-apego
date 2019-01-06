@@ -68,6 +68,8 @@
 
                 
                 .giver-data
+
+                    h2.title Informações do Doador:
                     
                     .perfil
                         .photo
