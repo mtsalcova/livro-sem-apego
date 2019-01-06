@@ -27,7 +27,7 @@
                     li <strong>Ano:</strong> {{ book.release_year }}
                     li <strong>Quantidade:</strong> {{ book.quantity }}
 
-                a.btn-main( :href = "btnAnchorForm") Adquirir Livro
+                a.btn-main( :href = "btnAnchorForm") Falar com o Doador
         
 
         .send-msg( id = 'getbook' )
@@ -105,7 +105,7 @@
                 btnAnchorForm: location.pathname + '#getbook',
                 book: {},
                 tokenReCaptcha: false,
-                btnText: 'Enviar',
+                btnText: 'Enviar Mensagem ao Doador',
                 btnActive: false,
             }
 
