@@ -34,7 +34,7 @@
     "babel-runtime": "^6.0.0",
     "babelify": "^7.2.0",
     "browserify": "^13.1.0",
-    "browserify-hmr": "^0.3.1",
+    "browserify-hmr": "^0.3.7",
     "cross-env": "^2.0.0",
     "envify": "^3.4.1",
     "http-server": "^0.11.1",
@@ -43,7 +43,7 @@
     "proxyquireify": "^3.0.1",
     "pug": "^2.0.0-rc.1",
     "stylus": "^0.54.5",
-    "uglify-js": "^2.5.0",
+    "uglify-js": "^3.4.9",
     "vueify": "^9.0.0",
     "watchify": "^3.4.0"
   }
