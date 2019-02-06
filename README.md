@@ -23,7 +23,7 @@ Para os arquivos estáticos utilizamos o **Gulp.js** como automatizador de taref
 
 ```
 1. npm install
-2. npm run gulp serve
+2. npm run gulp
 3. E Acessar http://localhost:8000 :)
 ``` 
 

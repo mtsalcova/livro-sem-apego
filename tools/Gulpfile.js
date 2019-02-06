@@ -26,21 +26,23 @@ gulp.task('stylus', function() {
 });
 
 
-gulp.task('combineMq', ['stylus'], function () {
+gulp.task('combineMq', gulp.series('stylus', function () {
     return gulp.src('../public/css/main.css')
         .pipe(combineMq({
             beautify: true
         }))
         .on('error', setError)
         .pipe(gulp.dest('../public/css/'));
-});
+}));
 
 
 var cssmin = require('gulp-cssmin');
-gulp.task('compresscss', function () {
+gulp.task('compresscss', function (done) {
     gulp.src('../public/css/main.css')
         .pipe(cssmin())
         .pipe(gulp.dest('../public/css/'));
+
+    done();
 });
 
 
@@ -102,20 +104,20 @@ gulp.task('js', function() {
         .pipe(gulp.dest('../public/js/'));
 });
  
-gulp.task('compress', ['js'], function (cb) {
+gulp.task('compress', gulp.series('js', function (cb) {
     pump([
         gulp.src('../public/js/app.js'),
         uglify(),
         gulp.dest('../public/js/')
     ], cb);
-});
+}));
 
 //
 // Connect Server
 //
 var connect = require( 'gulp-connect' );
 var modrewrite = require( 'connect-modrewrite' );
-gulp.task( 'serve', ['default'], function() {
+gulp.task( 'serve', function(done) {
     connect.server({
         root: '../public',
         port: 8000,
@@ -140,20 +142,22 @@ gulp.task( 'serve', ['default'], function() {
             ];
         }
     });
+    done();
 });
 
 
 //
 // Task Default
 
-gulp.task('default', function() {
-    gulp.watch('../src/css/**/*.styl', ['combineMq']);
-    gulp.watch('../src/html/**/*.pug', ['pug']);
-    gulp.watch(['../src/js/*.js', '../src/js/**/*.js'], ['compress']);
-});
+gulp.task('default', gulp.parallel('serve', function(done) {
+    gulp.watch('../src/css/**/*.styl', gulp.series('combineMq'));
+    gulp.watch('../src/html/**/*.pug', gulp.series('pug'));
+    gulp.watch(['../src/js/*.js', '../src/js/**/*.js'], gulp.series('compress'));
+    done();
+}));
 
-gulp.task('build', ['compresscss']);
-gulp.task('svg', ['svgstore']);
+gulp.task('build', gulp.series('compresscss'));
+gulp.task('svg', gulp.series('svgstore'));
 
 
 
