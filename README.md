@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/mtsalcova/livro-sem-apego) 
+
 # Livro sem Apego
 
 > O [Livro sem Apego](http://livrosemapego.com.br) é um site de doação de livros sem fins lucrativos com objetivo de ajudar alguém que esteja precisando de um livro mas não tem condições de comprá-lo ou simplesmente gostaria de ganhá-lo.
